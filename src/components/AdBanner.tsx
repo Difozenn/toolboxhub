@@ -12,7 +12,7 @@ import { useEffect, useRef } from "react";
  * 4. Create ad units in your AdSense dashboard and use the slot IDs when rendering this component
  */
 
-const AD_CLIENT = "ca-pub-XXXXXXXXXX";
+const AD_CLIENT = "ca-pub-1707684527667915";
 
 interface AdBannerProps {
   slot: string;
