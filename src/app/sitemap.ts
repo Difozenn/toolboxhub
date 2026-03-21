@@ -13,21 +13,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 1.0,
   };
 
-  // Search page
-  const searchPage: MetadataRoute.Sitemap[number] = {
-    url: `${BASE_URL}/search`,
+  // All tools page
+  const allToolsPage: MetadataRoute.Sitemap[number] = {
+    url: `${BASE_URL}/tools`,
     lastModified: now,
     changeFrequency: "weekly",
-    priority: 0.6,
+    priority: 0.9,
   };
 
-  // Tool pages
-  const toolPages: MetadataRoute.Sitemap = tools.map((tool) => ({
-    url: `${BASE_URL}/tools/${tool.slug}`,
+  // Categories index page
+  const categoriesPage: MetadataRoute.Sitemap[number] = {
+    url: `${BASE_URL}/categories`,
     lastModified: now,
-    changeFrequency: "weekly" as const,
+    changeFrequency: "weekly",
     priority: 0.8,
-  }));
+  };
 
   // Category pages
   const categoryPages: MetadataRoute.Sitemap = categories.map((cat) => ({
@@ -37,5 +37,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [homepage, searchPage, ...categoryPages, ...toolPages];
+  // Tool pages
+  const toolPages: MetadataRoute.Sitemap = tools.map((tool) => ({
+    url: `${BASE_URL}/tools/${tool.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  return [homepage, allToolsPage, categoriesPage, ...categoryPages, ...toolPages];
 }

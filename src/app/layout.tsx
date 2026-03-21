@@ -69,6 +69,14 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        {/* Google AdSense — replace ca-pub-XXXXXXXXXX with your real publisher ID */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         {generateSiteJsonLd().map((schema, i) => (
           <JsonLd key={i} data={schema} />
