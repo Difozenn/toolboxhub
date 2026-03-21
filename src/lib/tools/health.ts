@@ -225,6 +225,126 @@ export const healthTools: Tool[] = [
     useCases: ["Setting training loads for a powerlifting or strength program like 5/3/1 or Starting Strength", "Tracking strength progress over months without repeated max testing", "Comparing relative strength across different exercises", "Calculating accessory lift weights based on a percentage of main lift 1RM"],
     relatedSlugs: ["heart-rate-zones", "pace-calculator", "bmi-calculator"]
   },
+  { slug: "blood-type-calculator", name: "Blood Type Calculator", description: "Determine possible child blood types based on parents' blood types.", category: "health", icon: "🩸", keywords: ["blood type calculator", "blood type genetics", "child blood type", "abo blood type"], subcategory: "medical",
+    longDescription: "Determine all possible blood types a child could inherit based on the ABO and Rh blood types of both parents. Blood type inheritance follows Mendelian genetics, and this calculator shows all possible combinations with their probabilities — useful for educational purposes and satisfying parental curiosity about their child's likely blood type.",
+    faqs: [
+      { question: "Can blood type testing identify paternity?", answer: "Blood type alone cannot confirm paternity but can exclude it — if a child's blood type is impossible given one parent's type, that person cannot be the biological parent. DNA testing is required for conclusive paternity results." },
+      { question: "What is the rarest blood type?", answer: "AB negative is the rarest blood type, occurring in roughly 1% of the population. AB positive is the universal plasma donor type, while O negative is the universal red blood cell donor." },
+      { question: "Is this medically accurate?", answer: "The calculator applies standard ABO and Rh Mendelian inheritance rules. Results are for educational reference only and should not replace medical blood typing from a laboratory." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Select Parent 1's ABO blood type (A, B, AB, or O) and Rh factor (positive or negative)." },
+      { name: "Step 2", text: "Select Parent 2's ABO blood type and Rh factor." },
+      { name: "Step 3", text: "View all possible child blood types and the probability of each occurring." }
+    ],
+    useCases: [
+      "Parents curious about which blood types their child could inherit",
+      "Biology students studying ABO blood type genetics and Mendelian inheritance",
+      "Healthcare educators demonstrating blood type inheritance in genetics lessons",
+      "Expecting parents learning about blood compatibility considerations during pregnancy"
+    ],
+    relatedSlugs: ["pregnancy-due-date", "ovulation-calculator", "bmi-calculator"]
+  },
+  { slug: "shoe-size-converter", name: "Shoe Size Converter", description: "Convert shoe sizes between US, UK, EU, and international standards.", category: "health", icon: "👟", keywords: ["shoe size converter", "us uk eu shoe size", "shoe size chart", "international shoe size"], subcategory: "body",
+    longDescription: "Convert shoe sizes between US, UK, European, Japanese, and other international sizing standards for men, women, and children. Shoe sizing varies significantly across countries and brands, and this converter ensures you order the correct size whether shopping domestically or internationally.",
+    faqs: [
+      { question: "Are men's and women's shoe sizes different?", answer: "Yes. In the US, women's sizes are typically 1.5 sizes larger than men's for the same foot length. The converter handles all gender-specific size systems separately for accurate results." },
+      { question: "Why do shoe sizes feel different across brands?", answer: "Size standards vary not only between countries but also between individual brands, who use proprietary lasts (foot molds). This converter gives the standard size equivalent — always check a brand's specific size chart when possible." },
+      { question: "Does it convert children's shoe sizes too?", answer: "Yes. Children's sizes have their own scale in most countries, and the converter includes US, UK, and EU children's sizing." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Select your gender (men, women, or children) and enter your known shoe size." },
+      { name: "Step 2", text: "Choose the sizing system your known size is in (US, UK, EU, etc.)." },
+      { name: "Step 3", text: "View the equivalent sizes in all other major international sizing systems." }
+    ],
+    useCases: [
+      "Shopping for shoes from international online retailers in different size systems",
+      "Converting European shoe sizes when visiting or purchasing abroad",
+      "Finding the right children's shoe size equivalent when buying gifts internationally",
+      "Verifying the correct size when switching between US and UK sizing systems"
+    ],
+    relatedSlugs: ["unit-converter", "bmi-calculator", "ideal-weight-calculator"]
+  },
+  { slug: "dog-age-calculator", name: "Dog Age Calculator", description: "Convert dog years to human years using breed-size-adjusted formulas.", category: "health", icon: "🐕", keywords: ["dog age calculator", "dog years to human years", "pet age calculator", "dog human age"], subcategory: "medical",
+    longDescription: "Convert your dog's age to the human equivalent using modern research-based formulas that account for breed size. The old '1 dog year = 7 human years' rule is an oversimplification — dogs age much faster in their early years and the rate varies significantly between small and large breeds. This calculator gives a more accurate biological age comparison.",
+    faqs: [
+      { question: "Is the 7-year rule accurate?", answer: "No. Dogs mature very rapidly in the first two years — a 1-year-old dog is roughly equivalent to a 15-year-old human. After that, the aging rate slows and varies by breed size. Small dogs tend to live longer than large dogs." },
+      { question: "Why do small dogs live longer than large dogs?", answer: "Large dog breeds age faster at the cellular level despite their slower early development. A Great Dane ages much faster than a Chihuahua, resulting in a shorter lifespan." },
+      { question: "How does the calculator determine breed size?", answer: "Select your dog's size category (toy, small, medium, large, giant) and the calculator applies the appropriate age conversion formula for that size group." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter your dog's age in years (you can use decimals for puppies)." },
+      { name: "Step 2", text: "Select your dog's size category (toy under 12 lb, small, medium, large, or giant over 90 lb)." },
+      { name: "Step 3", text: "View the human age equivalent and a life stage description for your dog." }
+    ],
+    useCases: [
+      "Understanding your dog's life stage and adjusting care accordingly",
+      "Fun conversation starter at the dog park about your pet's 'human age'",
+      "Educational tool for children learning about how animals age differently",
+      "Helping new dog owners set realistic expectations about their pet's life stages"
+    ],
+    relatedSlugs: ["bmi-calculator", "sleep-calculator", "age-calculator"]
+  },
+  { slug: "pregnancy-weight-tracker", name: "Pregnancy Weight Tracker", description: "Track healthy pregnancy weight gain based on BMI and guidelines.", category: "health", icon: "🤰", keywords: ["pregnancy weight", "gestational weight gain", "pregnancy bmi", "weight during pregnancy"], subcategory: "medical",
+    longDescription: "Track recommended pregnancy weight gain based on your pre-pregnancy BMI and current gestational week, following the Institute of Medicine (IOM) guidelines. Gaining the right amount of weight during pregnancy supports healthy fetal development and reduces risks for both mother and baby. This tool shows your target range and current progress.",
+    faqs: [
+      { question: "How much weight should I gain during pregnancy?", answer: "IOM guidelines recommend: underweight (BMI <18.5): 28–40 lbs; normal weight: 25–35 lbs; overweight: 15–25 lbs; obese: 11–20 lbs. Women carrying twins have higher targets. Your OB will personalize these targets for you." },
+      { question: "How is the weight gain distributed over pregnancy?", answer: "Weight gain is not linear. During the first trimester, gain is minimal (0–4 lbs). Most of the weight is gained in the second and third trimesters at roughly 1 lb per week for normal-weight women." },
+      { question: "Is this tool a substitute for medical advice?", answer: "No. This tool provides general guidance based on IOM guidelines. Always follow your OB or midwife's personalized recommendations for your specific pregnancy." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter your pre-pregnancy weight and height to calculate your pre-pregnancy BMI." },
+      { name: "Step 2", text: "Enter your current week of pregnancy and current weight." },
+      { name: "Step 3", text: "View your recommended weight gain range and whether your current gain is within, above, or below target." }
+    ],
+    useCases: [
+      "Pregnant women monitoring weight gain against healthy guidelines each week",
+      "OB patients tracking their progress between prenatal appointments",
+      "Partners and family supporting a pregnant loved one with accurate information",
+      "Postpartum planning by understanding expected total pregnancy weight gain"
+    ],
+    relatedSlugs: ["pregnancy-due-date", "bmi-calculator", "calorie-calculator"]
+  },
+  { slug: "vo2-max-calculator", name: "VO2 Max Calculator", description: "Estimate your VO2 max from running performance data.", category: "health", icon: "🏃", keywords: ["vo2 max calculator", "aerobic fitness", "maximal oxygen uptake", "cardio fitness"], subcategory: "exercise",
+    longDescription: "Estimate your VO2 max — the maximum rate at which your body can consume oxygen during intense exercise — from a simple running test or race time. VO2 max is the gold standard measure of cardiovascular fitness and aerobic capacity, and a higher score correlates strongly with overall health and longevity. This calculator uses validated field test formulas so you don't need a lab.",
+    faqs: [
+      { question: "What is a good VO2 max score?", answer: "Average VO2 max varies by age and gender. For a 30-year-old male, average is around 40–45 ml/kg/min; for a female, 33–38. Elite endurance athletes can exceed 70 (men) or 60 (women)." },
+      { question: "How can I improve my VO2 max?", answer: "High-intensity interval training (HIIT) and sustained aerobic training are the most effective methods for raising VO2 max. Improvements of 10–25% are achievable with consistent training over several months." },
+      { question: "How accurate is this calculator?", answer: "Field test estimates typically have a margin of error of 3–5 ml/kg/min. Lab-based VO2 max testing (maximal treadmill test with gas analysis) is the most accurate but requires professional equipment." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Choose a test method: enter a recent race time and distance, or use the 1.5-mile run time test." },
+      { name: "Step 2", text: "Enter your data (time, distance, age, and weight as required by the test)." },
+      { name: "Step 3", text: "View your estimated VO2 max and see where it ranks on the fitness classification chart." }
+    ],
+    useCases: [
+      "Endurance athletes tracking aerobic fitness improvements between training cycles",
+      "Runners estimating race performance potential at different distances",
+      "Fitness enthusiasts benchmarking their cardiovascular health over time",
+      "Personal trainers assessing clients' aerobic fitness baseline at the start of a program"
+    ],
+    relatedSlugs: ["pace-calculator", "heart-rate-zones", "calorie-calculator"]
+  },
+  { slug: "lean-body-mass", name: "Lean Body Mass Calculator", description: "Calculate lean body mass from weight and body fat percentage.", category: "health", icon: "💪", keywords: ["lean body mass", "lean mass calculator", "fat free mass", "muscle mass"], subcategory: "body",
+    longDescription: "Calculate your lean body mass (LBM) — the total weight of everything in your body except fat — from your total weight and body fat percentage. LBM includes muscle, bone, organs, and water. Knowing your lean mass is essential for setting precise protein targets, calibrating calorie intake during a cut or bulk, and tracking true muscle gain over time.",
+    faqs: [
+      { question: "Why is lean body mass important?", answer: "LBM is a more meaningful metric than total body weight for fitness purposes because it shows how much muscle and structural tissue you have. It's used to set protein targets, calculate drug dosing in clinical settings, and evaluate body composition changes more accurately than scale weight alone." },
+      { question: "What is the difference between lean body mass and fat-free mass?", answer: "Lean body mass includes a small amount of essential fat (around 3% in men and 12% in women) that surrounds organs and the nervous system. Fat-free mass excludes all fat entirely. The terms are often used interchangeably in fitness contexts." },
+      { question: "How should I measure body fat percentage for the most accurate result?", answer: "DEXA scan is most accurate, followed by hydrostatic weighing, skinfold calipers, and the Navy tape measurement method. Bioelectrical impedance (bathroom scales with BIA) is convenient but less accurate." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter your total body weight in pounds or kilograms." },
+      { name: "Step 2", text: "Enter your body fat percentage (use our Body Fat Calculator if you don't know it)." },
+      { name: "Step 3", text: "View your lean body mass, fat mass, and the ratio between them." }
+    ],
+    useCases: [
+      "Setting precise daily protein targets based on lean mass rather than total weight",
+      "Tracking whether weight changes during a diet are from fat loss or muscle loss",
+      "Calculating calorie needs using lean mass-based TDEE formulas",
+      "Monitoring lean mass retention and growth during strength training programs"
+    ],
+    relatedSlugs: ["body-fat-calculator", "macro-calculator", "one-rep-max"]
+  },
   { slug: "waist-hip-ratio", name: "Waist-to-Hip Ratio Calculator", description: "Calculate your waist-to-hip ratio to assess health risk.", category: "health", icon: "📏", keywords: ["waist hip ratio", "whr calculator", "body shape", "health risk"], subcategory: "body", template: "simple-calculator",
     longDescription: "Waist-to-hip ratio (WHR) is a simple measurement that compares the circumference of your waist to your hips to assess the distribution of body fat. Research shows that carrying excess fat around the abdomen (apple shape) is strongly associated with higher risk of cardiovascular disease, type 2 diabetes, and metabolic syndrome — independent of overall weight or BMI. This calculator gives you your WHR and places it in the WHO health risk classification.",
     faqs: [

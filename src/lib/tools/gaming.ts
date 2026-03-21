@@ -241,6 +241,46 @@ export const gamingTools: Tool[] = [
     ],
     relatedSlugs: ["random-number-generator", "dice-roller", "math-quiz-generator"]
   },
+  { slug: "dnd-character-generator", name: "D&D Character Generator", description: "Generate random D&D 5e characters with stats, class, race, and backstory.", category: "gaming", icon: "⚔️", keywords: ["dnd character generator", "dungeons and dragons character", "d&d 5e character", "rpg character creator"], subcategory: "generators",
+    longDescription: "Generate complete Dungeons & Dragons 5th Edition characters in seconds — including rolled ability scores, a random class and race combination, background, personality traits, ideals, bonds, flaws, and a brief backstory hook. Perfect for new players setting up their first character, DMs who need quick NPCs, or veterans who want a random challenge.",
+    faqs: [
+      { question: "Does the generator follow D&D 5e rules?", answer: "Yes. Ability scores are generated using the standard 4d6-drop-lowest method, and all class, race, and background combinations follow the Player's Handbook options." },
+      { question: "Can I customize parts of the character?", answer: "Yes. Lock any field you want to keep (e.g., a specific class or race) and randomize only the remaining options to create a semi-random character." },
+      { question: "Does it calculate derived stats like AC and HP?", answer: "Yes. Hit Points (using average HP at level 1), Armor Class (using no armor as a base), initiative, and proficiency bonus are all calculated from the generated stats and class." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Click Generate to create a fully random D&D 5e character, or lock specific options like class or race before generating." },
+      { name: "Step 2", text: "Review the character's ability scores, modifiers, traits, and backstory hook." },
+      { name: "Step 3", text: "Copy or download the character sheet to use in your campaign or session." }
+    ],
+    useCases: [
+      "New D&D players quickly generating their first character to start playing immediately",
+      "Dungeon Masters creating quick NPCs with distinct personalities for encounters",
+      "Experienced players challenging themselves with a random character concept",
+      "One-shot games where players need characters fast without lengthy character creation"
+    ],
+    relatedSlugs: ["dice-roller", "random-number-generator", "name-picker"]
+  },
+  { slug: "lottery-number-generator", name: "Lottery Number Generator", description: "Generate random lottery number combinations for popular lottery games.", category: "gaming", icon: "🎰", keywords: ["lottery number generator", "lotto numbers", "random lottery", "powerball numbers"], subcategory: "generators",
+    longDescription: "Generate random lottery number combinations for Powerball, Mega Millions, EuroMillions, and custom lottery formats. All numbers are generated using a cryptographically secure random number generator for truly fair, unbiased picks. Generate multiple sets at once and copy them for quick use before buying your ticket.",
+    faqs: [
+      { question: "Are the generated lottery numbers truly random?", answer: "Yes. The tool uses the Web Crypto API for cryptographically secure random number generation, which is as random as any physical lottery ball draw." },
+      { question: "Does using a number generator improve my odds of winning?", answer: "No. Each lottery draw is independent, and no combination of numbers has a better or worse probability than any other. The generator simply saves you the time of picking numbers manually." },
+      { question: "Can I generate numbers for a custom lottery format?", answer: "Yes. Set your own number range (e.g., 1–49), the count of numbers to draw, and optionally a bonus ball range to match any lottery format worldwide." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Select a lottery preset (Powerball, Mega Millions, EuroMillions) or set a custom number range." },
+      { name: "Step 2", text: "Choose how many sets of numbers to generate at once (1–10 sets)." },
+      { name: "Step 3", text: "Copy your generated numbers and use them to fill out your lottery ticket." }
+    ],
+    useCases: [
+      "Generating lottery picks quickly without spending time choosing numbers manually",
+      "Creating multiple sets of numbers to play in a single draw",
+      "Generating custom lottery numbers for office pools and group lotto games",
+      "Simulating lottery odds and running experiments with random number sets"
+    ],
+    relatedSlugs: ["random-number-generator", "dice-roller", "coin-flip"]
+  },
   { slug: "countdown-number-game", name: "Countdown Numbers Game", description: "Reach the target number using basic operations — inspired by the TV show.", category: "gaming", icon: "🔢", keywords: ["countdown", "numbers game", "math game", "target number"], subcategory: "tools",
     longDescription: "Challenge yourself to reach a randomly generated target number using only a set of given numbers and basic arithmetic operations — just like the classic Countdown TV show. The countdown numbers game sharpens mental arithmetic, creative problem solving, and mathematical thinking in a fun, timed format.",
     faqs: [

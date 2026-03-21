@@ -284,6 +284,106 @@ export const utilityTools: Tool[] = [
     ],
     relatedSlugs: ["screen-resolution", "keyboard-tester", "internet-speed-test"]
   },
+  { slug: "random-quote-generator", name: "Random Quote Generator", description: "Generate inspirational and motivational quotes from famous thinkers.", category: "utility", icon: "💬", keywords: ["random quote", "inspirational quotes", "motivational quotes", "quote generator"], subcategory: "productivity",
+    longDescription: "Generate inspiring quotes from history's greatest philosophers, scientists, writers, and leaders with a single click. Filter by category — motivation, wisdom, humor, or success — or go fully random for daily inspiration. Perfect for journaling, social media content, presentations, and starting your day with a meaningful thought.",
+    faqs: [
+      { question: "How many quotes are in the database?", answer: "The generator includes thousands of verified quotes from hundreds of notable figures across history, literature, science, philosophy, and pop culture." },
+      { question: "Can I filter quotes by category or author?", answer: "Yes. Filter by category such as motivation, success, humor, wisdom, or love, or search by a specific author's name to see their famous quotes." },
+      { question: "Can I copy or share the generated quotes?", answer: "Yes. Each quote includes a one-click copy button for quick use, and you can generate shareable images from a quote for social media posts." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Click Generate to receive a random quote, or filter by category or author first." },
+      { name: "Step 2", text: "Read the quote and decide if it resonates, or click Generate again for a new one." },
+      { name: "Step 3", text: "Copy the quote to use in a presentation, social post, or journaling session." }
+    ],
+    useCases: [
+      "Starting a daily journaling practice with an inspiring quote as a writing prompt",
+      "Finding social media caption quotes for Instagram, LinkedIn, or Twitter",
+      "Adding motivational quotes to presentations and team meetings",
+      "Building quote databases and content libraries for blogs and newsletters"
+    ],
+    relatedSlugs: ["writing-prompt-generator", "notepad", "pomodoro-timer"]
+  },
+  { slug: "whiteboard", name: "Online Whiteboard", description: "Simple browser-based whiteboard for freehand drawing and sketching.", category: "utility", icon: "🖊️", keywords: ["whiteboard", "online whiteboard", "drawing board", "freehand draw"], subcategory: "productivity",
+    longDescription: "A clean, distraction-free browser whiteboard for freehand drawing, diagramming, and sketching. No sign-up required — just open and draw. Choose pen size and color, erase mistakes, and download your finished drawing as a PNG. Perfect for brainstorming, quick diagrams, remote teaching, and spontaneous creativity.",
+    faqs: [
+      { question: "Is my drawing saved when I close the browser?", answer: "Drawings are maintained during your current browser session. Use the Download button to save your whiteboard as a PNG image before closing the tab." },
+      { question: "Can I use this as a teaching or presentation tool?", answer: "Yes. The whiteboard works well for live teaching, online tutoring, and explaining ideas visually in video calls. Share your screen and draw explanations in real time." },
+      { question: "Can I undo mistakes?", answer: "Yes. Use the Undo button (or Ctrl+Z) to step backward through your drawing actions, and use the Eraser tool for selective corrections." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Select a pen color and size using the toolbar controls." },
+      { name: "Step 2", text: "Click and drag on the canvas to draw freehand shapes, lines, and diagrams." },
+      { name: "Step 3", text: "Click Download to save your whiteboard as a PNG image, or Clear to start fresh." }
+    ],
+    useCases: [
+      "Brainstorming and mind-mapping ideas visually without paper",
+      "Online tutors explaining math problems and diagrams to students",
+      "Remote teams sketching rough wireframes or flowcharts during video calls",
+      "Quick visual note-taking during meetings and brainstorming sessions"
+    ],
+    relatedSlugs: ["notepad", "pomodoro-timer", "screenshot-beautifier"]
+  },
+  { slug: "unit-price-calculator", name: "Unit Price Calculator", description: "Compare unit prices to find the best value between products.", category: "utility", icon: "🛒", keywords: ["unit price calculator", "price per unit", "best value", "compare prices"], subcategory: "productivity",
+    longDescription: "Calculate and compare the price per unit for any two or more products to instantly identify the best value purchase. Whether comparing different sizes of the same product, different brands, or bulk versus regular packaging, the unit price calculator cuts through confusing labeling to show you which option gives you the most for your money.",
+    faqs: [
+      { question: "What units does the calculator support?", answer: "The calculator supports weight (oz, lb, g, kg), volume (fl oz, ml, L, gallon), and count-based unit comparisons, letting you compare products across different measurement systems." },
+      { question: "Can I compare more than two products at once?", answer: "Yes. Add as many products as you need to compare in a single session, and the tool ranks them from best to worst value per unit." },
+      { question: "Does it convert between different units automatically?", answer: "Yes. If Product A is priced per pound and Product B per kilogram, the calculator converts both to a common unit for a fair comparison." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter the name, price, quantity, and unit for the first product." },
+      { name: "Step 2", text: "Add a second (and more) products with their respective prices and quantities." },
+      { name: "Step 3", text: "View the price-per-unit comparison and see which product offers the best value." }
+    ],
+    useCases: [
+      "Grocery shopping to compare different package sizes and find the best value",
+      "Comparing bulk buys against regular-size products to decide if bulk is worth it",
+      "Evaluating competing brands where different net weights make comparison tricky",
+      "Helping budget-conscious shoppers maximize purchasing power at the supermarket"
+    ],
+    relatedSlugs: ["percentage-calculator", "tip-guide", "loan-comparison"]
+  },
+  { slug: "tip-guide", name: "Tip Guide", description: "Tipping guide by country with recommended percentages for services.", category: "utility", icon: "💵", keywords: ["tip guide", "tipping guide", "tipping by country", "how much to tip"], subcategory: "productivity",
+    longDescription: "Look up tipping etiquette and recommended tip percentages for any country or service type. Tipping customs vary dramatically across cultures — what's generous in one country may be offensive in another. This guide gives you clear, up-to-date tipping norms for restaurants, hotels, taxis, salons, and more in over 50 countries.",
+    faqs: [
+      { question: "Is tipping mandatory in some countries?", answer: "In most countries tipping is optional or customary, not mandatory. However, in the US, Canada, and some other countries, not tipping in restaurants for good service is considered rude. In Japan, tipping can be seen as insulting." },
+      { question: "How do I calculate the tip amount?", answer: "Enter your bill total and select a percentage (e.g., 18%) to instantly calculate the tip amount and your total including tip, with easy options to split between multiple people." },
+      { question: "Are service charges the same as tips?", answer: "No. A service charge (often added automatically to the bill) goes to the establishment and may or may not be shared with staff. A tip you leave directly is additional and goes to the server." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Select the country you are visiting or dining in from the dropdown." },
+      { name: "Step 2", text: "Choose the service type (restaurant, hotel, taxi, salon, etc.)." },
+      { name: "Step 3", text: "View the recommended tipping range and calculate your tip by entering the bill total." }
+    ],
+    useCases: [
+      "Travelers looking up local tipping customs before visiting a foreign country",
+      "Diners quickly calculating a 15%, 18%, or 20% tip on a restaurant bill",
+      "Splitting tips evenly among a group at a restaurant",
+      "Understanding whether to tip and how much in countries with different tipping cultures"
+    ],
+    relatedSlugs: ["unit-price-calculator", "percentage-calculator", "currency-converter"]
+  },
+  { slug: "password-manager-helper", name: "Password Manager Helper", description: "Generate and organize strong passwords in your browser without cloud storage.", category: "utility", icon: "🔐", keywords: ["password manager", "generate password", "password organizer", "secure password"], subcategory: "productivity",
+    longDescription: "Generate cryptographically strong passwords and organize your account credentials locally in your browser without any cloud sync. All password data is encrypted and stored only in your browser's local storage — nothing is sent to any server. Use it as a lightweight offline-first alternative for saving password entries for common accounts.",
+    faqs: [
+      { question: "Is this a replacement for a full password manager?", answer: "This is a lightweight helper tool for generating strong passwords and keeping basic notes about accounts. For a full-featured, cross-device password manager, consider dedicated tools like Bitwarden or 1Password." },
+      { question: "Are my passwords encrypted?", answer: "Passwords are stored in your browser's local storage. They are not encrypted at rest in this tool — do not store highly sensitive credentials here. Use it for generating passwords and keeping non-critical access notes." },
+      { question: "Can I export my saved passwords?", answer: "Yes. You can export your saved entries as a JSON or CSV file for backup or import into a dedicated password manager." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Click Generate Password to create a cryptographically secure random password with your chosen length and character options." },
+      { name: "Step 2", text: "Optionally save the entry with the website name and username for future reference." },
+      { name: "Step 3", text: "Copy the password to use when creating or updating your account credentials." }
+    ],
+    useCases: [
+      "Generating strong, unique passwords for new account registrations",
+      "Keeping lightweight notes about which accounts use which generated passwords",
+      "Creating passwords that meet specific complexity requirements (length, symbols, numbers)",
+      "Generating temporary passwords to share with team members for shared accounts"
+    ],
+    relatedSlugs: ["password-generator", "uuid-generator", "hash-generator"]
+  },
   { slug: "world-clock", name: "World Clock", description: "View current time in multiple cities and time zones simultaneously.", category: "utility", icon: "🌍", keywords: ["world clock", "time zones", "global time", "international clock"], subcategory: "timers",
     longDescription: "World Clock displays the current local time in multiple cities and time zones simultaneously, making it easy to coordinate across regions for meetings, calls, and deadlines. Add any city from a searchable list, and see all clocks update live in a clean, side-by-side view.",
     faqs: [

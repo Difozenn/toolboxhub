@@ -424,4 +424,271 @@ export const generatorTools: Tool[] = [
     ],
     relatedSlugs: ["placeholder-image", "random-color", "color-palette-generator"]
   },
+  // ── New (19) ──────────────────────────────────────────
+  { slug: "username-generator", name: "Username Generator", description: "Generate unique, creative usernames for social media and online accounts.", category: "generator", icon: "👤", keywords: ["username generator", "random username", "display name", "online name"], subcategory: "content",
+    longDescription: "Generate memorable, creative usernames by combining adjectives, nouns, and optional number suffixes using multiple styles — gamer tags, professional handles, cute usernames, and random combos. Instantly produce dozens of options and check character count to ensure they fit platform limits.",
+    faqs: [
+      { question: "What username styles are available?", answer: "Styles include Gamer (e.g. ShadowBladeX), Professional (e.g. alex_digital), Cute (e.g. fluffybunny99), and Random combining random adjectives and nouns." },
+      { question: "Can I set a maximum length?", answer: "Yes — set a maximum character limit to filter results to usernames that fit within specific platform constraints like Twitter's 15-character limit." }
+    ],
+    howToSteps: [
+      { name: "Choose a style", text: "Select Gamer, Professional, Cute, or Random to define the tone of the generated usernames." },
+      { name: "Set preferences", text: "Optionally add a keyword seed and set the maximum character length." },
+      { name: "Generate and pick", text: "Click Generate to produce a list of usernames and click any to copy it." }
+    ],
+    useCases: ["Creating new social media account handles", "Generating gamer tags for online games", "Building placeholder user data for app development", "Finding available username ideas when your first choice is taken"],
+    relatedSlugs: ["fake-data-generator", "password-generator", "uuid-generator"]
+  },
+  { slug: "slug-id-generator", name: "Short ID Generator", description: "Generate short, unique IDs suitable for URLs, tokens, and identifiers.", category: "generator", icon: "🪪", keywords: ["short id", "nanoid", "unique id", "short token", "url id"], subcategory: "code",
+    longDescription: "Generate compact, URL-safe unique identifiers using customisable character sets and lengths. Ideal as NanoID-style alternatives to UUIDs when shorter identifiers are needed in URLs, database keys, share links, or API tokens. Configure length, alphabet, and batch size.",
+    faqs: [
+      { question: "How unique are short IDs compared to UUIDs?", answer: "Short IDs are statistically unique within their probability space — a 21-character alphanumeric ID has approximately 2^126 possible values, similar to UUID v4. Shorter lengths reduce collision resistance, so match length to your use case's scale." },
+      { question: "What character set is used by default?", answer: "The default alphabet is URL-safe: A-Z, a-z, 0-9, plus underscore and hyphen. You can restrict to alphanumeric only or define a custom alphabet." }
+    ],
+    howToSteps: [
+      { name: "Set ID length", text: "Choose the number of characters for each generated ID — 8, 12, 21, or a custom value." },
+      { name: "Choose character set", text: "Select alphanumeric, URL-safe, or numeric-only alphabet." },
+      { name: "Generate and copy", text: "Click Generate to produce one or more IDs and copy them to the clipboard." }
+    ],
+    useCases: ["Generating short share link tokens for URL shorteners", "Creating compact database record identifiers", "Producing session tokens for web applications", "Building human-readable but unique IDs for public-facing URLs"],
+    relatedSlugs: ["uuid-generator", "password-generator", "hash-generator"]
+  },
+  { slug: "color-name-generator", name: "Color Name Generator", description: "Generate creative, evocative names for any hex color.", category: "generator", icon: "🎨", keywords: ["color name", "colour name generator", "hex color name", "paint color names"], subcategory: "design",
+    longDescription: "Find or invent a creative, descriptive name for any hex color. Enter a hex code to retrieve its nearest named color from a comprehensive database, or generate evocative creative names inspired by nature, moods, materials, and palettes — perfect for design systems, paint collections, and brand guidelines.",
+    faqs: [
+      { question: "How are color names generated?", answer: "The tool matches your hex code to the nearest named color in a database of 1500+ named colors using perceptual color distance (CIEDE2000). It also generates creative alternative names inspired by the hue, saturation, and lightness properties." },
+      { question: "Can I use this for a design system token?", answer: "Yes — use the generated name as a design token label (e.g. 'dusty-rose' or 'ocean-slate') for semantic color naming in your style guide or CSS custom properties." }
+    ],
+    howToSteps: [
+      { name: "Enter a hex color", text: "Type or paste a hex color code (e.g. #3a7bd5) into the color input." },
+      { name: "Get names", text: "The tool shows the nearest standard color name and a list of creative alternative names." },
+      { name: "Copy your favourite", text: "Click any name to copy it for use in your design system or documentation." }
+    ],
+    useCases: ["Naming colors in a brand design token system", "Finding evocative names for paint or product color ranges", "Labelling custom colors in a Figma or Sketch library", "Creating named color variables for CSS and design systems"],
+    relatedSlugs: ["color-palette-generator", "random-color", "gradient-generator"]
+  },
+  { slug: "lorem-ipsum-json", name: "Lorem Ipsum JSON Generator", description: "Generate realistic placeholder JSON data for prototyping and testing.", category: "generator", icon: "📦", keywords: ["placeholder json", "dummy json", "mock data json", "fake json"], subcategory: "code",
+    longDescription: "Generate structured placeholder JSON objects and arrays with realistic fake data — names, emails, addresses, dates, numbers, booleans, and nested objects. Customise the schema by specifying field names and their types, then generate any number of records for API mocking, UI prototyping, and unit test fixtures.",
+    faqs: [
+      { question: "Can I define my own data schema?", answer: "Yes — specify field names and choose their data type (string, number, boolean, email, date, name, address, etc.) to generate JSON that matches your API's expected structure." },
+      { question: "What is the maximum number of records?", answer: "You can generate up to 100 records at once. For larger datasets, regenerate multiple times and merge the output." }
+    ],
+    howToSteps: [
+      { name: "Define your schema", text: "Add fields with names and data types that match your target data model." },
+      { name: "Set record count", text: "Choose how many JSON objects to generate." },
+      { name: "Copy or download", text: "Copy the JSON to clipboard or download it as a .json file for use in your project." }
+    ],
+    useCases: ["Creating mock API response payloads for frontend development", "Generating test fixture data for unit and integration tests", "Populating prototype databases with realistic fake records", "Demonstrating API structures in documentation"],
+    relatedSlugs: ["fake-data-generator", "json-formatter", "mock-api-generator"]
+  },
+  { slug: "mock-api-generator", name: "Mock API Response Generator", description: "Generate complete mock REST API responses with headers and status codes.", category: "generator", icon: "🔌", keywords: ["mock api", "fake api response", "api mock", "rest mock"], subcategory: "code",
+    longDescription: "Build realistic mock REST API responses complete with HTTP status codes, response headers, and JSON body payloads. Select from common response patterns (success, paginated list, error, validation failure) or customise your own. Copy as a raw HTTP response or as a JavaScript fetch mock for use in tests.",
+    faqs: [
+      { question: "What response patterns are available?", answer: "Pre-built patterns include 200 Success, 201 Created, 400 Bad Request with validation errors, 401 Unauthorized, 404 Not Found, 422 Unprocessable Entity, and 500 Internal Server Error." },
+      { question: "Can I customise the response body?", answer: "Yes — edit the JSON body directly in the editor to match your API's exact response schema before copying." }
+    ],
+    howToSteps: [
+      { name: "Choose a response pattern", text: "Select a common HTTP response type from the dropdown to load a template." },
+      { name: "Edit the response body", text: "Customise the JSON payload, status code, and headers to match your API spec." },
+      { name: "Copy the mock", text: "Copy as a raw response or as a JavaScript fetch mock for use in your test suite." }
+    ],
+    useCases: ["Mocking API responses for frontend development without a backend", "Creating test stubs for unit and integration tests", "Documenting API response formats with realistic examples", "Generating error response templates for error-handling UI development"],
+    relatedSlugs: ["lorem-ipsum-json", "fake-data-generator", "api-key-generator"]
+  },
+  { slug: "css-shadow-palette", name: "CSS Shadow Palette Generator", description: "Generate layered box-shadow palettes for depth and elevation effects.", category: "generator", icon: "🌑", keywords: ["css shadow", "box shadow", "shadow palette", "css elevation", "drop shadow"], subcategory: "design",
+    longDescription: "Generate a complete set of CSS box-shadow values for multiple elevation levels — from subtle card shadows to prominent modal shadows. Customise shadow colour, blur radius, spread, and opacity for each level, then copy the full CSS custom property palette ready to paste into your stylesheet.",
+    faqs: [
+      { question: "How many elevation levels does the palette include?", answer: "The default palette generates 5 elevation levels (sm, md, lg, xl, 2xl) similar to Tailwind CSS's shadow scale. You can add or remove levels as needed." },
+      { question: "Can I use coloured shadows?", answer: "Yes — choose any shadow colour including brand colours for coloured glow effects. The tool generates RGBA values with configurable opacity for each level." }
+    ],
+    howToSteps: [
+      { name: "Choose a shadow colour", text: "Select the shadow colour using the colour picker — black works for neutral shadows, or use a brand hue for coloured effects." },
+      { name: "Adjust the scale", text: "Modify the blur, spread, and opacity for each elevation level to match your design system." },
+      { name: "Copy the CSS", text: "Copy the generated CSS custom properties to paste into your project's stylesheet." }
+    ],
+    useCases: ["Building a consistent elevation system for a component library", "Generating Tailwind-compatible custom shadow utilities", "Creating depth effects for card, modal, and drawer components", "Designing neumorphic or glassmorphism UI shadow palettes"],
+    relatedSlugs: ["color-palette-generator", "gradient-generator", "css-gradient"]
+  },
+  { slug: "social-proof-generator", name: "Social Proof Generator", description: "Generate realistic testimonial and review placeholders for UI mockups.", category: "generator", icon: "⭐", keywords: ["testimonial generator", "review placeholder", "social proof", "fake review", "mockup review"], subcategory: "content",
+    longDescription: "Generate realistic-looking customer testimonial and review placeholders for UI/UX mockups, landing page wireframes, and prototype demos. Produce name, avatar initials, star rating, company, role, and review text combinations that look authentic for design presentations.",
+    faqs: [
+      { question: "Are these real reviews?", answer: "No — all generated testimonials are fictional placeholder content for design and prototyping purposes only. They should not be presented as real customer reviews." },
+      { question: "Can I customise the industry or tone?", answer: "Yes — choose from industry categories like SaaS, e-commerce, healthcare, and fintech to generate contextually appropriate testimonial language." }
+    ],
+    howToSteps: [
+      { name: "Choose an industry", text: "Select the product category to generate contextually relevant testimonial language." },
+      { name: "Set quantity and rating", text: "Choose how many testimonials to generate and the star rating range." },
+      { name: "Copy or export", text: "Copy individual testimonials or export all as JSON for use in your prototype." }
+    ],
+    useCases: ["Populating landing page mockups with realistic testimonial content", "Creating prototype demos with plausible social proof", "Generating review placeholder data for UI component development", "Building wireframes for testimonial section layouts"],
+    relatedSlugs: ["fake-data-generator", "lorem-ipsum-json", "lorem-ipsum"]
+  },
+  { slug: "terms-generator", name: "Terms of Service Generator", description: "Generate a basic Terms of Service document for websites and apps.", category: "generator", icon: "📜", keywords: ["terms of service", "terms generator", "tos generator", "legal template", "terms and conditions"], subcategory: "content",
+    longDescription: "Generate a customisable Terms of Service document template for websites, SaaS apps, and mobile applications. Fill in your product name, company details, and jurisdiction, and receive a structured ToS covering user obligations, intellectual property, disclaimers, termination, and governing law. For reference only — consult a lawyer for binding legal documents.",
+    faqs: [
+      { question: "Is the generated document legally binding?", answer: "The generated document is a starting template for reference and informational purposes only. It is not a substitute for professional legal advice. Always have a qualified attorney review any legal documents before publishing." },
+      { question: "What sections are included?", answer: "Sections include Acceptance of Terms, Use of Service, User Accounts, Intellectual Property, Prohibited Activities, Disclaimers, Limitation of Liability, Termination, and Governing Law." }
+    ],
+    howToSteps: [
+      { name: "Enter your details", text: "Provide your company name, product name, website URL, contact email, and jurisdiction." },
+      { name: "Customise sections", text: "Toggle optional sections like subscription terms, user-generated content, or cookie policy references." },
+      { name: "Copy or download", text: "Copy the generated ToS text or download it as a markdown or plain text file." }
+    ],
+    useCases: ["Generating a starting-point ToS for a new SaaS product or app", "Creating placeholder legal text for a prototype or demo site", "Understanding which sections a ToS typically covers", "Drafting an initial ToS to hand off to a legal professional"],
+    relatedSlugs: ["privacy-policy-generator", "license-generator", "readme-generator"]
+  },
+  { slug: "changelog-generator", name: "Changelog Generator", description: "Generate structured changelog entries following Keep a Changelog format.", category: "generator", icon: "📋", keywords: ["changelog", "changelog template", "release notes", "keep a changelog", "version log"], subcategory: "code",
+    longDescription: "Generate structured changelog entries following the Keep a Changelog (keepachangelog.com) convention. Input your version number, release date, and a list of changes categorised as Added, Changed, Deprecated, Removed, Fixed, or Security. Output a clean markdown block ready to prepend to your CHANGELOG.md.",
+    faqs: [
+      { question: "What is the Keep a Changelog format?", answer: "Keep a Changelog is a widely adopted convention for organising changelog files. Each release gets a header with version number and date, followed by changes grouped into categories: Added, Changed, Deprecated, Removed, Fixed, and Security." },
+      { question: "Does it follow Semantic Versioning?", answer: "Yes — the version field follows SemVer (MAJOR.MINOR.PATCH) format and the tool validates correct version number syntax." }
+    ],
+    howToSteps: [
+      { name: "Enter version and date", text: "Type the semantic version number and select the release date." },
+      { name: "Add change entries", text: "Enter change descriptions and assign each to a category (Added, Fixed, Changed, etc.)." },
+      { name: "Copy the markdown", text: "Copy the formatted changelog block to prepend to your CHANGELOG.md file." }
+    ],
+    useCases: ["Generating release notes for open source projects", "Documenting changes for SaaS product updates", "Creating structured version history for package releases", "Maintaining a human-readable changelog for team communication"],
+    relatedSlugs: ["readme-generator", "commit-message-generator", "markdown-to-html"]
+  },
+  { slug: "readme-generator", name: "README Generator", description: "Generate a professional README.md template for your project.", category: "generator", icon: "📖", keywords: ["readme generator", "readme template", "github readme", "project readme", "markdown readme"], subcategory: "code",
+    longDescription: "Generate a comprehensive, well-structured README.md template for any software project. Fill in project name, description, tech stack, installation steps, usage examples, and contributing guidelines to produce a professional markdown file ready to push to your repository.",
+    faqs: [
+      { question: "What sections does the generated README include?", answer: "The template includes: Project Title & Description, Badges, Table of Contents, Features, Tech Stack, Prerequisites, Installation, Usage, API Reference, Contributing, License, and Contact sections." },
+      { question: "Can I choose which sections to include?", answer: "Yes — toggle each section on or off to generate only the parts relevant to your project type." }
+    ],
+    howToSteps: [
+      { name: "Enter project details", text: "Fill in your project name, description, tech stack, and GitHub repository URL." },
+      { name: "Select sections", text: "Choose which README sections to include based on your project's needs." },
+      { name: "Copy or download", text: "Copy the markdown or download the README.md file to add to your repository." }
+    ],
+    useCases: ["Bootstrapping a professional README for a new open source project", "Generating a README template for client project deliverables", "Ensuring all standard documentation sections are covered", "Creating consistent README structure across multiple projects"],
+    relatedSlugs: ["changelog-generator", "license-generator", "markdown-to-html"]
+  },
+  { slug: "license-generator", name: "Open Source License Generator", description: "Generate open source license files for your software projects.", category: "generator", icon: "⚖️", keywords: ["license generator", "open source license", "mit license", "apache license", "software license"], subcategory: "code",
+    longDescription: "Generate complete open source license files for any of the most commonly used licenses: MIT, Apache 2.0, GPL v2/v3, LGPL, MPL 2.0, ISC, BSD 2-Clause, BSD 3-Clause, and Creative Commons variants. Enter your name, year, and project name to produce a ready-to-use LICENSE file.",
+    faqs: [
+      { question: "Which licenses are available?", answer: "MIT, Apache 2.0, GPL v2, GPL v3, LGPL v2.1, LGPL v3, MPL 2.0, ISC, BSD 2-Clause, BSD 3-Clause, AGPL v3, and Creative Commons CC0, CC-BY, and CC-BY-SA." },
+      { question: "Which license should I choose?", answer: "MIT and Apache 2.0 are permissive and business-friendly. GPL requires derivative works to be open source. ISC is similar to MIT but simpler. For non-code projects, Creative Commons licenses are appropriate." }
+    ],
+    howToSteps: [
+      { name: "Choose a license", text: "Select the open source license appropriate for your project from the dropdown." },
+      { name: "Enter your details", text: "Fill in the copyright holder name, year, and optional project name." },
+      { name: "Copy or download", text: "Copy the full license text or download it as a LICENSE file for your repository." }
+    ],
+    useCases: ["Adding an open source license to a new GitHub repository", "Choosing the right license for a new project", "Generating a LICENSE file as part of project bootstrapping", "Understanding the terms of different open source licenses"],
+    relatedSlugs: ["readme-generator", "changelog-generator", "terms-generator"]
+  },
+  { slug: "commit-message-generator", name: "Commit Message Generator", description: "Generate conventional commit messages from a description of your changes.", category: "generator", icon: "💬", keywords: ["commit message", "conventional commits", "git commit", "commit generator"], subcategory: "code",
+    longDescription: "Generate well-formatted git commit messages following the Conventional Commits specification (conventionalcommits.org). Select the commit type (feat, fix, docs, style, refactor, test, chore), enter the scope and description, and optionally add a body and breaking change footer.",
+    faqs: [
+      { question: "What is the Conventional Commits format?", answer: "Conventional Commits is a specification that structures commit messages as: type(scope): description — for example, feat(auth): add OAuth2 login support. It enables automated changelog generation and semantic versioning." },
+      { question: "Which commit types are supported?", answer: "feat (new feature), fix (bug fix), docs (documentation), style (formatting), refactor (code restructure), perf (performance), test (tests), build (build system), ci (CI/CD), and chore (maintenance)." }
+    ],
+    howToSteps: [
+      { name: "Select a commit type", text: "Choose the type that best describes your change: feat, fix, docs, refactor, etc." },
+      { name: "Add scope and description", text: "Enter an optional scope (e.g. the module name) and a concise imperative description." },
+      { name: "Copy the commit message", text: "Copy the formatted commit message to use with git commit -m." }
+    ],
+    useCases: ["Writing consistently formatted commit messages for team projects", "Generating conventional commits for automated changelog tools", "Learning the Conventional Commits specification format", "Standardising commit message style across a development team"],
+    relatedSlugs: ["changelog-generator", "readme-generator", "regex-generator"]
+  },
+  { slug: "regex-generator", name: "Regex Generator", description: "Generate regular expressions from plain-English descriptions or examples.", category: "generator", icon: "🔍", keywords: ["regex generator", "regular expression", "regex builder", "pattern generator"], subcategory: "code",
+    longDescription: "Build regular expressions from common pattern templates — email addresses, URLs, phone numbers, dates, IP addresses, postcodes, credit cards, and more. Choose a pattern category, customise flags and anchors, and get the regex with an explanation of each component. Test it against sample input immediately.",
+    faqs: [
+      { question: "Can it generate regex from my own examples?", answer: "The template library covers the most common patterns. For custom patterns, select the closest template and modify the output regex, using the inline explanation as a guide." },
+      { question: "What regex flavours are supported?", answer: "The generated regex is compatible with JavaScript, Python (re module), PHP (PCRE), and most modern regex engines. Flavour-specific differences are noted where they exist." }
+    ],
+    howToSteps: [
+      { name: "Choose a pattern category", text: "Select from templates like email, URL, phone, date, IP address, or hexadecimal color." },
+      { name: "Customise options", text: "Set flags (global, case-insensitive, multiline) and configure anchors as needed." },
+      { name: "Copy the regex", text: "Copy the generated pattern and test it against your sample data in the built-in tester." }
+    ],
+    useCases: ["Generating validation regex for form input fields", "Building search patterns for log file analysis", "Creating URL routing patterns for web frameworks", "Learning regex syntax from explained pattern templates"],
+    relatedSlugs: ["regex-tester", "crontab-generator", "commit-message-generator"]
+  },
+  { slug: "crontab-generator", name: "Crontab Expression Generator", description: "Generate cron expressions for scheduled tasks visually.", category: "generator", icon: "⏰", keywords: ["cron generator", "crontab", "cron expression", "scheduled task", "cron builder"], subcategory: "code",
+    longDescription: "Build cron schedule expressions visually without memorising crontab syntax. Select minute, hour, day-of-month, month, and day-of-week values using dropdowns and checkboxes, then see the generated cron expression and a human-readable description of when it will run. Supports standard 5-field and extended 6-field (with seconds) formats.",
+    faqs: [
+      { question: "What does each field in a cron expression mean?", answer: "A standard cron expression has 5 fields: Minute (0-59), Hour (0-23), Day of Month (1-31), Month (1-12), Day of Week (0-7, where 0 and 7 are Sunday). Each field can use *, ranges (1-5), lists (1,3,5), and step values (*/15)." },
+      { question: "Does it support extended cron with seconds?", answer: "Yes — toggle 6-field mode to add a Seconds field at the start, used by AWS CloudWatch Events, Spring Scheduler, and other systems that support second-level scheduling." }
+    ],
+    howToSteps: [
+      { name: "Set the schedule", text: "Use the visual controls to select how often the task should run — every N minutes, specific hours, or custom day/month combinations." },
+      { name: "Review the expression", text: "See the generated cron expression and its human-readable description in real time." },
+      { name: "Copy the expression", text: "Copy the cron expression to paste into your crontab file, CI configuration, or scheduler." }
+    ],
+    useCases: ["Scheduling recurring server maintenance tasks with crontab", "Configuring CI/CD pipeline schedules in GitHub Actions or GitLab CI", "Setting up AWS EventBridge or Lambda scheduled rules", "Learning cron syntax with immediate visual feedback"],
+    relatedSlugs: ["regex-generator", "commit-message-generator", "unix-timestamp"]
+  },
+  { slug: "password-phrase-generator", name: "Passphrase Generator", description: "Generate secure, memorable passphrase passwords from random words.", category: "generator", icon: "🔐", keywords: ["passphrase", "diceware", "word password", "memorable password", "passphrase generator"], subcategory: "security",
+    longDescription: "Generate strong, memorable passphrases using the Diceware method — combining multiple random common words into a phrase that is both highly secure and easy to remember. Customise the number of words, word separator, and optional capitalisation or number insertion to meet specific password requirements.",
+    faqs: [
+      { question: "Why are passphrases more secure than random character passwords?", answer: "A 4-word passphrase from a 7776-word list has approximately 51 bits of entropy. A 5-word passphrase has ~64 bits — more than a typical random 10-character password. Passphrases are also far easier to remember and type." },
+      { question: "What word list is used?", answer: "The generator uses a curated list of common English words selected for memorability and clarity. Words that could cause embarrassment or confusion are excluded." }
+    ],
+    howToSteps: [
+      { name: "Choose word count", text: "Select 4-7 words — more words means higher entropy and better security." },
+      { name: "Configure options", text: "Set the separator character (space, hyphen, dot), toggle capitalisation, and optionally insert a digit." },
+      { name: "Copy the passphrase", text: "Copy the generated passphrase to store in your password manager." }
+    ],
+    useCases: ["Creating master passwords for password managers", "Generating memorable passwords that meet complexity requirements", "Teaching the concept of password entropy and security", "Replacing short complex passwords with longer memorable ones"],
+    relatedSlugs: ["password-generator", "password-strength", "uuid-generator"]
+  },
+  { slug: "api-key-generator", name: "API Key Generator", description: "Generate random API keys and tokens in various formats.", category: "generator", icon: "🗝️", keywords: ["api key", "api token", "secret key", "random token", "auth key"], subcategory: "security",
+    longDescription: "Generate cryptographically secure random API keys and tokens in multiple formats: hex strings, Base64-encoded keys, alphanumeric tokens, and prefixed keys (e.g. sk_live_...). Configure key length from 16 to 64 bytes and copy individual keys or batch-generate multiple at once.",
+    faqs: [
+      { question: "Are the generated API keys cryptographically secure?", answer: "Yes — all keys are generated using the browser's Web Crypto API (crypto.getRandomValues), which produces cryptographically secure random bytes suitable for use as API keys and secrets." },
+      { question: "What format should I use for my API keys?", answer: "Hex (lowercase) is widely used and easy to store. Base64 produces shorter strings for the same entropy. Prefixed keys (like sk_live_ or pk_test_) are common in commercial APIs and help users identify key type at a glance." }
+    ],
+    howToSteps: [
+      { name: "Choose key format", text: "Select hex, Base64, alphanumeric, or prefixed format depending on your API's requirements." },
+      { name: "Set key length", text: "Choose the number of random bytes — 16 bytes (128-bit), 32 bytes (256-bit), or 64 bytes (512-bit)." },
+      { name: "Generate and copy", text: "Click Generate and copy one or more API keys to use in your application." }
+    ],
+    useCases: ["Generating API keys for a new REST API or web service", "Creating secret keys for HMAC signing and JWT secrets", "Producing test API credentials for development environments", "Generating webhook secrets for payload signature verification"],
+    relatedSlugs: ["password-generator", "uuid-generator", "hash-generator"]
+  },
+  { slug: "port-number-reference", name: "Port Number Reference", description: "Look up common TCP/UDP port numbers and their associated services.", category: "generator", icon: "🔌", keywords: ["port number", "tcp port", "udp port", "well-known ports", "network ports"], subcategory: "code",
+    longDescription: "Quickly look up standard TCP and UDP port numbers and the services assigned to them — from well-known ports (0-1023) to registered ports (1024-49151). Search by port number or service name. Includes HTTP, HTTPS, SSH, FTP, DNS, SMTP, MySQL, PostgreSQL, Redis, MongoDB, and hundreds more.",
+    faqs: [
+      { question: "What are well-known ports?", answer: "Well-known ports (0-1023) are reserved by IANA for standard system services — e.g. port 80 for HTTP, 443 for HTTPS, 22 for SSH. Registered ports (1024-49151) are assigned to specific applications like MySQL (3306) or Redis (6379)." },
+      { question: "Does it cover both TCP and UDP?", answer: "Yes — each entry shows whether the service uses TCP, UDP, or both protocols." }
+    ],
+    howToSteps: [
+      { name: "Search by port or service", text: "Enter a port number or service name in the search field to filter the reference table." },
+      { name: "View service details", text: "See the protocol (TCP/UDP), service name, and description for each port." },
+      { name: "Copy the port number", text: "Click any port number to copy it for use in configuration files or firewall rules." }
+    ],
+    useCases: ["Checking which service uses a specific port number during debugging", "Configuring firewall rules and network security groups", "Learning standard network port assignments for sysadmin work", "Verifying port conflicts when setting up new services"],
+    relatedSlugs: ["crontab-generator", "api-key-generator", "mock-api-generator"]
+  },
+  { slug: "wifi-qr-generator", name: "WiFi QR Code Generator", description: "Generate QR codes that automatically connect devices to a WiFi network.", category: "generator", icon: "📶", keywords: ["wifi qr code", "wifi qr", "wifi password qr", "wireless qr code"], subcategory: "content",
+    longDescription: "Generate a QR code that, when scanned, automatically connects Android and iOS devices to your WiFi network without typing the password. Enter the SSID, password, and security type (WPA2, WPA3, WEP, or open), and optionally hide the SSID for hidden networks.",
+    faqs: [
+      { question: "Which devices support WiFi QR codes?", answer: "Android 10+ can scan and connect directly from the camera app. iOS 11+ supports QR-based WiFi connection via the Camera app. Older devices may require a separate QR scanner app." },
+      { question: "Is my WiFi password secure when using this tool?", answer: "Yes — the QR code is generated entirely in your browser. Your WiFi password is never sent to any server. The resulting QR code encodes your credentials locally and should be shared carefully." }
+    ],
+    howToSteps: [
+      { name: "Enter your WiFi details", text: "Type the network name (SSID), password, and select the security type (WPA2 is most common)." },
+      { name: "Generate the QR code", text: "Click Generate to create a QR code that encodes your WiFi credentials." },
+      { name: "Print or share", text: "Download the QR code to print for guests, or display it on screen for easy scanning." }
+    ],
+    useCases: ["Printing WiFi QR codes for guests in homes, offices, and cafes", "Creating WiFi access cards for Airbnb and hotel guests", "Replacing hand-written WiFi password signs at events", "Adding WiFi QR codes to printed menus, posters, or reception desks"],
+    relatedSlugs: ["qr-code-generator", "password-generator", "barcode-generator"]
+  },
+  { slug: "svg-pattern-generator", name: "SVG Pattern Generator", description: "Generate seamless SVG background patterns for websites and apps.", category: "generator", icon: "🔲", keywords: ["svg pattern", "background pattern", "seamless pattern", "css background", "svg background"], subcategory: "design",
+    longDescription: "Generate customisable seamless SVG background patterns — including dots, lines, grids, diagonals, crosshatch, waves, and hexagons. Control size, spacing, colour, opacity, and rotation, then copy the SVG code or CSS background-image property for immediate use in your design.",
+    faqs: [
+      { question: "What pattern types are available?", answer: "Available patterns include dots, lines (horizontal/vertical/diagonal), grid, crosshatch, waves, chevrons, hexagons, triangles, and circles. Each can be fully customised for size, spacing, colour, and rotation." },
+      { question: "How do I use the generated pattern in CSS?", answer: "Copy the CSS background-image output (a data URI SVG) and paste it into your stylesheet's background-image property. It tiles seamlessly and scales with the element." }
+    ],
+    howToSteps: [
+      { name: "Choose a pattern type", text: "Select from the available seamless pattern styles in the pattern picker." },
+      { name: "Customise appearance", text: "Adjust colour, size, spacing, opacity, and rotation using the controls." },
+      { name: "Copy and use", text: "Copy the SVG code or CSS background-image value to use directly in your project." }
+    ],
+    useCases: ["Adding subtle background textures to landing pages and hero sections", "Generating pattern fills for cards, banners, and UI elements", "Creating decorative backgrounds for presentations and mockups", "Building CSS background pattern utilities for a design system"],
+    relatedSlugs: ["color-palette-generator", "css-shadow-palette", "gradient-generator"]
+  },
 ];

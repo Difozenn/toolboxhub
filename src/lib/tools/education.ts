@@ -261,6 +261,126 @@ export const educationTools: Tool[] = [
     ],
     relatedSlugs: ["pomodoro-timer", "stopwatch", "flashcard-maker"]
   },
+  { slug: "number-line-generator", name: "Number Line Generator", description: "Generate visual number lines for math education and practice.", category: "education", icon: "📏", keywords: ["number line", "number line generator", "math visual", "number line maker"], subcategory: "math",
+    longDescription: "Generate clear, printable number lines for math education across a custom range with adjustable intervals. Visual number lines help students understand number relationships, integer placement, fraction positions, and arithmetic operations. Customize the start, end, and interval to create the perfect number line for any lesson or practice activity.",
+    faqs: [
+      { question: "What range of numbers can I create a number line for?", answer: "You can generate number lines for any numeric range, including negative numbers, decimals, and fractions. Common ranges like -10 to 10 or 0 to 100 are preset for convenience." },
+      { question: "Can I print the generated number line?", answer: "Yes. The number line is rendered cleanly for direct browser printing, making it easy to include in worksheets and classroom handouts." },
+      { question: "Can I mark specific points on the number line?", answer: "Yes. Enter a list of values to highlight specific points on the number line, useful for showing answers, problem solutions, or data points." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter your desired start and end values to define the number line range." },
+      { name: "Step 2", text: "Set the interval between tick marks (e.g., 1, 2, 5, or 0.5 for decimal lines)." },
+      { name: "Step 3", text: "Optionally mark specific values on the line, then print or download the result." }
+    ],
+    useCases: [
+      "Creating number line worksheets for elementary and middle school math classes",
+      "Visualizing integer and fraction positions for students learning number placement",
+      "Illustrating addition and subtraction jumps on a number line",
+      "Producing negative number lines for lessons on signed integers and absolute value"
+    ],
+    relatedSlugs: ["multiplication-table", "math-quiz-generator", "fraction-calculator"]
+  },
+  { slug: "equation-solver", name: "Equation Solver", description: "Solve linear and quadratic equations with step-by-step solutions.", category: "education", icon: "🔢", keywords: ["equation solver", "solve linear equation", "algebra solver", "math equation"], subcategory: "math",
+    longDescription: "Solve linear and quadratic equations step by step, with a clear explanation of every algebraic operation applied to reach the solution. Whether you're checking homework, learning algebra, or verifying a calculation, the equation solver shows every step so you can understand the process — not just the answer.",
+    faqs: [
+      { question: "What types of equations can it solve?", answer: "The solver handles single-variable linear equations (e.g., 3x + 5 = 14) and quadratic equations (e.g., x² - 5x + 6 = 0), returning all real solutions." },
+      { question: "Does it show step-by-step working?", answer: "Yes. Each algebraic step is shown with a brief explanation so students can follow the reasoning and learn the method alongside getting the answer." },
+      { question: "Can it solve equations with fractions or decimals?", answer: "Yes. The solver handles equations with fractional and decimal coefficients, simplifying fractions as part of the working." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Type your equation into the input field using standard notation (e.g., 2x + 4 = 10 or x^2 - 3x + 2 = 0)." },
+      { name: "Step 2", text: "Click Solve to see the step-by-step solution process." },
+      { name: "Step 3", text: "Study the steps to understand the algebra, then verify the answer by substituting it back into the equation." }
+    ],
+    useCases: [
+      "Checking algebra homework answers and understanding the correct working",
+      "Learning how to solve linear and quadratic equations as a student",
+      "Quickly solving equations encountered in physics or chemistry problem sets",
+      "Teachers verifying equation solutions and generating step-by-step examples"
+    ],
+    relatedSlugs: ["scientific-calculator", "quadratic-solver", "fraction-calculator"]
+  },
+  { slug: "set-operations", name: "Set Operations Calculator", description: "Calculate union, intersection, and difference of two sets.", category: "education", icon: "🔵", keywords: ["set operations", "set union", "set intersection", "set difference", "venn diagram"], subcategory: "math",
+    longDescription: "Perform fundamental set theory operations — union, intersection, difference, and complement — on any two sets of numbers or values. The set operations calculator shows the result of each operation with a visual Venn diagram, making abstract set theory concepts concrete and easy to understand for students and educators.",
+    faqs: [
+      { question: "What set operations does the calculator support?", answer: "The calculator supports Union (A ∪ B), Intersection (A ∩ B), Difference (A − B and B − A), Symmetric Difference (A △ B), and displays the Venn diagram for each result." },
+      { question: "Can I use non-numeric values in my sets?", answer: "Yes. Sets can contain any space-separated values including letters, words, or numbers. The tool treats each space-separated token as a set element." },
+      { question: "What is a set in mathematics?", answer: "A set is a collection of distinct, unordered elements. Set theory is foundational to mathematics, logic, computer science, and database operations." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter Set A elements separated by spaces or commas (e.g., 1 2 3 4 5)." },
+      { name: "Step 2", text: "Enter Set B elements in the same way." },
+      { name: "Step 3", text: "View the results of union, intersection, difference, and symmetric difference operations, along with the Venn diagram visualization." }
+    ],
+    useCases: [
+      "Learning set theory concepts in discrete mathematics or computer science courses",
+      "Verifying set operation results during homework and problem sets",
+      "Understanding SQL JOIN operations by mapping them to set theory",
+      "Teaching Venn diagrams and set relationships in middle and high school math"
+    ],
+    relatedSlugs: ["binary-calculator", "truth-table-generator", "scientific-calculator"]
+  },
+  { slug: "truth-table-generator", name: "Truth Table Generator", description: "Generate truth tables for logical expressions and boolean operations.", category: "education", icon: "✅", keywords: ["truth table", "boolean logic", "logic gates", "propositional logic"], subcategory: "math",
+    longDescription: "Generate complete truth tables for any boolean or propositional logic expression. Enter expressions using AND, OR, NOT, XOR, NAND, NOR, and XNOR operators and instantly see the truth value for every possible combination of inputs. Essential for computer science, digital logic design, and discrete mathematics courses.",
+    faqs: [
+      { question: "What logic operators does the generator support?", answer: "The generator supports AND (∧), OR (∨), NOT (¬), XOR (⊕), NAND, NOR, XNOR, and implication (→), covering all standard propositional logic operators." },
+      { question: "How many variables can I use in an expression?", answer: "You can use 2, 3, or 4 variables in a single expression. With 4 variables, the truth table has 16 rows (2⁴ combinations)." },
+      { question: "Can I use this for digital logic circuit design?", answer: "Yes. Truth tables are fundamental to digital logic design. You can use the output to identify boolean simplifications or implement logic circuits." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter a boolean expression using variables (p, q, r) and operators (AND, OR, NOT, XOR, etc.)." },
+      { name: "Step 2", text: "Click Generate to produce the complete truth table showing all possible input combinations." },
+      { name: "Step 3", text: "Analyze the output column to determine if the expression is a tautology, contradiction, or contingency." }
+    ],
+    useCases: [
+      "Computer science students learning propositional logic and boolean algebra",
+      "Digital electronics students designing and verifying logic gate circuits",
+      "Discrete mathematics courses covering logical equivalences and proofs",
+      "Programmers verifying complex boolean conditions in code"
+    ],
+    relatedSlugs: ["binary-calculator", "set-operations", "number-base-converter"]
+  },
+  { slug: "probability-distribution", name: "Probability Distribution Calculator", description: "Calculate normal and binomial probability distributions.", category: "education", icon: "📊", keywords: ["probability distribution", "normal distribution", "binomial distribution", "statistics calculator"], subcategory: "math",
+    longDescription: "Calculate probabilities for normal and binomial distributions with step-by-step results and visual probability curves. Enter your distribution parameters and instantly compute probability values, cumulative probabilities, and find Z-scores for normal distributions. Essential for statistics courses, data science, and any field that involves probability calculations.",
+    faqs: [
+      { question: "What distributions does the calculator support?", answer: "The calculator handles Normal distribution (with Z-score computation and standard deviation), Binomial distribution (n trials, p probability), and Poisson distribution calculations." },
+      { question: "Can I calculate P(X < a), P(X > a), and P(a < X < b)?", answer: "Yes. For normal distributions, you can calculate left-tail, right-tail, and two-tail probabilities for any value range." },
+      { question: "What is a Z-score?", answer: "A Z-score measures how many standard deviations a value is from the mean. It is calculated as Z = (X - μ) / σ and used to find probabilities in a standard normal distribution table." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Select the distribution type (normal, binomial, or Poisson) and enter the required parameters." },
+      { name: "Step 2", text: "Enter the value or range you want to compute the probability for." },
+      { name: "Step 3", text: "View the probability result, Z-score (for normal), and a visual probability curve." }
+    ],
+    useCases: [
+      "Statistics students calculating normal distribution probabilities for coursework",
+      "Data scientists verifying probability calculations in analysis workflows",
+      "Researchers computing confidence intervals and hypothesis testing p-values",
+      "Quality control engineers applying statistical distributions to process variation"
+    ],
+    relatedSlugs: ["statistics-visualizer", "significant-figures", "scientific-calculator"]
+  },
+  { slug: "statistics-visualizer", name: "Statistics Visualizer", description: "Enter data and visualize statistics with mean, median, mode, and charts.", category: "education", icon: "📈", keywords: ["statistics calculator", "mean median mode", "data visualizer", "descriptive statistics"], subcategory: "math",
+    longDescription: "Enter any data set and instantly compute all key descriptive statistics — mean, median, mode, range, standard deviation, variance, and quartiles — along with a simple bar chart or histogram visualization. Whether you're a student learning statistics or an analyst exploring a data set, this tool makes quick statistical work effortless.",
+    faqs: [
+      { question: "What statistics are calculated?", answer: "The tool calculates mean, median, mode, range, variance, standard deviation, standard error, and the five-number summary (minimum, Q1, Q2, Q3, maximum) for your data set." },
+      { question: "How many data points can I enter?", answer: "The calculator handles data sets of any size. Larger data sets may take a moment to process but there is no hard limit." },
+      { question: "What types of charts are available?", answer: "The tool generates bar charts, histograms, and dot plots. You can choose the most appropriate visualization for your data distribution." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter your data values separated by commas, spaces, or on separate lines." },
+      { name: "Step 2", text: "Click Analyze to compute all descriptive statistics for your data set." },
+      { name: "Step 3", text: "Review the statistics table and choose a chart type to visualize the data distribution." }
+    ],
+    useCases: [
+      "Statistics students computing descriptive statistics for homework data sets",
+      "Researchers quickly summarizing sample data before formal analysis",
+      "Teachers generating statistics and charts from classroom data for demonstrations",
+      "Anyone who needs to understand the distribution and central tendency of a data set"
+    ],
+    relatedSlugs: ["probability-distribution", "significant-figures", "average-calculator"]
+  },
   { slug: "typing-speed-test", name: "Typing Speed Test", description: "Test your typing speed and accuracy with WPM and error tracking.", category: "education", icon: "⌨️", keywords: ["typing test", "typing speed", "wpm test", "typing practice"], subcategory: "language",
     longDescription: "Measure your typing speed in words per minute (WPM) and accuracy percentage with a real-time typing test. Track errors, identify problem keys, and monitor your improvement over multiple attempts. Whether you're preparing for a job that requires typing proficiency or just want to type faster, regular testing helps you progress measurably.",
     faqs: [

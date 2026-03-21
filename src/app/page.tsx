@@ -22,7 +22,7 @@ export default function Home() {
           Free Online Tools
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          {tools.length}+ free tools for text, development, math, finance, health, and
+          500+ free tools for text, development, math, finance, health, and
           more. No signup required.
         </p>
       </section>

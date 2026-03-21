@@ -284,4 +284,188 @@ export const mathTools: Tool[] = [
     useCases: ["Scaling recipe ingredients up or down for different serving sizes", "Calculating map distances using a scale ratio", "Solving proportion problems in math and science homework", "Determining scale factor for model building or architectural drawings"],
     relatedSlugs: ["percentage-calculator", "fraction-calculator", "recipe-scaler"]
   },
+  // ── New (12) ──────────────────────────────────────────
+  { slug: "area-calculator", name: "Area Calculator", description: "Calculate the area of common 2D shapes including rectangles, circles, triangles, and more.", category: "math", icon: "📐", keywords: ["area calculator", "shape area", "square area", "circle area", "triangle area"], subcategory: "geometry",
+    longDescription: "Calculate the area of any common 2D shape — square, rectangle, circle, triangle, parallelogram, trapezoid, ellipse, sector, and regular polygon. Enter the required dimensions and get the area instantly with the formula used shown for reference.",
+    faqs: [
+      { question: "Which shapes are supported?", answer: "Square, rectangle, circle, triangle, parallelogram, trapezoid, rhombus, ellipse, sector, and regular polygon. Select the shape and the required input fields appear automatically." },
+      { question: "What units can I use?", answer: "Enter any consistent unit (mm, cm, m, inches, feet) — the calculator is unit-agnostic and the result is in the square of whatever unit you input." }
+    ],
+    howToSteps: [
+      { name: "Select a shape", text: "Choose the 2D shape you want to calculate the area for from the shape picker." },
+      { name: "Enter dimensions", text: "Fill in the required measurements (e.g. base and height for a triangle)." },
+      { name: "View the result", text: "The area is calculated instantly with the formula displayed for reference." }
+    ],
+    useCases: ["Calculating room area for flooring or painting estimates", "Solving geometry homework problems", "Determining plot area for landscaping or construction", "Computing surface areas for material estimation"],
+    relatedSlugs: ["volume-calculator", "triangle-calculator", "circle-calculator"]
+  },
+  { slug: "volume-calculator", name: "Volume Calculator", description: "Calculate the volume of common 3D shapes including cubes, spheres, and cylinders.", category: "math", icon: "📦", keywords: ["volume calculator", "3d shape volume", "sphere volume", "cylinder volume", "cube volume"], subcategory: "geometry",
+    longDescription: "Calculate the volume of common three-dimensional shapes — cube, rectangular prism (cuboid), sphere, cylinder, cone, pyramid, ellipsoid, and torus. Select the shape, enter the dimensions, and instantly get the volume with the formula displayed.",
+    faqs: [
+      { question: "Which 3D shapes are supported?", answer: "Cube, rectangular prism, sphere, cylinder, cone, triangular prism, square pyramid, ellipsoid, and torus are all supported." },
+      { question: "Can I convert the volume to different units?", answer: "Yes — the unit converter lets you convert the result between cubic millimetres, cubic centimetres, cubic metres, litres, millilitres, cubic inches, cubic feet, and gallons." }
+    ],
+    howToSteps: [
+      { name: "Select a shape", text: "Choose the 3D shape from the shape selector." },
+      { name: "Enter dimensions", text: "Input the required measurements such as radius, height, or edge length." },
+      { name: "Read the volume", text: "The calculated volume appears with the formula and unit conversion options." }
+    ],
+    useCases: ["Calculating tank or container capacity", "Estimating concrete or fill material volumes for construction", "Solving physics and chemistry homework problems", "Calculating shipping volume and package dimensions"],
+    relatedSlugs: ["area-calculator", "pythagorean-calculator", "unit-converter"]
+  },
+  { slug: "pythagorean-calculator", name: "Pythagorean Theorem Calculator", description: "Solve for any side of a right triangle using the Pythagorean theorem.", category: "math", icon: "📐", keywords: ["pythagorean theorem", "right triangle", "hypotenuse calculator", "triangle sides"], subcategory: "geometry",
+    longDescription: "Solve the Pythagorean theorem (a² + b² = c²) for any unknown side of a right triangle. Enter any two sides to instantly calculate the third. Also displays the triangle's angles, perimeter, and area. Perfect for geometry homework, construction projects, and engineering calculations.",
+    faqs: [
+      { question: "Which sides can I solve for?", answer: "Enter any two known sides (a, b, or c — the hypotenuse) and the tool calculates the missing third side using the theorem a² + b² = c²." },
+      { question: "Does it also calculate the angles?", answer: "Yes — once all three sides are known, the tool uses inverse trigonometric functions to calculate all three angles in both degrees and radians." }
+    ],
+    howToSteps: [
+      { name: "Enter two sides", text: "Input the values for any two sides of the right triangle — label them as legs (a, b) or hypotenuse (c)." },
+      { name: "Calculate", text: "Click Calculate to find the missing side, angles, perimeter, and area." },
+      { name: "Review results", text: "View all three sides, angles in degrees, perimeter, and triangle area." }
+    ],
+    useCases: ["Solving right-triangle geometry homework", "Calculating diagonal distances in construction and carpentry", "Determining ramp or roof slope dimensions", "Computing distances in coordinate geometry"],
+    relatedSlugs: ["triangle-calculator", "area-calculator", "angle-converter"]
+  },
+  { slug: "permutation-calculator", name: "Permutation Calculator", description: "Calculate the number of permutations P(n,r) for ordered arrangements.", category: "math", icon: "🔢", keywords: ["permutation", "P(n r)", "ordered arrangement", "combinatorics"], subcategory: "combinatorics",
+    longDescription: "Calculate the number of permutations P(n, r) — the number of ways to arrange r items chosen from a set of n items where order matters. Enter n (total items) and r (items to arrange) and get the result with step-by-step factorial calculation shown.",
+    faqs: [
+      { question: "What is a permutation?", answer: "A permutation is an ordered arrangement of items. P(n, r) = n! / (n-r)! counts the number of ways to choose and arrange r items from n total items where the order matters (e.g. 1st, 2nd, 3rd place in a race)." },
+      { question: "What is the difference between permutations and combinations?", answer: "In permutations, order matters (ABC ≠ BAC). In combinations, order does not matter (ABC = BAC). Use the Combination Calculator when order is irrelevant." }
+    ],
+    howToSteps: [
+      { name: "Enter n and r", text: "Input the total number of items (n) and how many you want to arrange (r)." },
+      { name: "Calculate", text: "Click Calculate to get P(n, r) with the factorial formula shown step by step." },
+      { name: "Use the result", text: "Apply the permutation count to probability and combinatorics problems." }
+    ],
+    useCases: ["Counting possible race finishing orders", "Calculating password combination counts", "Solving combinatorics exam problems", "Analysing arrangement possibilities in scheduling"],
+    relatedSlugs: ["combination-calculator", "probability-calculator", "factorial-calculator"]
+  },
+  { slug: "combination-calculator", name: "Combination Calculator", description: "Calculate the number of combinations C(n,r) for unordered selections.", category: "math", icon: "🎲", keywords: ["combination", "C(n r)", "choose", "binomial coefficient", "combinatorics"], subcategory: "combinatorics",
+    longDescription: "Calculate the binomial coefficient C(n, r) — the number of ways to choose r items from n items where order does not matter. Also written as 'n choose r' or nCr. Enter n and r to get the result with the full factorial formula expanded step by step.",
+    faqs: [
+      { question: "What is a combination?", answer: "A combination C(n, r) = n! / (r! × (n-r)!) counts selections where order is irrelevant — e.g. choosing 3 students from a class of 30. The group {A,B,C} is the same as {B,A,C}." },
+      { question: "Can I calculate large values of n?", answer: "Yes — the calculator handles large factorials using an optimised algorithm to avoid overflow, supporting values of n up to several thousand." }
+    ],
+    howToSteps: [
+      { name: "Enter n and r", text: "Input the total pool size (n) and the number of items to select (r)." },
+      { name: "Calculate", text: "Click Calculate to get C(n, r) with the formula and step-by-step calculation." },
+      { name: "Use the result", text: "Apply the combination count to lottery odds, probability, or selection problems." }
+    ],
+    useCases: ["Calculating lottery odds and prize probabilities", "Counting ways to select a team or committee", "Solving statistics and probability homework", "Analysing possible poker hand combinations"],
+    relatedSlugs: ["permutation-calculator", "probability-calculator", "factorial-calculator"]
+  },
+  { slug: "logarithm-calculator", name: "Logarithm Calculator", description: "Calculate logarithms with any base including natural log and log base 10.", category: "math", icon: "📉", keywords: ["logarithm", "log calculator", "natural log", "log base 10", "ln"], subcategory: "algebra",
+    longDescription: "Calculate logarithms for any base — common log (base 10), natural log (base e, ln), binary log (base 2), and any custom base. Enter the number and base to see the result, along with the inverse (antilogarithm) and the change-of-base formula breakdown.",
+    faqs: [
+      { question: "What is the difference between log and ln?", answer: "log (or log₁₀) is the common logarithm with base 10. ln is the natural logarithm with base e (≈2.71828). log₂ is the binary logarithm used in computing. All are related by the change-of-base formula: logₙ(x) = ln(x)/ln(n)." },
+      { question: "Can I calculate antilogarithms?", answer: "Yes — toggle to Antilog mode and enter a logarithmic value to calculate the original number (10^x for base 10, e^x for natural log)." }
+    ],
+    howToSteps: [
+      { name: "Enter the number", text: "Type the value you want to find the logarithm of (must be positive)." },
+      { name: "Choose the base", text: "Select log₁₀, ln (natural log), log₂, or enter a custom base." },
+      { name: "Read the result", text: "The logarithm is displayed with the formula and optional antilog result." }
+    ],
+    useCases: ["Solving exponential and logarithmic equations in algebra", "Calculating pH values and decibel levels", "Computing information entropy in bits (log₂)", "Understanding exponential growth and decay problems"],
+    relatedSlugs: ["exponent-calculator", "scientific-calculator", "percentage-calculator"]
+  },
+  { slug: "exponent-calculator", name: "Exponent Calculator", description: "Calculate powers and exponents including fractional and negative exponents.", category: "math", icon: "⬆️", keywords: ["exponent", "power calculator", "base exponent", "x to the power of n"], subcategory: "algebra",
+    longDescription: "Calculate any number raised to any power — including negative exponents, fractional exponents (roots), and scientific notation. Enter the base and exponent to get the result with step-by-step breakdown. Handles very large and very small numbers by displaying results in scientific notation.",
+    faqs: [
+      { question: "How do fractional exponents work?", answer: "A fractional exponent like x^(1/2) equals the square root of x. More generally, x^(m/n) equals the nth root of x raised to the m power. Enter 0.5 as the exponent to calculate square roots, 0.333 for cube roots, etc." },
+      { question: "What about negative exponents?", answer: "A negative exponent x^(-n) equals 1/(x^n). For example, 2^(-3) = 1/8 = 0.125. The calculator handles negative exponents and displays the reciprocal form." }
+    ],
+    howToSteps: [
+      { name: "Enter the base", text: "Input the number you want to raise to a power." },
+      { name: "Enter the exponent", text: "Type the power — whole number, negative, or fractional." },
+      { name: "Calculate", text: "Click Calculate to see the result, the formula, and scientific notation if applicable." }
+    ],
+    useCases: ["Solving algebra problems with powers", "Computing compound interest with fractional exponents", "Calculating scientific measurements in exponential notation", "Finding square roots, cube roots, and nth roots"],
+    relatedSlugs: ["logarithm-calculator", "scientific-calculator", "fraction-calculator"]
+  },
+  { slug: "fibonacci-generator", name: "Fibonacci Sequence Generator", description: "Generate Fibonacci sequences and find specific Fibonacci numbers.", category: "math", icon: "🐚", keywords: ["fibonacci", "fibonacci sequence", "fibonacci number", "golden ratio"], subcategory: "sequences",
+    longDescription: "Generate Fibonacci sequences up to any length, find the nth Fibonacci number, and explore properties of the sequence including the golden ratio (φ ≈ 1.618). View the sequence in table form, see the ratio between consecutive terms approaching φ, and calculate any single Fibonacci number by position.",
+    faqs: [
+      { question: "What is the Fibonacci sequence?", answer: "The Fibonacci sequence starts 0, 1, 1, 2, 3, 5, 8, 13, 21... where each number is the sum of the two preceding ones. It appears frequently in nature, art, and mathematics." },
+      { question: "What is the connection to the golden ratio?", answer: "The ratio of consecutive Fibonacci numbers (F(n+1)/F(n)) approaches the golden ratio φ ≈ 1.6180339887 as n increases. The tool displays this ratio for each pair of consecutive terms." }
+    ],
+    howToSteps: [
+      { name: "Choose output mode", text: "Select whether to generate a sequence up to N terms, or find the value at a specific position." },
+      { name: "Enter the count or position", text: "Type the number of terms to generate or the position (index) of the Fibonacci number you want." },
+      { name: "View the results", text: "The sequence or single value is displayed along with the golden ratio approximations." }
+    ],
+    useCases: ["Generating Fibonacci sequences for math coursework", "Exploring the golden ratio in art and design", "Producing Fibonacci numbers for algorithm testing", "Teaching recursive sequences and mathematical patterns"],
+    relatedSlugs: ["exponent-calculator", "prime-checker", "percentage-calculator"]
+  },
+  { slug: "triangle-calculator", name: "Triangle Calculator", description: "Solve any triangle given sides and angles using the law of sines and cosines.", category: "math", icon: "📐", keywords: ["triangle calculator", "law of sines", "law of cosines", "triangle solver", "SSS SAS"], subcategory: "geometry",
+    longDescription: "Solve any triangle given any combination of sides and angles (SSS, SAS, ASA, AAS, SSA). The calculator applies the law of sines and law of cosines to find all missing sides, angles, area, and perimeter. Works for right, acute, and obtuse triangles.",
+    faqs: [
+      { question: "What input combinations are supported?", answer: "All standard triangle cases are supported: SSS (three sides), SAS (two sides, included angle), ASA (two angles, included side), AAS (two angles, non-included side), and SSA (two sides, non-included angle — the ambiguous case)." },
+      { question: "How does it handle the ambiguous SSA case?", answer: "When the SSA configuration could produce zero, one, or two valid triangles, the calculator detects this and shows all valid solutions with an explanation." }
+    ],
+    howToSteps: [
+      { name: "Enter known values", text: "Input the sides and angles you know. Leave the unknowns blank." },
+      { name: "Solve the triangle", text: "Click Solve to calculate all missing values using the appropriate trigonometric laws." },
+      { name: "Review full results", text: "See all sides, all angles, perimeter, area, and the type of triangle." }
+    ],
+    useCases: ["Solving trigonometry homework and exam problems", "Calculating structural dimensions in engineering and construction", "Navigation and surveying calculations", "Determining distances and bearings from partial measurements"],
+    relatedSlugs: ["pythagorean-calculator", "area-calculator", "angle-converter"]
+  },
+  { slug: "circle-calculator", name: "Circle Calculator", description: "Calculate circumference, area, diameter, and radius of a circle.", category: "math", icon: "⭕", keywords: ["circle calculator", "circumference", "circle area", "radius", "diameter"], subcategory: "geometry",
+    longDescription: "Calculate any property of a circle — radius, diameter, circumference, and area — given any one known value. Enter the radius, diameter, circumference, or area and instantly compute all other properties using π. Also calculates sector area and arc length for a given central angle.",
+    faqs: [
+      { question: "Which circle properties can I calculate?", answer: "Radius, diameter, circumference (perimeter), area, sector area, and arc length. Enter any single known value and all others are calculated automatically." },
+      { question: "Can I calculate the arc length for a given angle?", answer: "Yes — enter the central angle in degrees or radians along with the radius to calculate the arc length and sector area." }
+    ],
+    howToSteps: [
+      { name: "Enter one known value", text: "Type any one measurement — radius, diameter, circumference, or area." },
+      { name: "View all properties", text: "All other circle properties are calculated and displayed instantly." },
+      { name: "Calculate sector values", text: "Optionally enter a central angle to compute arc length and sector area." }
+    ],
+    useCases: ["Calculating circumference for fencing or trim around circular areas", "Finding circle area for flooring and material estimates", "Solving circle geometry problems in maths courses", "Calculating wheel, gear, or pipe circumferences in engineering"],
+    relatedSlugs: ["area-calculator", "pythagorean-calculator", "triangle-calculator"]
+  },
+  { slug: "probability-calculator", name: "Probability Calculator", description: "Calculate basic, compound, and conditional probability for events.", category: "math", icon: "🎲", keywords: ["probability", "probability calculator", "compound probability", "conditional probability"], subcategory: "statistics",
+    longDescription: "Calculate basic event probability, complement probability, union (A or B), intersection (A and B), and conditional probability P(A|B). Supports independent and mutually exclusive events, and includes a built-in dice, coin, and card probability reference.",
+    faqs: [
+      { question: "What types of probability can I calculate?", answer: "Single event probability (P(A) = favourable/total), complement (P(not A)), union (P(A∪B) for independent and mutually exclusive events), intersection (P(A∩B)), and conditional probability P(A|B) = P(A∩B)/P(B)." },
+      { question: "What is the difference between mutually exclusive and independent events?", answer: "Mutually exclusive events cannot both occur at the same time (P(A∩B) = 0). Independent events do not affect each other's probability (P(A∩B) = P(A) × P(B))." }
+    ],
+    howToSteps: [
+      { name: "Choose the calculation type", text: "Select from basic probability, complement, union, intersection, or conditional probability." },
+      { name: "Enter the probabilities", text: "Input the event probability values as fractions, decimals, or percentages." },
+      { name: "Calculate and interpret", text: "View the result with a plain-English explanation of what the probability means." }
+    ],
+    useCases: ["Solving probability problems in maths and statistics courses", "Analysing risk and likelihood in decision making", "Understanding card game and dice odds", "Calculating compound event probabilities in data science"],
+    relatedSlugs: ["combination-calculator", "permutation-calculator", "percentage-calculator"]
+  },
+  { slug: "modular-arithmetic", name: "Modular Arithmetic Calculator", description: "Perform modulo operations and explore modular arithmetic concepts.", category: "math", icon: "🔄", keywords: ["modulo", "modular arithmetic", "mod calculator", "remainder", "congruence"], subcategory: "algebra",
+    longDescription: "Calculate modulo operations (a mod n), modular inverse, modular exponentiation, and check congruences. A clean, step-by-step tool for understanding modular arithmetic used in cryptography, computer science, and number theory.",
+    faqs: [
+      { question: "What does 'a mod n' mean?", answer: "a mod n is the remainder when a is divided by n. For example, 17 mod 5 = 2 because 17 = 3×5 + 2. In programming, this is the % operator in most languages." },
+      { question: "What is the modular inverse?", answer: "The modular inverse of a modulo n is the number x such that (a × x) ≡ 1 (mod n). It exists only when a and n are coprime (GCD = 1). The calculator uses the extended Euclidean algorithm to find it." }
+    ],
+    howToSteps: [
+      { name: "Choose the operation", text: "Select modulo, modular inverse, modular exponentiation, or congruence check." },
+      { name: "Enter the values", text: "Input the operands (a, b, modulus n) for the selected operation." },
+      { name: "View the result", text: "The answer is displayed with the calculation steps for learning and verification." }
+    ],
+    useCases: ["Solving modular arithmetic problems in maths courses", "Understanding the basis of RSA and cryptographic algorithms", "Computing hash function modulo operations", "Checking clock arithmetic and cyclic number patterns"],
+    relatedSlugs: ["exponent-calculator", "permutation-calculator", "combination-calculator"]
+  },
+  { slug: "quadratic-equation-solver", name: "Quadratic Equation Solver", description: "Solve quadratic equations (ax² + bx + c = 0) and find roots.", category: "math", icon: "📐", keywords: ["quadratic equation", "quadratic formula", "find roots", "ax2 bx c", "solve quadratic"], subcategory: "algebra",
+    longDescription: "Solve any quadratic equation in the form ax² + bx + c = 0 using the quadratic formula. Enter the coefficients a, b, and c to find both roots (real or complex), the discriminant, vertex coordinates, axis of symmetry, and whether the parabola opens up or down. Includes a visual formula breakdown.",
+    faqs: [
+      { question: "What is the quadratic formula?", answer: "x = (-b ± √(b²-4ac)) / 2a. It gives both solutions of any quadratic equation ax² + bx + c = 0." },
+      { question: "What if the discriminant is negative?", answer: "If b²-4ac < 0, the equation has two complex (imaginary) roots. The tool displays these in a+bi format." },
+      { question: "What does the discriminant tell me?", answer: "If discriminant > 0: two distinct real roots. If = 0: one repeated real root. If < 0: two complex conjugate roots." }
+    ],
+    howToSteps: [
+      { name: "Enter coefficients", text: "Type the values for a, b, and c in your equation ax² + bx + c = 0." },
+      { name: "View roots", text: "Both solutions are displayed instantly along with the discriminant and root type." },
+      { name: "See properties", text: "View the vertex, axis of symmetry, and direction of the parabola." }
+    ],
+    useCases: ["Solving algebra homework and exam problems", "Finding projectile trajectory intercepts in physics", "Calculating break-even points in business models", "Verifying hand-calculated quadratic solutions"],
+    relatedSlugs: ["equation-solver", "pythagorean-calculator", "logarithm-calculator", "exponent-calculator"]
+  },
 ];

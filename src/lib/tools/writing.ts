@@ -301,6 +301,186 @@ export const writingTools: Tool[] = [
     ],
     relatedSlugs: ["title-generator", "headline-analyzer", "writing-prompt-generator"]
   },
+  { slug: "word-spinner", name: "Word Spinner", description: "Spin/rewrite individual words with synonyms for variety.", category: "writing", icon: "🔀", keywords: ["word spinner", "synonym finder", "word replacer", "paraphrase words"], subcategory: "generation",
+    longDescription: "Replace any word with a rich selection of synonyms to add variety and flair to your writing. The word spinner helps you escape repetitive vocabulary by offering context-aware alternatives for any term you highlight, making your prose more engaging and your vocabulary more diverse. Perfect for writers looking to polish drafts without losing their original meaning.",
+    faqs: [
+      { question: "How do I use the word spinner?", answer: "Type or paste your text, then click on any word to see a list of synonym alternatives. Click a synonym to swap it in immediately." },
+      { question: "Does it preserve the original meaning?", answer: "The tool offers synonyms that are semantically close to the original word. Always review replacements in context to ensure the meaning and tone are preserved." },
+      { question: "Can I use it on entire sentences?", answer: "The word spinner works best on individual words. For full sentence paraphrasing, try the Paraphrase Tool instead." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Type or paste your text into the input area." },
+      { name: "Step 2", text: "Click on any word you want to replace to see synonym suggestions." },
+      { name: "Step 3", text: "Select your preferred synonym and it replaces the original word instantly." }
+    ],
+    useCases: [
+      "Avoiding repetitive word use across a long essay or article",
+      "Expanding vocabulary while writing academic or professional content",
+      "Freshening up product descriptions and marketing copy",
+      "Helping ESL writers find more natural-sounding word alternatives"
+    ],
+    relatedSlugs: ["paraphrase-tool", "readability-improver", "grammar-checker"]
+  },
+  { slug: "adverb-checker", name: "Adverb Checker", description: "Find and reduce adverb usage for stronger, more precise writing.", category: "writing", icon: "🔎", keywords: ["adverb checker", "adverb finder", "writing style", "strong verbs"], subcategory: "analysis",
+    longDescription: "Detect every adverb in your text and get suggestions for replacing weak adverb-verb combinations with stronger, more precise verbs. Overusing adverbs is a hallmark of weak writing — this tool highlights them so you can revise sentences to be more direct, vivid, and impactful.",
+    faqs: [
+      { question: "Why should I reduce adverbs?", answer: "Adverbs often prop up weak verbs. Replacing 'ran quickly' with 'sprinted' is more vivid and concise. Reducing adverbs generally produces stronger, more professional prose." },
+      { question: "Should I eliminate all adverbs?", answer: "No — some adverbs serve a genuine purpose. The goal is intentional use. This tool helps you identify ones that could be replaced for stronger effect." },
+      { question: "What counts as an adverb?", answer: "The checker primarily targets -ly adverbs (quickly, very, really, extremely) and common intensifiers that often weaken sentences." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Paste your text into the adverb checker input field." },
+      { name: "Step 2", text: "Review the highlighted adverbs and their frequency in your text." },
+      { name: "Step 3", text: "Replace flagged adverb-verb pairs with stronger, more precise verb alternatives." }
+    ],
+    useCases: [
+      "Editing fiction and creative writing to use stronger, more vivid verbs",
+      "Strengthening business reports and professional documents",
+      "Improving journalistic writing by cutting weak intensifiers",
+      "Teaching students about strong verb usage in writing classes"
+    ],
+    relatedSlugs: ["passive-voice-checker", "readability-improver", "grammar-checker"]
+  },
+  { slug: "readability-improver", name: "Readability Improver", description: "Suggest simpler alternatives for complex words to improve clarity.", category: "writing", icon: "📖", keywords: ["readability", "simplify text", "plain language", "complex words"], subcategory: "analysis",
+    longDescription: "Identify overly complex or obscure words in your text and receive plain-language alternatives that communicate the same idea more clearly. Good writing is accessible writing — this tool helps you replace jargon and unnecessarily complicated vocabulary with simpler equivalents that any reader can understand.",
+    faqs: [
+      { question: "What reading level does the tool target?", answer: "By default, suggestions aim for a 6th–8th grade reading level, suitable for most general audiences. You can adjust the target level for more technical or simplified output." },
+      { question: "Does it simplify technical jargon?", answer: "The tool focuses on common complex vocabulary. Highly specialized technical terms may not have suitable simpler equivalents and will be left unchanged." },
+      { question: "Will it change the meaning of my text?", answer: "Suggested alternatives are chosen to preserve meaning. Always review each suggestion in context before accepting it to ensure accuracy." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Paste your text into the readability improver input field." },
+      { name: "Step 2", text: "Review highlighted complex words and the simpler alternatives suggested for each." },
+      { name: "Step 3", text: "Accept or reject each suggestion to produce a clearer, more accessible version of your text." }
+    ],
+    useCases: [
+      "Simplifying academic or legal writing for a general audience",
+      "Making government communications and public notices more accessible",
+      "Improving user documentation and help articles for non-technical readers",
+      "Editing marketing copy to ensure it speaks clearly to all customers"
+    ],
+    relatedSlugs: ["readability-checker", "paraphrase-tool", "word-counter"]
+  },
+  { slug: "abstract-generator", name: "Abstract Generator", description: "Generate concise abstracts for academic papers and research articles.", category: "writing", icon: "🎓", keywords: ["abstract generator", "paper abstract", "research abstract", "academic writing"], subcategory: "generation",
+    longDescription: "Generate a structured, concise abstract for any academic paper, thesis, or research article by entering the key components of your work. A well-written abstract is the most-read part of any paper and determines whether readers continue to the full text — this tool helps you craft one that clearly summarizes your purpose, methods, results, and conclusions.",
+    faqs: [
+      { question: "What should an abstract include?", answer: "A standard abstract covers: background/motivation, research question or objective, methodology, key results, and conclusions or implications. The generator prompts you for each section." },
+      { question: "How long should an abstract be?", answer: "Most journal abstracts are 150–300 words. Conference abstracts may be shorter at 100–150 words. Check your target publication's guidelines." },
+      { question: "Can I use this for a conference abstract submission?", answer: "Yes. The generator creates a clear, structured abstract suitable for conference submissions, journal articles, and thesis documents." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter your research topic, objectives, methods, and key findings into the respective fields." },
+      { name: "Step 2", text: "Click Generate to produce a structured abstract draft." },
+      { name: "Step 3", text: "Edit the output to match your specific results and your target journal's word limit." }
+    ],
+    useCases: [
+      "Writing abstracts for journal article submissions in academic fields",
+      "Preparing conference paper abstracts for submission deadlines",
+      "Summarizing thesis or dissertation research for the abstract section",
+      "Creating structured summaries for grant proposals and research funding applications"
+    ],
+    relatedSlugs: ["text-summarizer", "outline-generator", "grammar-checker"]
+  },
+  { slug: "thesis-statement-generator", name: "Thesis Statement Generator", description: "Generate clear, arguable thesis statements for essays and papers.", category: "writing", icon: "📌", keywords: ["thesis statement", "thesis generator", "essay thesis", "argument statement"], subcategory: "generation",
+    longDescription: "Generate a focused, arguable thesis statement for any essay topic in seconds. A strong thesis statement is the foundation of a well-structured essay — it presents your main argument clearly and tells readers exactly what your paper will prove. This tool guides you through the key elements and produces a polished thesis ready for your introduction.",
+    faqs: [
+      { question: "What makes a good thesis statement?", answer: "A good thesis is specific, arguable, and roadmaps the main points of your essay. It takes a clear position on a topic rather than stating an obvious fact." },
+      { question: "Can this work for argumentative and expository essays?", answer: "Yes. The generator adapts to different essay types — argumentative, expository, compare-and-contrast, and analytical — to produce an appropriate thesis structure." },
+      { question: "Should I use the generated thesis exactly as-is?", answer: "Use it as a strong starting draft and refine it to match your specific evidence, tone, and assignment requirements." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter your essay topic and the main argument or position you want to take." },
+      { name: "Step 2", text: "Select the essay type (argumentative, expository, analytical, etc.)." },
+      { name: "Step 3", text: "Review the generated thesis statement and adjust it to fit your specific essay." }
+    ],
+    useCases: [
+      "Writing thesis statements for high school and college argumentative essays",
+      "Drafting position statements for research papers and literature reviews",
+      "Helping students understand what a thesis should accomplish before writing",
+      "Quickly generating multiple thesis options to choose the strongest one"
+    ],
+    relatedSlugs: ["outline-generator", "writing-prompt-generator", "grammar-checker"]
+  },
+  { slug: "conclusion-generator", name: "Conclusion Generator", description: "Generate strong conclusion paragraphs for essays and articles.", category: "writing", icon: "🏁", keywords: ["conclusion generator", "essay conclusion", "writing conclusion", "closing paragraph"], subcategory: "generation",
+    longDescription: "Generate a well-structured conclusion paragraph that effectively wraps up your essay or article by restating your thesis, summarizing key points, and leaving readers with a memorable closing thought. A strong conclusion reinforces your argument and gives readers a satisfying sense of completion — this tool helps you write one that hits all the right notes.",
+    faqs: [
+      { question: "What should a conclusion paragraph include?", answer: "A strong conclusion restates the thesis in fresh language, briefly summarizes the main supporting points, and ends with a broader implication, call to action, or thought-provoking closing statement." },
+      { question: "Should I just repeat the introduction in the conclusion?", answer: "No. Your conclusion should echo the thesis but use different phrasing, and the closing thought should go beyond what was already said, offering a broader perspective or call to action." },
+      { question: "How long should a conclusion be?", answer: "For most essays, the conclusion should be 5–8 sentences — enough to wrap up the argument without introducing new information." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter your thesis statement and the main points from your essay body." },
+      { name: "Step 2", text: "Click Generate to produce a conclusion draft that ties your essay together." },
+      { name: "Step 3", text: "Revise the generated conclusion to match your own voice and the specifics of your argument." }
+    ],
+    useCases: [
+      "Wrapping up academic essays with a polished conclusion paragraph",
+      "Closing blog posts and articles with a memorable final thought",
+      "Writing conclusions for reports and business documents",
+      "Helping students who struggle to end their essays effectively"
+    ],
+    relatedSlugs: ["outline-generator", "thesis-statement-generator", "writing-prompt-generator"]
+  },
+  { slug: "hook-generator", name: "Hook Generator", description: "Generate compelling opening hooks for essays, blogs, and speeches.", category: "writing", icon: "🎣", keywords: ["hook generator", "essay hook", "opening hook", "writing opener"], subcategory: "generation",
+    longDescription: "Generate attention-grabbing opening hooks for essays, blog posts, speeches, and stories. A powerful hook is what separates a piece that immediately engages readers from one they abandon after the first sentence. This tool provides hooks using proven techniques: surprising statistics, provocative questions, vivid anecdotes, bold statements, and more.",
+    faqs: [
+      { question: "What types of hooks does the generator produce?", answer: "The generator creates hooks using six techniques: startling statistic, rhetorical question, vivid scene or anecdote, bold declarative statement, relevant quotation, and paradox or contradiction." },
+      { question: "Can I use this for a persuasive essay or speech?", answer: "Yes. Hook types can be tailored to your content format — a speech may benefit from an anecdote or question, while an academic essay might use a statistic or quote." },
+      { question: "How do I integrate the hook into my introduction?", answer: "Place your hook as the very first sentence. Follow it with 1–2 context-building sentences before transitioning into your thesis statement." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter your essay topic and select a preferred hook style or leave it on random." },
+      { name: "Step 2", text: "Click Generate to see several hook options based on your topic." },
+      { name: "Step 3", text: "Choose the hook that best suits your tone and writing style, then integrate it into your introduction." }
+    ],
+    useCases: [
+      "Opening academic essays with an engaging first sentence that draws readers in",
+      "Starting blog posts with a hook that reduces bounce rates",
+      "Beginning speeches and presentations with a memorable opening",
+      "Writing compelling introductions for newsletters and email campaigns"
+    ],
+    relatedSlugs: ["thesis-statement-generator", "outline-generator", "title-generator"]
+  },
+  { slug: "metaphor-generator", name: "Metaphor Generator", description: "Generate creative metaphors to add depth and color to your writing.", category: "writing", icon: "🌈", keywords: ["metaphor generator", "creative metaphors", "figurative language", "writing imagery"], subcategory: "generation",
+    longDescription: "Generate vivid, creative metaphors to enrich your writing with figurative language. Metaphors create powerful connections between ideas, making abstract concepts tangible and memorable. Whether you're writing poetry, a speech, a novel, or an essay, this tool sparks metaphorical thinking and gives you fresh images to work with.",
+    faqs: [
+      { question: "What is the difference between a metaphor and a simile?", answer: "A metaphor states that something is something else directly (e.g., 'Life is a journey'), while a simile makes the comparison using 'like' or 'as' (e.g., 'Life is like a journey'). This tool generates both." },
+      { question: "Can I use the generated metaphors in published work?", answer: "Yes. The generated metaphors are offered as creative inspiration. You're encouraged to adapt and build on them to make them authentically your own." },
+      { question: "Are the metaphors suitable for academic writing?", answer: "Metaphors can be used in academic writing when appropriate, particularly in introductions and conclusions. Avoid using them in highly formal scientific writing where precision is paramount." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter the concept, emotion, or idea you want to express metaphorically." },
+      { name: "Step 2", text: "Select a domain or mood (nature, technology, sport, etc.) for the metaphor or leave on random." },
+      { name: "Step 3", text: "Browse the generated metaphors and adapt the one that resonates most with your writing." }
+    ],
+    useCases: [
+      "Enriching poetry and creative fiction with vivid figurative language",
+      "Making speeches and presentations more memorable and relatable",
+      "Adding color to blog posts and articles to engage readers emotionally",
+      "Teaching students about figurative language and creative expression"
+    ],
+    relatedSlugs: ["writing-prompt-generator", "rhyme-finder", "alliteration-finder"]
+  },
+  { slug: "tone-analyzer", name: "Tone Analyzer", description: "Analyze the tone of your writing — formal, casual, positive, negative.", category: "writing", icon: "🎭", keywords: ["tone analyzer", "writing tone", "sentiment analysis", "text tone"], subcategory: "analysis",
+    longDescription: "Analyze the emotional tone and formality level of any text to ensure your writing strikes the right note for your audience. The tone analyzer detects whether your content is formal or casual, positive or negative, confident or uncertain, and more — giving you actionable feedback to align your writing voice with your intent.",
+    faqs: [
+      { question: "What tones does the analyzer detect?", answer: "The analyzer evaluates formality level, sentiment (positive/neutral/negative), confidence level, and emotional tone markers such as enthusiastic, serious, empathetic, or urgent." },
+      { question: "Why does writing tone matter?", answer: "Tone affects how readers perceive your message and your credibility. A casual tone in a formal report undermines authority; an overly formal tone in a friendly email can feel cold and off-putting." },
+      { question: "Can this help me match the tone of an existing piece?", answer: "Yes. Analyze a reference piece first to identify its tone profile, then compare it against your own writing to calibrate the voice accordingly." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Paste your text into the tone analyzer input field." },
+      { name: "Step 2", text: "Review the tone breakdown showing formality level, sentiment, and key tone markers." },
+      { name: "Step 3", text: "Revise your text based on the analysis to better match your intended tone and audience." }
+    ],
+    useCases: [
+      "Checking that business emails strike a professional yet approachable tone",
+      "Verifying that academic writing maintains formal, objective language throughout",
+      "Ensuring marketing copy communicates enthusiasm and positivity",
+      "Reviewing customer communications to confirm a consistent brand voice"
+    ],
+    relatedSlugs: ["grammar-checker", "readability-checker", "passive-voice-checker"]
+  },
   { slug: "cover-letter-helper", name: "Cover Letter Helper", description: "Generate professional cover letter templates with customizable sections.", category: "writing", icon: "📄", keywords: ["cover letter", "job application", "resume letter", "application letter"], subcategory: "generation",
     longDescription: "Create a compelling, professional cover letter for any job application using customizable templates. The cover letter helper guides you through key sections — opening hook, relevant experience, alignment with the role, and a strong call to action — so you can put together a polished letter that impresses hiring managers.",
     faqs: [

@@ -221,6 +221,66 @@ export const businessTools: Tool[] = [
     ],
     relatedSlugs: ["privacy-policy-generator", "terms-of-service-generator", "nda-generator"]
   },
+  { slug: "roi-timeline-calculator", name: "ROI Timeline Calculator", description: "Calculate return on investment over time periods with projections.", category: "business", icon: "📈", keywords: ["roi calculator", "return on investment", "roi timeline", "investment return"], subcategory: "calculators", template: "simple-calculator",
+    longDescription: "Calculate return on investment (ROI) over custom time periods and project how your ROI evolves month by month or year by year. Unlike a simple ROI calculator, this tool shows the full investment timeline — factoring in ongoing costs, periodic gains, and cumulative returns — so you can see exactly when an investment becomes profitable and what the total value is at any point.",
+    faqs: [
+      { question: "How is ROI calculated?", answer: "ROI = ((Net Profit / Cost of Investment) × 100). Net profit is the gain from the investment minus the total cost. This calculator extends that formula across multiple time periods to show compounding and cumulative returns." },
+      { question: "What is a good ROI?", answer: "A good ROI depends on the type of investment and timeframe. For marketing spend, 5:1 ROI (500%) is generally considered strong. For stock market investments, 7–10% annual ROI is the historical average." },
+      { question: "Can this model recurring costs or recurring revenue?", answer: "Yes. Enter ongoing monthly or annual costs (e.g., subscriptions, maintenance) and recurring revenue to model a more realistic investment timeline beyond a one-time cost/gain scenario." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter your initial investment cost and expected net return or revenue." },
+      { name: "Step 2", text: "Set the time period (months or years) and any recurring costs or gains per period." },
+      { name: "Step 3", text: "View the ROI chart showing cumulative return across the full timeline and identify the break-even point." }
+    ],
+    useCases: [
+      "Marketing managers calculating the ROI of a campaign over 6 and 12 months",
+      "Business owners evaluating whether a capital purchase will pay for itself",
+      "Startups projecting ROI for investors across different growth scenarios",
+      "Real estate investors modeling rental property returns over 5 and 10-year horizons"
+    ],
+    relatedSlugs: ["break-even-calculator", "profit-loss-calculator", "compound-interest"]
+  },
+  { slug: "burn-rate-calculator", name: "Burn Rate Calculator", description: "Calculate monthly cash burn rate and runway for startups.", category: "business", icon: "🔥", keywords: ["burn rate", "startup burn rate", "cash burn", "runway calculator"], subcategory: "calculators", template: "simple-calculator",
+    longDescription: "Calculate your startup's monthly burn rate and cash runway — how many months of operating funds remain at your current spending pace. Understanding burn rate is critical for startup founders and CFOs to make informed decisions about fundraising timing, hiring, and cost management before reaching zero cash.",
+    faqs: [
+      { question: "What is burn rate?", answer: "Burn rate is the rate at which a company spends its cash reserves. Gross burn is total monthly spend. Net burn is monthly spend minus revenue — it's the net burn rate that determines your actual runway." },
+      { question: "What is a good runway for a startup?", answer: "Most startup advisors recommend maintaining at least 18–24 months of runway at all times, especially before a Series A or B fundraise, giving time for product development and investor conversations." },
+      { question: "How does revenue affect burn rate?", answer: "Net burn rate = gross burn (total expenses) minus revenue. As revenue grows, net burn decreases. A company reaches profitability when revenue exceeds expenses (zero net burn)." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter your current cash balance in the bank." },
+      { name: "Step 2", text: "Enter your average monthly expenses (gross burn) and monthly revenue." },
+      { name: "Step 3", text: "View your net burn rate and the calculated runway in months." }
+    ],
+    useCases: [
+      "Startup founders monitoring how long their current funding will last",
+      "CFOs preparing board updates and fundraising timeline recommendations",
+      "Investors evaluating a startup's financial position and fundraising urgency",
+      "Founders deciding when to begin the next fundraising round based on runway"
+    ],
+    relatedSlugs: ["profit-loss-calculator", "roi-timeline-calculator", "break-even-calculator"]
+  },
+  { slug: "customer-lifetime-value", name: "Customer Lifetime Value Calculator", description: "Calculate CLV to understand the long-term value of your customers.", category: "business", icon: "👥", keywords: ["customer lifetime value", "clv calculator", "ltv calculator", "customer value"], subcategory: "calculators", template: "simple-calculator",
+    longDescription: "Calculate the Customer Lifetime Value (CLV or LTV) of your average customer to understand how much revenue each customer relationship generates over time. CLV is one of the most important business metrics — it determines how much you can profitably spend to acquire a new customer and informs pricing, retention, and product decisions.",
+    faqs: [
+      { question: "How is CLV calculated?", answer: "CLV = Average Order Value × Purchase Frequency × Average Customer Lifespan. For example, a customer who spends $50 per purchase, buys 4 times per year, and stays for 3 years has a CLV of $600." },
+      { question: "What is the relationship between CLV and CAC?", answer: "Customer Acquisition Cost (CAC) should ideally be less than 1/3 of CLV for a healthy business. A CLV:CAC ratio of at least 3:1 is generally considered sustainable." },
+      { question: "Can I improve my CLV?", answer: "Yes. CLV increases by improving retention (longer customer lifespan), increasing purchase frequency through loyalty programs, and increasing average order value through upsells and cross-sells." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter your average order value, average purchase frequency per year, and average customer retention period in years." },
+      { name: "Step 2", text: "Optionally enter your profit margin percentage to calculate CLV in terms of profit rather than revenue." },
+      { name: "Step 3", text: "View your CLV and compare it against your customer acquisition cost to assess business health." }
+    ],
+    useCases: [
+      "E-commerce businesses calculating how much to spend on Google and Facebook ads",
+      "SaaS companies computing CLV to set customer acquisition budgets",
+      "Marketing teams measuring the financial impact of retention and loyalty programs",
+      "Founders presenting CLV and cohort analysis to investors during fundraising"
+    ],
+    relatedSlugs: ["roi-timeline-calculator", "break-even-calculator", "margin-calculator"]
+  },
   { slug: "shipping-calculator", name: "Shipping Cost Calculator", description: "Estimate shipping costs based on weight, dimensions, and destination.", category: "business", icon: "📦", keywords: ["shipping calculator", "shipping cost", "postage calculator", "delivery cost"], subcategory: "calculators", template: "simple-calculator",
     longDescription: "The Shipping Cost Calculator estimates delivery costs for packages based on weight, dimensions, and shipping zone, supporting major carriers including USPS, UPS, and FedEx rate structures. Use it to price your shipping accurately for e-commerce listings, compare carrier rates side by side, and avoid undercharging customers.",
     faqs: [

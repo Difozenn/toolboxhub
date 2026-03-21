@@ -221,6 +221,66 @@ export const socialTools: Tool[] = [
     ],
     relatedSlugs: ["character-counter", "hashtag-generator", "instagram-fonts"]
   },
+  { slug: "social-media-calendar", name: "Social Media Content Calendar", description: "Plan and organize your social media content calendar by platform and date.", category: "social", icon: "📅", keywords: ["social media calendar", "content calendar", "posting schedule", "content planner"], subcategory: "content",
+    longDescription: "Plan, organize, and visualize your social media content calendar across multiple platforms in a simple browser-based tool. Schedule posts by date and platform, add content ideas and captions, and see your upcoming content at a glance in a weekly or monthly calendar view — all saved to your browser without any account required.",
+    faqs: [
+      { question: "Which platforms can I plan for?", answer: "The calendar supports planning for Instagram, Facebook, Twitter/X, LinkedIn, TikTok, Pinterest, and YouTube, with platform-specific character limit reminders for each." },
+      { question: "Is my calendar data saved?", answer: "Yes. All your content calendar entries are saved to your browser's local storage and persist between sessions on the same device and browser." },
+      { question: "Can I export my content calendar?", answer: "Yes. Export your calendar as a CSV file to import into Google Sheets, Notion, or other planning tools, or share it with a client or team member." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Select a date and platform, then add your post idea, caption draft, and any relevant hashtags." },
+      { name: "Step 2", text: "Switch between weekly and monthly calendar views to see your content schedule at a glance." },
+      { name: "Step 3", text: "Export your calendar to CSV or copy individual post details when it's time to publish." }
+    ],
+    useCases: [
+      "Social media managers planning content for multiple clients or brands",
+      "Content creators scheduling posts a week or month in advance",
+      "Small businesses planning promotional campaigns around key dates and events",
+      "Freelancers organizing and presenting content schedules to their clients"
+    ],
+    relatedSlugs: ["hashtag-generator", "caption-generator", "character-counter"]
+  },
+  { slug: "caption-generator", name: "Caption Generator", description: "Generate engaging social media captions from keywords or topics.", category: "social", icon: "✍️", keywords: ["caption generator", "instagram caption", "social media caption", "photo caption"], subcategory: "content",
+    longDescription: "Generate compelling, platform-ready captions for your social media posts by entering a few keywords or a topic. The caption generator creates engaging, on-brand copy with the right tone for each platform — from casual and playful for Instagram to professional and insightful for LinkedIn — complete with hashtag suggestions.",
+    faqs: [
+      { question: "Can I choose the tone of the generated caption?", answer: "Yes. Select from tone options including inspirational, funny, informative, conversational, or professional to match your brand voice and the mood of your post." },
+      { question: "Do the captions include hashtags?", answer: "Yes. Each generated caption includes a relevant set of hashtag suggestions that you can use as-is or customize for your niche." },
+      { question: "Can I use this for product promotion captions?", answer: "Yes. Enter your product name and key features as keywords and the generator creates promotional captions with benefit-focused messaging and a clear call to action." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter the topic, keywords, or a brief description of your post." },
+      { name: "Step 2", text: "Select the target platform and preferred tone." },
+      { name: "Step 3", text: "Copy the generated caption and hashtags, then customize as needed before posting." }
+    ],
+    useCases: [
+      "Generating captions for Instagram photos when writer's block strikes",
+      "Creating varied caption options for A/B testing engagement on Facebook",
+      "Writing product launch captions with clear benefit messaging for social media",
+      "Maintaining a consistent posting schedule without spending time on caption writing"
+    ],
+    relatedSlugs: ["hashtag-generator", "bio-generator", "character-counter"]
+  },
+  { slug: "follower-count-formatter", name: "Follower Count Formatter", description: "Format large follower counts as 1.2K, 3.4M, or 1.1B for display.", category: "social", icon: "🔢", keywords: ["follower count format", "number formatter", "1k 1m format", "social media numbers"], subcategory: "analytics",
+    longDescription: "Convert any large number into the compact social media display format used by Instagram, YouTube, Twitter, and TikTok — 1,200 becomes 1.2K, 3,400,000 becomes 3.4M, and 1,100,000,000 becomes 1.1B. Essential for designers building mockups, developers rendering follower counts, and anyone working with large social metrics.",
+    faqs: [
+      { question: "What thresholds trigger K, M, and B formatting?", answer: "Numbers are formatted as K (thousands) from 1,000 onward, M (millions) from 1,000,000 onward, and B (billions) from 1,000,000,000 onward, matching the conventions used by major social platforms." },
+      { question: "How many decimal places are shown?", answer: "One decimal place is shown by default (e.g., 1.2K), matching the convention used by Instagram and YouTube. You can toggle to zero decimals for a cleaner look." },
+      { question: "Can I batch convert a list of numbers?", answer: "Yes. Enter multiple numbers separated by commas or newlines and all will be converted to their compact social format simultaneously." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Enter a number or list of numbers (e.g., follower counts, view counts, likes)." },
+      { name: "Step 2", text: "Choose whether to show 0 or 1 decimal places in the output." },
+      { name: "Step 3", text: "Copy the formatted numbers to use in designs, mockups, or applications." }
+    ],
+    useCases: [
+      "UI/UX designers building social media app mockups that show follower counts",
+      "Front-end developers implementing number formatting for profile pages",
+      "Content creators displaying subscriber or follower milestones in a compact format",
+      "Marketers formatting large audience metrics in presentations and reports"
+    ],
+    relatedSlugs: ["engagement-rate-calculator", "number-to-words", "percentage-calculator"]
+  },
   { slug: "linkedin-post-formatter", name: "LinkedIn Post Formatter", description: "Format LinkedIn posts with bold, italic, emojis, and bullet points.", category: "social", icon: "💼", keywords: ["linkedin formatter", "linkedin post", "linkedin bold", "linkedin formatting"], subcategory: "text",
     longDescription: "Format your LinkedIn posts with bold text, italics, Unicode bullet points, and emojis that stand out in the feed. LinkedIn's native editor has limited formatting options, but this tool lets you create visually structured posts that are easier to read and more likely to capture attention while scrolling.",
     faqs: [

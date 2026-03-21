@@ -266,6 +266,12 @@ export const converterTools: Tool[] = [
       { question: "How many pounds are in a kilogram?", answer: "One kilogram equals approximately 2.20462 pounds." },
       { question: "Is kg to lbs exact?", answer: "The conversion factor 2.20462 is rounded. The exact value is 2.2046226218..." }
     ],
+    howToSteps: [
+      { name: "Enter your weight", text: "Type a value in kilograms or pounds into the corresponding field." },
+      { name: "View the conversion", text: "The equivalent weight appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted weight wherever you need it." }
+    ],
+    useCases: ["Tracking body weight across fitness apps that use different units", "Converting luggage weight limits for international flights", "Calculating shipping costs when weight is listed in the other unit", "Following workout programs that list weights in kilograms or pounds"],
     relatedSlugs: ["ounces-to-grams", "unit-converter", "bmi-calculator"]
   },
   { slug: "ounces-to-grams", name: "Ounces to Grams Converter", description: "Convert ounces to grams and grams to ounces.", category: "converter", icon: "⚖️", keywords: ["ounces to grams", "grams to ounces", "oz to g", "weight converter"], subcategory: "weight", template: "simple-converter",
@@ -289,6 +295,12 @@ export const converterTools: Tool[] = [
       { question: "What is the formula for Celsius to Fahrenheit?", answer: "F = (C x 9/5) + 32. For example, 100°C = 212°F." },
       { question: "At what temperature are Celsius and Fahrenheit equal?", answer: "Celsius and Fahrenheit are equal at -40 degrees." }
     ],
+    howToSteps: [
+      { name: "Enter a temperature", text: "Type a value in either the Celsius or Fahrenheit field." },
+      { name: "See the conversion", text: "The equivalent temperature appears instantly in the other field." },
+      { name: "Use the result", text: "Copy the converted temperature for weather, cooking, or scientific use." }
+    ],
+    useCases: ["Converting weather forecasts between Celsius and Fahrenheit", "Setting oven temperatures from recipes using a different scale", "Understanding fever thresholds in medical contexts across regions", "Converting scientific data between temperature scales"],
     relatedSlugs: ["unit-converter", "cooking-converter", "weather-tools"]
   },
   { slug: "liters-to-gallons", name: "Liters to Gallons Converter", description: "Convert liters to gallons and gallons to liters (US and Imperial).", category: "converter", icon: "🫗", keywords: ["liters to gallons", "gallons to liters", "volume converter", "liquid converter"], subcategory: "volume", template: "simple-converter",
@@ -368,6 +380,17 @@ export const converterTools: Tool[] = [
   },
   { slug: "bytes-converter", name: "Bytes Converter", description: "Convert between bytes, KB, MB, GB, TB, and PB.", category: "converter", icon: "💾", keywords: ["bytes to mb", "kb to gb", "data converter", "file size converter"], subcategory: "data", template: "simple-converter",
     longDescription: "Convert digital storage units between bytes, kilobytes (KB), megabytes (MB), gigabytes (GB), terabytes (TB), and petabytes (PB). Supports both binary (1024-based) and decimal (1000-based) conversions. Essential for understanding file sizes, storage capacity, and data transfer rates.",
+    faqs: [
+      { question: "What is the difference between binary and decimal bytes?", answer: "Binary uses 1024 as the multiplier (1 KB = 1024 bytes), while decimal uses 1000 (1 KB = 1000 bytes). Storage manufacturers typically use decimal, while operating systems often use binary." },
+      { question: "How many megabytes are in a gigabyte?", answer: "In binary, 1 GB = 1024 MB. In decimal, 1 GB = 1000 MB." },
+      { question: "Why does my hard drive show less space than advertised?", answer: "Manufacturers advertise using decimal units (1 GB = 1,000,000,000 bytes) while your OS may display binary units (1 GiB = 1,073,741,824 bytes), making the reported capacity appear smaller." }
+    ],
+    howToSteps: [
+      { name: "Enter a value", text: "Type a number in any digital storage unit field (bytes, KB, MB, GB, TB, or PB)." },
+      { name: "View all conversions", text: "All other unit fields update instantly with the equivalent values." },
+      { name: "Choose binary or decimal", text: "Toggle between binary (1024-based) and decimal (1000-based) conversion modes." }
+    ],
+    useCases: ["Estimating how many photos or videos fit on a storage device", "Calculating bandwidth and data transfer requirements", "Understanding cloud storage plan sizes and limits", "Converting file sizes for upload limits on websites and email"],
     relatedSlugs: ["number-base-converter", "unit-converter", "checksum-calculator"]
   },
   { slug: "cups-to-ml", name: "Cups to ML Converter", description: "Convert cups to milliliters and milliliters to cups for cooking.", category: "converter", icon: "🍳", keywords: ["cups to ml", "ml to cups", "cooking measurement", "baking converter"], subcategory: "volume", template: "simple-converter",
@@ -459,5 +482,682 @@ export const converterTools: Tool[] = [
     ],
     useCases: ["Converting degrees to radians for math and programming", "Trigonometry calculations in physics and engineering", "Surveying and navigation angle conversions", "Understanding angles in graphics and game development"],
     relatedSlugs: ["unit-converter", "scientific-calculator", "number-base-converter"]
+  },
+
+  // ── 42 New Converter Tools ──────────────────────────────────
+  { slug: "yards-to-meters", name: "Yards to Meters Converter", description: "Convert yards to meters and meters to yards instantly.", category: "converter", icon: "📏", keywords: ["yards to meters", "meters to yards", "yard converter", "yd to m"], subcategory: "length", template: "simple-converter",
+    longDescription: "Convert yards to meters and meters to yards with precision. One yard equals exactly 0.9144 meters, making this converter useful for fabric measurements, football fields, swimming pools, and general US-to-metric distance conversions. Works bidirectionally for complete flexibility.",
+    faqs: [
+      { question: "How many meters are in a yard?", answer: "One yard equals exactly 0.9144 meters." },
+      { question: "How many yards are in a meter?", answer: "One meter equals approximately 1.09361 yards." },
+      { question: "Is the yard-to-meter conversion exact?", answer: "Yes, 1 yard = 0.9144 m is an exact international definition." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a number in either the yards or meters field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted value." }
+    ],
+    useCases: ["Fabric and textile measurements", "American football field dimensions", "Swimming pool length conversions", "Athletics and track-and-field distances"],
+    relatedSlugs: ["feet-to-meters", "inches-to-cm", "miles-to-km", "unit-converter"]
+  },
+  { slug: "mm-to-inches", name: "MM to Inches Converter", description: "Convert millimeters to inches and inches to millimeters.", category: "converter", icon: "📏", keywords: ["mm to inches", "inches to mm", "millimeter converter", "millimeter to inch"], subcategory: "length", template: "simple-converter",
+    longDescription: "Convert millimeters to inches and inches to millimeters instantly. One millimeter equals approximately 0.03937 inches, making this converter essential for engineering drawings, woodworking, screen sizes, and any precision measurement task crossing metric and imperial systems.",
+    faqs: [
+      { question: "How many inches is 1 mm?", answer: "One millimeter equals approximately 0.03937 inches (about 1/25th of an inch)." },
+      { question: "How many mm in an inch?", answer: "One inch equals exactly 25.4 millimeters." },
+      { question: "What is 10mm in inches?", answer: "10 millimeters equals approximately 0.3937 inches (just under 3/8 inch)." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a measurement in either the millimeters or inches field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the value in your project." }
+    ],
+    useCases: ["Engineering drawings and precision manufacturing", "Woodworking and carpentry plans", "Comparing screen and display sizes", "3D printing and model making dimensions"],
+    relatedSlugs: ["inches-to-cm", "feet-to-meters", "unit-converter", "cm-to-feet"]
+  },
+  { slug: "km-to-meters", name: "KM to Meters Converter", description: "Convert kilometers to meters and meters to kilometers.", category: "converter", icon: "📏", keywords: ["km to meters", "meters to km", "kilometer converter", "km to m"], subcategory: "length", template: "simple-converter",
+    longDescription: "Convert kilometers to meters and meters to kilometers with ease. One kilometer equals exactly 1,000 meters, making this a straightforward but frequently needed conversion for running distances, road measurements, mapping, and scientific calculations.",
+    faqs: [
+      { question: "How many meters are in a kilometer?", answer: "One kilometer equals exactly 1,000 meters." },
+      { question: "How do I convert km to m?", answer: "Multiply the number of kilometers by 1,000 to get meters. For example, 5 km = 5,000 m." },
+      { question: "When would I need km to meters?", answer: "Common uses include GPS coordinates, running distances in scientific contexts, physics problems, and elevation data conversion." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a distance in either the kilometers or meters field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted distance." }
+    ],
+    useCases: ["Converting running race distances", "Scientific and physics calculations", "Mapping and cartography conversions", "GPS and elevation data analysis"],
+    relatedSlugs: ["miles-to-km", "feet-to-meters", "unit-converter", "yards-to-meters"]
+  },
+  { slug: "cm-to-feet", name: "CM to Feet Converter", description: "Convert centimeters to feet and feet to centimeters.", category: "converter", icon: "📏", keywords: ["cm to feet", "feet to cm", "centimeter to feet", "height converter"], subcategory: "length", template: "simple-converter",
+    longDescription: "Convert centimeters to feet and feet to centimeters instantly. One centimeter equals approximately 0.03281 feet. Useful for height conversions, furniture dimensions, and any task requiring a switch between the metric and imperial measurement systems.",
+    faqs: [
+      { question: "How many feet is 1 cm?", answer: "One centimeter equals approximately 0.03281 feet." },
+      { question: "How many cm in a foot?", answer: "One foot equals exactly 30.48 centimeters." },
+      { question: "How do I convert my height from cm to feet?", answer: "Divide your height in cm by 30.48 to get feet. For example, 175 cm ÷ 30.48 = 5.74 feet (approximately 5 feet 9 inches)." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a measurement in either the centimeters or feet field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted measurement." }
+    ],
+    useCases: ["Converting height between metric and imperial", "Furniture and interior design dimensions", "Medical height records", "International clothing and sizing charts"],
+    relatedSlugs: ["feet-to-meters", "inches-to-cm", "unit-converter", "mm-to-inches"]
+  },
+  { slug: "tablespoons-to-ml", name: "Tablespoons to ML Converter", description: "Convert tablespoons to milliliters and milliliters to tablespoons.", category: "converter", icon: "🥄", keywords: ["tablespoons to ml", "ml to tablespoons", "tbsp to ml", "cooking converter"], subcategory: "volume", template: "simple-converter",
+    longDescription: "Convert tablespoons to milliliters and milliliters to tablespoons for cooking and baking. One US tablespoon equals approximately 14.787 milliliters. Essential for adapting recipes between US customary and metric measurements.",
+    faqs: [
+      { question: "How many ml is one tablespoon?", answer: "One US tablespoon equals approximately 14.787 milliliters." },
+      { question: "How many tablespoons are in 100ml?", answer: "100 milliliters equals approximately 6.76 US tablespoons." },
+      { question: "Is a metric tablespoon the same?", answer: "A metric tablespoon is exactly 15 ml, while a US tablespoon is 14.787 ml — very close but slightly different." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a volume in either the tablespoons or milliliters field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Use in your recipe", text: "Copy the result to use in your cooking or baking." }
+    ],
+    useCases: ["Adapting US recipe measurements to metric", "Scaling recipes up or down accurately", "Liquid medicine dosage conversions", "Bartending and cocktail measurements"],
+    relatedSlugs: ["teaspoons-to-ml", "cups-to-ml", "cooking-converter", "ml-to-oz"]
+  },
+  { slug: "teaspoons-to-ml", name: "Teaspoons to ML Converter", description: "Convert teaspoons to milliliters and milliliters to teaspoons.", category: "converter", icon: "🥄", keywords: ["teaspoons to ml", "ml to teaspoons", "tsp to ml", "cooking measurement"], subcategory: "volume", template: "simple-converter",
+    longDescription: "Convert teaspoons to milliliters and milliliters to teaspoons for cooking, baking, and medicine. One US teaspoon equals approximately 4.929 milliliters. An indispensable converter when adapting recipes across measurement systems.",
+    faqs: [
+      { question: "How many ml is one teaspoon?", answer: "One US teaspoon equals approximately 4.929 milliliters." },
+      { question: "How many teaspoons is 5ml?", answer: "5 milliliters equals approximately 1.014 teaspoons, which is often rounded to 1 teaspoon in medical dosing." },
+      { question: "Is a metric teaspoon 5ml?", answer: "Yes, a metric teaspoon is exactly 5 ml, while a US teaspoon is approximately 4.929 ml." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a volume in either the teaspoons or milliliters field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use in your recipe or medication guide." }
+    ],
+    useCases: ["Cooking and baking recipe conversions", "Medicine dosage conversion (5ml = 1 tsp)", "Scaling small ingredient amounts", "Converting herbal remedy instructions"],
+    relatedSlugs: ["tablespoons-to-ml", "cups-to-ml", "cooking-converter", "ml-to-oz"]
+  },
+  { slug: "pints-to-liters", name: "Pints to Liters Converter", description: "Convert US pints to liters and liters to pints.", category: "converter", icon: "🍺", keywords: ["pints to liters", "liters to pints", "pint converter", "pt to l"], subcategory: "volume", template: "simple-converter",
+    longDescription: "Convert US pints to liters and liters to pints accurately. One US liquid pint equals approximately 0.4732 liters. Often used for beverage volumes, cooking, and understanding fluid quantities when working across US and metric measurement systems.",
+    faqs: [
+      { question: "How many liters is one pint?", answer: "One US liquid pint equals approximately 0.4732 liters." },
+      { question: "How many pints is one liter?", answer: "One liter equals approximately 2.113 US pints." },
+      { question: "Is a US pint the same as a UK pint?", answer: "No, a UK (Imperial) pint equals approximately 0.5683 liters, which is larger than the US pint (0.4732 L)." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a volume in either the pints or liters field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted volume." }
+    ],
+    useCases: ["Beer and beverage volume comparisons", "Cooking and baking measurement adaptation", "Homebrewing calculations", "Understanding serving sizes in pubs and restaurants"],
+    relatedSlugs: ["quarts-to-liters", "liters-to-gallons", "ml-to-oz", "cooking-converter"]
+  },
+  { slug: "quarts-to-liters", name: "Quarts to Liters Converter", description: "Convert US quarts to liters and liters to quarts.", category: "converter", icon: "🫗", keywords: ["quarts to liters", "liters to quarts", "quart converter", "qt to l"], subcategory: "volume", template: "simple-converter",
+    longDescription: "Convert US quarts to liters and liters to quarts with accuracy. One US liquid quart equals approximately 0.9464 liters. A commonly needed conversion for cooking, engine oil capacities, and understanding large liquid volumes across US and metric systems.",
+    faqs: [
+      { question: "How many liters is one quart?", answer: "One US liquid quart equals approximately 0.9464 liters." },
+      { question: "How many quarts is one liter?", answer: "One liter equals approximately 1.0567 US quarts — very close to 1 quart." },
+      { question: "How many pints are in a quart?", answer: "There are exactly 2 US pints in 1 US quart." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a volume in either the quarts or liters field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted volume." }
+    ],
+    useCases: ["Engine oil and automotive fluid measurements", "Cooking and baking volume conversion", "Beverage container size comparison", "Understanding paint and chemical volumes"],
+    relatedSlugs: ["pints-to-liters", "liters-to-gallons", "cooking-converter", "unit-converter"]
+  },
+  { slug: "tons-to-kg", name: "Tons to KG Converter", description: "Convert US short tons to kilograms and kilograms to tons.", category: "converter", icon: "⚖️", keywords: ["tons to kg", "kg to tons", "short ton converter", "ton to kilogram"], subcategory: "weight", template: "simple-converter",
+    longDescription: "Convert US short tons to kilograms and kilograms to US short tons. One US short ton equals exactly 907.185 kilograms. Used in freight, shipping, mining, and industrial weight measurements where large mass values must be compared across metric and imperial systems.",
+    faqs: [
+      { question: "How many kg is one US ton?", answer: "One US short ton equals exactly 907.185 kilograms." },
+      { question: "What is the difference between a short ton, long ton, and metric ton?", answer: "A short ton (US) = 907.185 kg, a long ton (UK) = 1,016.05 kg, and a metric ton (tonne) = exactly 1,000 kg." },
+      { question: "How many pounds are in a short ton?", answer: "One US short ton equals exactly 2,000 pounds." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a weight in either the tons or kilograms field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted weight." }
+    ],
+    useCases: ["Freight and shipping weight calculation", "Mining and extraction payload measurement", "Industrial and manufacturing weight specs", "Comparing vehicle payload capacities"],
+    relatedSlugs: ["kg-to-lbs", "ounces-to-grams", "unit-converter", "stones-to-kg"]
+  },
+  { slug: "grams-to-mg", name: "Grams to Milligrams Converter", description: "Convert grams to milligrams and milligrams to grams.", category: "converter", icon: "⚖️", keywords: ["grams to mg", "mg to grams", "milligram converter", "g to mg"], subcategory: "weight", template: "simple-converter",
+    longDescription: "Convert grams to milligrams and milligrams to grams instantly. One gram equals exactly 1,000 milligrams. Essential for pharmaceutical dosing, nutritional labeling, chemistry experiments, and any precision measurement task requiring small weight units.",
+    faqs: [
+      { question: "How many milligrams are in a gram?", answer: "One gram equals exactly 1,000 milligrams." },
+      { question: "How do I convert mg to grams?", answer: "Divide the number of milligrams by 1,000 to get grams. For example, 500 mg = 0.5 g." },
+      { question: "When is mg used instead of grams?", answer: "Milligrams are used for very small masses like medication doses, vitamins, minerals, and trace elements in chemistry and nutrition." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a weight in either the grams or milligrams field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted weight." }
+    ],
+    useCases: ["Converting medicine and supplement dosages", "Nutritional label reading and analysis", "Chemistry lab measurement preparation", "Calculating trace mineral amounts in formulations"],
+    relatedSlugs: ["ounces-to-grams", "kg-to-lbs", "unit-converter", "carats-to-grams"]
+  },
+  { slug: "carats-to-grams", name: "Carats to Grams Converter", description: "Convert carats to grams and grams to carats for gemstones.", category: "converter", icon: "💎", keywords: ["carats to grams", "grams to carats", "carat converter", "gemstone weight"], subcategory: "weight", template: "simple-converter",
+    longDescription: "Convert metric carats to grams and grams to carats. One metric carat equals exactly 0.2 grams (200 milligrams). Carats are the standard unit of mass for gemstones and diamonds in the jewelry industry worldwide.",
+    faqs: [
+      { question: "How many grams is one carat?", answer: "One metric carat equals exactly 0.2 grams (200 milligrams)." },
+      { question: "How many carats is one gram?", answer: "One gram equals exactly 5 carats." },
+      { question: "Is a carat the same as a karat?", answer: "No, a carat (ct) measures gemstone mass, while karat (k or kt) measures gold purity. They are completely different units." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a weight in either the carats or grams field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted gemstone weight." }
+    ],
+    useCases: ["Evaluating diamond and gemstone weights", "Jewelry appraisal and valuation", "Gem trading and wholesale pricing", "Converting gemstone weights for international transactions"],
+    relatedSlugs: ["troy-ounces-to-grams", "grams-to-mg", "ounces-to-grams", "unit-converter"]
+  },
+  { slug: "troy-ounces-to-grams", name: "Troy Ounces to Grams Converter", description: "Convert troy ounces to grams and grams to troy ounces.", category: "converter", icon: "🥇", keywords: ["troy ounces to grams", "grams to troy ounces", "troy oz converter", "precious metals"], subcategory: "weight", template: "simple-converter",
+    longDescription: "Convert troy ounces to grams and grams to troy ounces. One troy ounce equals approximately 31.1035 grams — heavier than an avoirdupois ounce (28.35 g). Troy ounces are the standard unit for measuring precious metals like gold, silver, and platinum.",
+    faqs: [
+      { question: "How many grams is one troy ounce?", answer: "One troy ounce equals approximately 31.1035 grams." },
+      { question: "How is a troy ounce different from a regular ounce?", answer: "A troy ounce (31.1035 g) is heavier than an avoirdupois ounce (28.3495 g). Troy ounces are used exclusively for precious metals." },
+      { question: "Why is gold measured in troy ounces?", answer: "Troy weight has been used for precious metals since medieval Europe and remains the global standard for gold, silver, and platinum pricing." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a weight in either the troy ounces or grams field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted precious metal weight." }
+    ],
+    useCases: ["Pricing and valuing gold and silver bullion", "Jewelry manufacturing and precious metal buying", "Investment portfolio precious metal calculations", "Understanding commodity market pricing"],
+    relatedSlugs: ["carats-to-grams", "ounces-to-grams", "grams-to-mg", "unit-converter"]
+  },
+  { slug: "kelvin-converter", name: "Kelvin Converter", description: "Convert between Kelvin and Celsius temperature scales.", category: "converter", icon: "🌡️", keywords: ["kelvin to celsius", "celsius to kelvin", "kelvin converter", "absolute temperature"], subcategory: "temperature", template: "simple-converter",
+    longDescription: "Convert between Kelvin and Celsius temperature scales. Kelvin is the SI base unit of temperature where 0 K is absolute zero, the coldest possible temperature. The conversion formula is simple: K = °C + 273.15. Used extensively in science, physics, and thermodynamics.",
+    faqs: [
+      { question: "How do you convert Celsius to Kelvin?", answer: "Add 273.15 to the Celsius temperature. For example, 100°C = 373.15 K." },
+      { question: "What is absolute zero in Celsius?", answer: "Absolute zero is 0 Kelvin, which equals −273.15°C — the theoretical minimum temperature." },
+      { question: "Why does Kelvin not use the degree symbol?", answer: "Kelvin is a base SI unit and is named after Lord Kelvin. By international convention, it is written as K without the degree (°) symbol." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a temperature in either the Celsius or Kelvin field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted temperature." }
+    ],
+    useCases: ["Physics and chemistry temperature calculations", "Astronomy and astrophysics temperature data", "Thermodynamics and engineering applications", "Converting scientific literature temperatures"],
+    relatedSlugs: ["celsius-to-fahrenheit", "rankine-converter", "fahrenheit-to-kelvin", "unit-converter"]
+  },
+  { slug: "rankine-converter", name: "Rankine Converter", description: "Convert between Rankine and Fahrenheit temperature scales.", category: "converter", icon: "🌡️", keywords: ["rankine converter", "fahrenheit to rankine", "rankine temperature", "absolute temperature"], subcategory: "temperature", template: "simple-converter",
+    longDescription: "Convert between the Rankine and Fahrenheit temperature scales. Rankine is an absolute thermodynamic temperature scale using Fahrenheit-sized degrees, where 0°R is absolute zero. The conversion is °R = °F + 459.67. Used in some US engineering and thermodynamics applications.",
+    faqs: [
+      { question: "How do you convert Fahrenheit to Rankine?", answer: "Add 459.67 to the Fahrenheit temperature. For example, 32°F (water's freezing point) = 491.67°R." },
+      { question: "What is 0 Rankine in Fahrenheit?", answer: "0°R is absolute zero, which equals −459.67°F." },
+      { question: "When is Rankine used?", answer: "Rankine is used in some US engineering fields, particularly in thermodynamics and aeronautical engineering where Fahrenheit-based absolute temperatures are needed." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a temperature in either the Fahrenheit or Rankine field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted temperature." }
+    ],
+    useCases: ["US engineering thermodynamics calculations", "Aeronautical and aerospace temperature work", "Chemical engineering process design", "Converting legacy US scientific temperature data"],
+    relatedSlugs: ["celsius-to-fahrenheit", "kelvin-converter", "fahrenheit-to-kelvin", "unit-converter"]
+  },
+  { slug: "light-years-to-km", name: "Light Years to KM Converter", description: "Convert light years to kilometers and kilometers to light years.", category: "converter", icon: "🌌", keywords: ["light years to km", "km to light years", "astronomical distance", "light year converter"], subcategory: "length", template: "simple-converter",
+    longDescription: "Convert light years to kilometers and back. One light year equals approximately 9.461 × 10¹² kilometers — the distance light travels in one year. Used in astronomy and astrophysics to express vast interstellar and intergalactic distances.",
+    faqs: [
+      { question: "How many km is one light year?", answer: "One light year equals approximately 9.461 × 10¹² km (9,461,000,000,000 km)." },
+      { question: "How fast does light travel per year?", answer: "Light travels approximately 299,792 km per second, covering about 9.461 trillion km per year." },
+      { question: "How far away is the nearest star in light years?", answer: "Proxima Centauri, the nearest star to the Sun, is approximately 4.24 light years away." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a distance in either the light years or kilometers field." },
+      { name: "See the result", text: "The conversion appears in scientific notation for clarity." },
+      { name: "Copy the result", text: "Click copy to use the astronomical distance value." }
+    ],
+    useCases: ["Astronomy and astrophysics distance calculations", "Understanding stellar and galactic distances", "Science education and space exploration context", "Converting distances from astronomical catalogues"],
+    relatedSlugs: ["parsec-to-light-years", "nautical-miles", "miles-to-km", "unit-converter"]
+  },
+  { slug: "horsepower-to-watts", name: "Horsepower to Watts Converter", description: "Convert horsepower to watts and watts to horsepower.", category: "converter", icon: "⚡", keywords: ["horsepower to watts", "watts to horsepower", "hp to watts", "power converter"], subcategory: "energy", template: "simple-converter",
+    longDescription: "Convert between horsepower and watts, two of the most widely used power units. One mechanical horsepower equals exactly 745.7 watts. Used in automotive engineering, electric motor specifications, and any application comparing engine power output across different measurement traditions.",
+    faqs: [
+      { question: "How many watts is one horsepower?", answer: "One mechanical horsepower equals exactly 745.7 watts." },
+      { question: "How many horsepower is 1000 watts (1 kW)?", answer: "1,000 watts equals approximately 1.341 horsepower." },
+      { question: "Are all horsepower the same?", answer: "No. Mechanical (imperial) hp = 745.7 W, metric hp = 735.5 W, and electric hp = 746 W. This converter uses mechanical hp." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a power value in either the horsepower or watts field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted power value." }
+    ],
+    useCases: ["Comparing car engine power specifications", "Electric motor sizing and selection", "Generator capacity planning", "Converting pump and engine power ratings"],
+    relatedSlugs: ["watts-to-btu", "energy-converter", "unit-converter", "newtons-to-pounds-force"]
+  },
+  { slug: "watts-to-btu", name: "Watts to BTU Converter", description: "Convert watts to BTU/hour and BTU/hour to watts.", category: "converter", icon: "🔥", keywords: ["watts to btu", "btu to watts", "power converter", "heating cooling"], subcategory: "energy", template: "simple-converter",
+    longDescription: "Convert between watts and BTU per hour (BTU/hr), two common units for expressing heating and cooling power. One watt equals approximately 3.412 BTU/hour. Essential for comparing HVAC system ratings, air conditioner capacities, and heater output across US and metric standards.",
+    faqs: [
+      { question: "How many BTU/hr is one watt?", answer: "One watt equals approximately 3.41214 BTU/hour." },
+      { question: "How many watts is 10,000 BTU?", answer: "10,000 BTU/hour equals approximately 2,931 watts (about 2.93 kW)." },
+      { question: "What does BTU stand for?", answer: "BTU stands for British Thermal Unit — the amount of heat needed to raise 1 pound of water by 1°F." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a power value in either the watts or BTU/hr field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted power rating." }
+    ],
+    useCases: ["Comparing air conditioner BTU to watt ratings", "HVAC system sizing and planning", "Heater power output comparison", "Energy efficiency calculation for heating and cooling"],
+    relatedSlugs: ["horsepower-to-watts", "energy-converter", "unit-converter", "calories-to-joules"]
+  },
+  { slug: "newtons-to-pounds-force", name: "Newtons to Pounds-Force Converter", description: "Convert newtons to pounds-force and pounds-force to newtons.", category: "converter", icon: "🔩", keywords: ["newtons to lbf", "pounds force", "force converter", "newton converter"], subcategory: "energy", template: "simple-converter",
+    longDescription: "Convert between newtons (N) and pounds-force (lbf), the two most common units of force. One newton equals approximately 0.2248 pounds-force. Used in mechanical engineering, structural analysis, and any application requiring force measurement across metric and imperial systems.",
+    faqs: [
+      { question: "How many pounds-force is one newton?", answer: "One newton equals approximately 0.2248 pounds-force." },
+      { question: "How many newtons is one pound-force?", answer: "One pound-force equals approximately 4.4482 newtons." },
+      { question: "What is pounds-force (lbf)?", answer: "Pounds-force is the force exerted by gravity on a one-pound mass at standard gravity (9.80665 m/s²). It is different from pounds-mass (lbm)." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a force value in either the newtons or pounds-force field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted force value." }
+    ],
+    useCases: ["Mechanical engineering force calculations", "Structural load and stress analysis", "Spring constant and tension measurements", "Material strength and testing specifications"],
+    relatedSlugs: ["horsepower-to-watts", "torr-to-pascal", "energy-converter", "unit-converter"]
+  },
+  { slug: "rpm-to-radians", name: "RPM to Radians/Second Converter", description: "Convert RPM to radians per second and back.", category: "converter", icon: "🔄", keywords: ["rpm to rad/s", "radians per second", "angular velocity", "rpm converter"], subcategory: "speed", template: "simple-converter",
+    longDescription: "Convert revolutions per minute (RPM) to radians per second (rad/s) and back. One RPM equals approximately 0.10472 radians per second (2π/60). Essential for motor specifications, robotics, gyroscope data, and any rotational mechanics application.",
+    faqs: [
+      { question: "How many rad/s is one RPM?", answer: "One RPM equals approximately 0.10472 rad/s (2π divided by 60)." },
+      { question: "How do I convert RPM to rad/s?", answer: "Multiply RPM by 2π/60, which equals approximately 0.10472. For example, 100 RPM × 0.10472 = 10.472 rad/s." },
+      { question: "Why use radians per second instead of RPM?", answer: "Radians per second is the SI unit of angular velocity used in physics and engineering equations, while RPM is more intuitive for practical motor and engine specifications." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a rotation speed in either the RPM or rad/s field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted angular velocity." }
+    ],
+    useCases: ["Electric motor angular velocity specifications", "Robotics and servo motor programming", "Gyroscope and IMU sensor data interpretation", "Physics and mechanical engineering calculations"],
+    relatedSlugs: ["knots-to-mph", "mph-to-kph", "angle-converter", "unit-converter"]
+  },
+  { slug: "knots-to-mph", name: "Knots to MPH Converter", description: "Convert knots to miles per hour and miles per hour to knots.", category: "converter", icon: "⚓", keywords: ["knots to mph", "mph to knots", "nautical speed", "knot converter"], subcategory: "speed", template: "simple-converter",
+    longDescription: "Convert between knots and miles per hour. One knot equals approximately 1.15078 miles per hour. Knots are the standard unit of speed in aviation and maritime navigation, while mph is commonly used for road travel in the US and UK.",
+    faqs: [
+      { question: "How many mph is one knot?", answer: "One knot equals approximately 1.15078 miles per hour." },
+      { question: "How many knots is 100 mph?", answer: "100 mph equals approximately 86.9 knots." },
+      { question: "Why do ships and aircraft use knots?", answer: "One knot equals one nautical mile per hour, and one nautical mile equals one arcminute of latitude. This makes navigation and chart calculations much simpler." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a speed in either the knots or mph field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted speed." }
+    ],
+    useCases: ["Sailing and maritime navigation speed conversion", "Aviation airspeed conversion", "Interpreting weather buoy and station data", "Comparing vessel speed ratings across systems"],
+    relatedSlugs: ["mph-to-kph", "nautical-miles", "rpm-to-radians", "unit-converter"]
+  },
+  { slug: "parsec-to-light-years", name: "Parsec to Light Years Converter", description: "Convert parsecs to light years and light years to parsecs.", category: "converter", icon: "🌌", keywords: ["parsec to light years", "light years to parsec", "astronomical distance", "parsec converter"], subcategory: "length", template: "simple-converter",
+    longDescription: "Convert between parsecs and light years, two units used in astronomy for measuring interstellar distances. One parsec equals approximately 3.2616 light years. Parsecs are derived from parallax measurements and are the preferred unit among professional astronomers.",
+    faqs: [
+      { question: "How many light years is one parsec?", answer: "One parsec equals approximately 3.2616 light years." },
+      { question: "What does parsec stand for?", answer: "Parsec stands for parallax-arcsecond. It is defined as the distance at which one astronomical unit subtends one arcsecond of angle." },
+      { question: "Which is bigger, a parsec or a light year?", answer: "A parsec is bigger — it equals about 3.26 light years." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a distance in either the parsecs or light years field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the astronomical distance value." }
+    ],
+    useCases: ["Professional astronomy and astrophysics calculations", "Interpreting stellar catalogue distances", "Science education in cosmology", "Converting distances in scientific papers"],
+    relatedSlugs: ["light-years-to-km", "nautical-miles", "miles-to-km", "unit-converter"]
+  },
+  { slug: "fathoms-to-feet", name: "Fathoms to Feet Converter", description: "Convert fathoms to feet and feet to fathoms.", category: "converter", icon: "⚓", keywords: ["fathoms to feet", "feet to fathoms", "nautical depth", "fathom converter"], subcategory: "length", template: "simple-converter",
+    longDescription: "Convert fathoms to feet and feet to fathoms. One fathom equals exactly 6 feet (approximately 1.8288 meters). Fathoms are a traditional unit used to measure water depth in nautical and maritime contexts, and are still used on nautical charts.",
+    faqs: [
+      { question: "How many feet is one fathom?", answer: "One fathom equals exactly 6 feet." },
+      { question: "Where does the word fathom come from?", answer: "Fathom comes from the Old English 'faethm' meaning outstretched arms — the approximate span a sailor could reach when taking a sounding." },
+      { question: "Is the fathom still used today?", answer: "Yes, fathoms are still used on some nautical charts and in traditional seafaring, particularly in English-speaking countries." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a depth in either the fathoms or feet field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted depth value." }
+    ],
+    useCases: ["Interpreting nautical chart depth markings", "Scuba diving and underwater navigation", "Maritime history and literature reference", "Converting traditional seafaring measurements"],
+    relatedSlugs: ["nautical-miles", "feet-to-meters", "yards-to-meters", "unit-converter"]
+  },
+  { slug: "furlongs-to-meters", name: "Furlongs to Meters Converter", description: "Convert furlongs to meters and meters to furlongs.", category: "converter", icon: "🏇", keywords: ["furlongs to meters", "meters to furlongs", "furlong converter", "horse racing distance"], subcategory: "length", template: "simple-converter",
+    longDescription: "Convert furlongs to meters and meters to furlongs. One furlong equals exactly 201.168 meters. Furlongs are a unit of length used in horse racing, land surveying, and agriculture. Eight furlongs equal one mile.",
+    faqs: [
+      { question: "How many meters is one furlong?", answer: "One furlong equals exactly 201.168 meters." },
+      { question: "How many furlongs are in a mile?", answer: "There are exactly 8 furlongs in one statute mile." },
+      { question: "When is the furlong used today?", answer: "Furlongs are still commonly used in horse racing to describe race distances, particularly in the US, UK, and Australia." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a distance in either the furlongs or meters field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted distance." }
+    ],
+    useCases: ["Horse racing distance reference and conversion", "Agricultural land measurement", "Historical and traditional land survey calculations", "Equestrian sports distance planning"],
+    relatedSlugs: ["yards-to-meters", "miles-to-km", "chains-to-meters", "unit-converter"]
+  },
+  { slug: "chains-to-meters", name: "Chains to Meters Converter", description: "Convert Gunter's chains to meters and meters to chains.", category: "converter", icon: "⛓️", keywords: ["chains to meters", "meters to chains", "surveyor chain", "chain converter"], subcategory: "length", template: "simple-converter",
+    longDescription: "Convert surveyor's chains (Gunter's chains) to meters and meters to chains. One chain equals exactly 20.1168 meters (66 feet or 100 links). The chain is a traditional unit used in land surveying, agriculture, and real estate particularly in English-speaking countries.",
+    faqs: [
+      { question: "How many meters is one chain?", answer: "One Gunter's chain equals exactly 20.1168 meters." },
+      { question: "How many chains are in a mile?", answer: "There are exactly 80 chains in one statute mile." },
+      { question: "Why is the chain used in land measurement?", answer: "The chain was devised by mathematician Edmund Gunter in 1620 and became standard for land surveys because 10 square chains equals exactly one acre." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a distance in either the chains or meters field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted length." }
+    ],
+    useCases: ["Traditional land survey measurement conversion", "Understanding historical property deeds", "Agricultural land boundary calculations", "Real estate records in older documentation"],
+    relatedSlugs: ["furlongs-to-meters", "yards-to-meters", "acres-to-hectares", "unit-converter"]
+  },
+  { slug: "hands-to-cm", name: "Hands to CM Converter", description: "Convert hands to centimeters and centimeters to hands.", category: "converter", icon: "🐎", keywords: ["hands to cm", "cm to hands", "horse height converter", "hand unit"], subcategory: "length", template: "simple-converter",
+    longDescription: "Convert hands to centimeters and centimeters to hands. One hand equals exactly 10.16 centimeters (4 inches). The hand is a unit of measurement used specifically to measure the height of horses at the withers (the highest point of the shoulder).",
+    faqs: [
+      { question: "How many cm is one hand?", answer: "One hand equals exactly 10.16 centimeters (4 inches)." },
+      { question: "What does '16 hands' mean for a horse?", answer: "A horse measuring 16 hands stands 162.56 cm (approximately 64 inches or 5 feet 4 inches) at the withers." },
+      { question: "Why are horses measured in hands?", answer: "The hand was historically based on the average width of a human hand, and has been used to measure horses for centuries as an intuitive field measurement." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a height in either the hands or centimeters field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted horse height." }
+    ],
+    useCases: ["Equestrian height measurement and reporting", "Horse buying and selling advertisements", "Veterinary records and health assessments", "Equestrian sport classification"],
+    relatedSlugs: ["cm-to-feet", "feet-to-meters", "yards-to-meters", "unit-converter"]
+  },
+  { slug: "imperial-gallons-to-liters", name: "Imperial Gallons to Liters Converter", description: "Convert Imperial (UK) gallons to liters and liters to Imperial gallons.", category: "converter", icon: "🫗", keywords: ["imperial gallons", "uk gallons to liters", "imperial gallon converter", "british gallon"], subcategory: "volume", template: "simple-converter",
+    longDescription: "Convert Imperial (UK) gallons to liters and liters to Imperial gallons. One Imperial gallon equals approximately 4.54609 liters — larger than the US gallon (3.78541 L). Important for UK fuel economy, beverage volumes, and international comparisons.",
+    faqs: [
+      { question: "How many liters is one Imperial gallon?", answer: "One Imperial (UK) gallon equals exactly 4.54609 liters." },
+      { question: "How is an Imperial gallon different from a US gallon?", answer: "An Imperial gallon (4.546 L) is about 20% larger than a US gallon (3.785 L). Always clarify which gallon is intended when comparing fuel economy internationally." },
+      { question: "Do UK fuel pumps use Imperial gallons?", answer: "No, UK fuel is now sold in liters. Imperial gallons are still referenced for older fuel economy ratings (mpg)." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a volume in either the Imperial gallons or liters field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted volume." }
+    ],
+    useCases: ["UK fuel economy and range calculations", "Comparing US vs UK mpg ratings", "Understanding British recipe volumes", "Agricultural water and chemical usage"],
+    relatedSlugs: ["liters-to-gallons", "pints-to-liters", "quarts-to-liters", "unit-converter"]
+  },
+  { slug: "bushels-to-liters", name: "Bushels to Liters Converter", description: "Convert US bushels to liters and liters to bushels.", category: "converter", icon: "🌾", keywords: ["bushels to liters", "liters to bushels", "bushel converter", "grain volume"], subcategory: "volume", template: "simple-converter",
+    longDescription: "Convert US bushels to liters and liters to bushels. One US bushel equals approximately 35.239 liters. Bushels are used in agriculture for measuring grain, produce, and dry goods, particularly for crops like corn, wheat, soybeans, and oats.",
+    faqs: [
+      { question: "How many liters is one US bushel?", answer: "One US bushel equals approximately 35.239 liters." },
+      { question: "How many bushels is one cubic meter?", answer: "One cubic meter (1,000 liters) equals approximately 28.38 US bushels." },
+      { question: "Do different crops have different bushel weights?", answer: "Yes, while volume is the same, the weight of a bushel varies by crop: corn is 56 lbs/bushel, wheat is 60 lbs/bushel, and soybeans are 60 lbs/bushel." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a volume in either the bushels or liters field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted grain volume." }
+    ],
+    useCases: ["Agricultural grain volume measurement", "Crop yield estimation and reporting", "Farm storage capacity planning", "Commodity trading volume calculations"],
+    relatedSlugs: ["liters-to-gallons", "cubic-feet-to-liters", "acres-to-hectares", "unit-converter"]
+  },
+  { slug: "fluid-drams-to-ml", name: "Fluid Drams to ML Converter", description: "Convert fluid drams to milliliters and milliliters to fluid drams.", category: "converter", icon: "💊", keywords: ["fluid drams to ml", "ml to fluid drams", "dram converter", "pharmacy measurement"], subcategory: "volume", template: "simple-converter",
+    longDescription: "Convert fluid drams to milliliters and milliliters to fluid drams. One US fluid dram equals approximately 3.697 milliliters. Fluid drams are a traditional unit used in pharmacy, herbal medicine, and historical recipes where small liquid volumes are measured.",
+    faqs: [
+      { question: "How many ml is one fluid dram?", answer: "One US fluid dram equals approximately 3.697 milliliters." },
+      { question: "How many fluid drams are in a fluid ounce?", answer: "There are 8 fluid drams in one US fluid ounce." },
+      { question: "Is a fluid dram the same as a dram in weight?", answer: "No, a fluid dram (volume) is different from an avoirdupois dram (weight, 1/16 oz). They are separate units that happen to share the name 'dram'." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a volume in either the fluid drams or milliliters field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted small liquid volume." }
+    ],
+    useCases: ["Pharmaceutical and compounding calculations", "Herbal medicine and tincture measurements", "Historical recipe conversion and research", "Perfumery and essential oil blending"],
+    relatedSlugs: ["teaspoons-to-ml", "tablespoons-to-ml", "ml-to-oz", "cooking-converter"]
+  },
+  { slug: "grains-to-grams", name: "Grains to Grams Converter", description: "Convert grains to grams and grams to grains.", category: "converter", icon: "⚖️", keywords: ["grains to grams", "grams to grains", "grain converter", "pharmacist weight"], subcategory: "weight", template: "simple-converter",
+    longDescription: "Convert grains to grams and grams to grains. One grain equals approximately 0.0648 grams (64.8 mg). The grain is the smallest unit in both the avoirdupois and troy weight systems, originally based on the mass of a single seed of grain. Used in pharmacy, ballistics, and gemology.",
+    faqs: [
+      { question: "How many grams is one grain?", answer: "One grain equals approximately 0.0648 grams (64.8 milligrams)." },
+      { question: "How many grains are in an ounce?", answer: "There are 437.5 grains in one avoirdupois ounce, and 480 grains in one troy ounce." },
+      { question: "Why is grain still used?", answer: "Grains are still used in ballistics (bullet weight), pharmacy (historical prescriptions), and gemology for precision small-mass measurements." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a weight in either the grains or grams field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted small weight." }
+    ],
+    useCases: ["Ballistics and ammunition reloading", "Historical pharmaceutical prescription conversion", "Precision gemstone and powder weighing", "Traditional herbal medicine measurements"],
+    relatedSlugs: ["grams-to-mg", "troy-ounces-to-grams", "carats-to-grams", "unit-converter"]
+  },
+  { slug: "pennyweight-to-grams", name: "Pennyweight to Grams Converter", description: "Convert pennyweight to grams and grams to pennyweight.", category: "converter", icon: "🏅", keywords: ["pennyweight to grams", "dwt to grams", "pennyweight converter", "precious metals weight"], subcategory: "weight", template: "simple-converter",
+    longDescription: "Convert pennyweight (dwt) to grams and grams to pennyweight. One pennyweight equals approximately 1.5552 grams. Pennyweight is a unit of troy weight equal to 1/20 of a troy ounce, commonly used by jewelers and goldsmiths for weighing precious metals and gems.",
+    faqs: [
+      { question: "How many grams is one pennyweight?", answer: "One pennyweight equals approximately 1.5552 grams." },
+      { question: "How many pennyweights are in a troy ounce?", answer: "There are exactly 20 pennyweights in one troy ounce." },
+      { question: "Why is pennyweight used in jewelry?", answer: "Pennyweight (dwt) provides a convenient intermediate unit between grains and troy ounces for weighing small quantities of gold, silver, and gemstones in the jewelry trade." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a weight in either the pennyweight or grams field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted precious metal weight." }
+    ],
+    useCases: ["Jewelry making and goldsmithing", "Precious metal trading and appraisal", "Coin collecting and numismatics", "Gold and silver scrap buying calculations"],
+    relatedSlugs: ["troy-ounces-to-grams", "carats-to-grams", "grams-to-mg", "unit-converter"]
+  },
+  { slug: "slugs-to-kg", name: "Slugs to KG Converter", description: "Convert slugs to kilograms and kilograms to slugs.", category: "converter", icon: "⚖️", keywords: ["slugs to kg", "kg to slugs", "slug converter", "imperial mass"], subcategory: "weight", template: "simple-converter",
+    longDescription: "Convert slugs to kilograms and kilograms to slugs. One slug equals approximately 14.5939 kilograms. The slug is the unit of mass in the imperial foot-pound-second system, defined as the mass that accelerates at 1 ft/s² when a force of 1 pound-force is applied.",
+    faqs: [
+      { question: "How many kg is one slug?", answer: "One slug equals approximately 14.5939 kilograms." },
+      { question: "What is a slug in physics?", answer: "A slug is defined as the mass that accelerates at 1 ft/s² when subjected to a net force of 1 pound-force. It is used in US customary unit calculations in mechanics and physics." },
+      { question: "Is the slug still used?", answer: "The slug is still used in some US engineering, aerospace, and physics calculations where the imperial FPS (foot-pound-second) system is applied." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a mass in either the slugs or kilograms field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted mass value." }
+    ],
+    useCases: ["US engineering and aerospace mass calculations", "Mechanics and dynamics problem solving", "Converting legacy physics equations to SI", "Aerospace and ballistic trajectory calculations"],
+    relatedSlugs: ["kg-to-lbs", "newtons-to-pounds-force", "unit-converter", "tons-to-kg"]
+  },
+  { slug: "torr-to-pascal", name: "Torr to Pascal Converter", description: "Convert Torr to Pascal and Pascal to Torr.", category: "converter", icon: "🔧", keywords: ["torr to pascal", "pascal to torr", "pressure converter", "vacuum pressure"], subcategory: "energy", template: "simple-converter",
+    longDescription: "Convert between Torr and Pascal pressure units. One Torr equals approximately 133.322 Pascals. The Torr is a unit of pressure defined as 1/760 of a standard atmosphere and is widely used in vacuum technology, laboratory science, and meteorology.",
+    faqs: [
+      { question: "How many Pascals is one Torr?", answer: "One Torr equals approximately 133.322 Pascals." },
+      { question: "What is one standard atmosphere in Torr?", answer: "One standard atmosphere equals exactly 760 Torr (or 101,325 Pascals)." },
+      { question: "Why is Torr used in vacuum measurements?", answer: "Torr provides a convenient scale for vacuum pressures, where blood pressure (~120 mmHg), atmospheric pressure (760 Torr), and lab vacuum levels are all expressible in manageable numbers." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a pressure in either the Torr or Pascal field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted pressure value." }
+    ],
+    useCases: ["Vacuum chamber and pump pressure measurement", "Laboratory and research pressure specification", "Blood pressure unit conversion (mmHg = Torr)", "Meteorological and atmospheric pressure analysis"],
+    relatedSlugs: ["pressure-converter", "newtons-to-pounds-force", "energy-converter", "unit-converter"]
+  },
+  { slug: "calories-to-joules", name: "Calories to Joules Converter", description: "Convert calories to joules and joules to calories.", category: "converter", icon: "🔥", keywords: ["calories to joules", "joules to calories", "energy converter", "calorie converter"], subcategory: "energy", template: "simple-converter",
+    longDescription: "Convert between calories and joules, two common units of energy. One thermochemical calorie equals exactly 4.184 joules. Note that food calories (kcal) are 1,000 small calories. This converter uses the thermochemical calorie, the standard scientific definition.",
+    faqs: [
+      { question: "How many joules is one calorie?", answer: "One thermochemical calorie equals exactly 4.184 joules." },
+      { question: "Are food calories the same as scientific calories?", answer: "No, food calories are actually kilocalories (kcal). One food Calorie = 1,000 scientific calories = 4,184 joules." },
+      { question: "How many joules is 100 calories?", answer: "100 thermochemical calories equals 418.4 joules." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type an energy value in either the calories or joules field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted energy value." }
+    ],
+    useCases: ["Physics and chemistry energy calculations", "Nutrition and metabolic energy analysis", "Thermochemistry and calorimetry experiments", "Converting food energy to SI units"],
+    relatedSlugs: ["energy-converter", "watts-to-btu", "electron-volts-to-joules", "unit-converter"]
+  },
+  { slug: "electron-volts-to-joules", name: "Electron Volts to Joules Converter", description: "Convert electron volts to joules and joules to electron volts.", category: "converter", icon: "⚛️", keywords: ["electron volts to joules", "eV to joules", "particle physics energy", "eV converter"], subcategory: "energy", template: "simple-converter",
+    longDescription: "Convert between electron volts (eV) and joules (J). One electron volt equals approximately 1.602 × 10⁻¹⁹ joules. The electron volt is the standard energy unit in atomic and particle physics, representing the kinetic energy gained by a single electron accelerated through one volt of electric potential difference.",
+    faqs: [
+      { question: "How many joules is one electron volt?", answer: "One electron volt equals approximately 1.602 × 10⁻¹⁹ joules." },
+      { question: "Why is eV used in particle physics?", answer: "The electron volt is a natural unit for atomic and subatomic physics because the energies involved are extremely small. Using joules would require unwieldy scientific notation for most particle energy values." },
+      { question: "What is 1 MeV in joules?", answer: "1 MeV (mega-electron volt) = 1,000,000 eV = approximately 1.602 × 10⁻¹³ joules." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type an energy value in either the electron volts or joules field." },
+      { name: "See the result", text: "The result appears in scientific notation for precision." },
+      { name: "Copy the result", text: "Click copy to use the converted energy in your calculation." }
+    ],
+    useCases: ["Particle physics and nuclear energy calculations", "Semiconductor and photon energy analysis", "Astrophysics radiation energy conversion", "Quantum mechanics course calculations"],
+    relatedSlugs: ["calories-to-joules", "energy-converter", "watts-to-btu", "unit-converter"]
+  },
+  { slug: "decibels-converter", name: "Decibels Converter", description: "Convert between decibels and linear ratios for power and amplitude.", category: "converter", icon: "🔊", keywords: ["decibels converter", "dB calculator", "power ratio dB", "amplitude dB"], subcategory: "data", template: "simple-converter",
+    longDescription: "Convert between decibels (dB) and linear ratios for both power and amplitude quantities. The decibel is a logarithmic unit expressing the ratio of two values. Power ratios use 10 × log₁₀(ratio) while amplitude ratios use 20 × log₁₀(ratio). Widely used in audio engineering, telecommunications, and acoustics.",
+    faqs: [
+      { question: "What is a decibel?", answer: "A decibel is one-tenth of a bel, a logarithmic unit expressing the ratio of two quantities. It is widely used to describe power levels, sound pressure, and signal gain in electronics and acoustics." },
+      { question: "What is the difference between power and amplitude dB?", answer: "For power ratios, dB = 10 × log₁₀(ratio). For amplitude (voltage, pressure) ratios, dB = 20 × log₁₀(ratio), because power is proportional to amplitude squared." },
+      { question: "What does 0 dB mean?", answer: "0 dB means the ratio is 1:1 — no gain or attenuation. Positive dB values indicate gain (amplification) and negative values indicate attenuation (reduction)." }
+    ],
+    howToSteps: [
+      { name: "Select mode", text: "Choose power ratio (10 log) or amplitude ratio (20 log) based on your measurement type." },
+      { name: "Enter a value", text: "Type a linear ratio or a dB value in the appropriate field." },
+      { name: "See the result", text: "The converted dB or ratio value appears instantly." }
+    ],
+    useCases: ["Audio engineering gain and attenuation calculation", "Telecommunications signal strength analysis", "Acoustics and sound pressure level measurement", "Electronics amplifier and filter design"],
+    relatedSlugs: ["energy-converter", "angle-converter", "unit-converter", "bits-to-bytes"]
+  },
+  { slug: "bits-to-bytes", name: "Bits to Bytes Converter", description: "Convert bits to bytes and bytes to bits.", category: "converter", icon: "💾", keywords: ["bits to bytes", "bytes to bits", "bit converter", "data size"], subcategory: "data", template: "simple-converter",
+    longDescription: "Convert between bits and bytes, the fundamental units of digital data storage and transmission. One byte equals exactly 8 bits. Essential for understanding data rates, file sizes, network bandwidth, and any digital storage or transmission calculation.",
+    faqs: [
+      { question: "How many bits are in a byte?", answer: "One byte equals exactly 8 bits." },
+      { question: "How many bytes is a megabit?", answer: "One megabit = 1,000,000 bits = 125,000 bytes = 125 kilobytes." },
+      { question: "Why do internet speeds use Mbps but storage uses MB?", answer: "Internet speed is typically measured in megabits per second (Mbps) while storage uses megabytes (MB). Since 1 byte = 8 bits, an 8 Mbps connection transfers about 1 MB per second." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a value in either the bits or bytes field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted data size." }
+    ],
+    useCases: ["Internet speed and bandwidth calculations", "File download time estimation", "Network protocol and packet size analysis", "Storage capacity planning"],
+    relatedSlugs: ["bytes-converter", "number-base-converter", "unit-converter", "decibels-converter"]
+  },
+  { slug: "pixels-to-points", name: "Pixels to Points Converter", description: "Convert pixels to points and points to pixels based on DPI.", category: "converter", icon: "🖥️", keywords: ["pixels to points", "points to pixels", "px to pt", "typography units"], subcategory: "data", template: "simple-converter",
+    longDescription: "Convert between pixels (px) and typographic points (pt) based on screen resolution (DPI). At 96 DPI (standard web), 1 pixel equals 0.75 points and 1 point equals approximately 1.333 pixels. Essential for typography, print design, and cross-media layout consistency.",
+    faqs: [
+      { question: "How many points is one pixel at 96 DPI?", answer: "At 96 DPI (standard web resolution), 1 pixel equals 0.75 points." },
+      { question: "What is a typographic point?", answer: "A point (pt) is a unit of typographic measurement equal to 1/72 of an inch. It is the standard unit for font sizes in print and in CSS." },
+      { question: "Why does DPI matter for this conversion?", answer: "The number of pixels per inch (DPI/PPI) determines how many pixels correspond to a physical inch, which affects the relationship between screen pixels and physical units like points." }
+    ],
+    howToSteps: [
+      { name: "Set the DPI", text: "Enter your screen or output DPI (default 96 for web, 72 for traditional print)." },
+      { name: "Enter your value", text: "Type a size in either the pixels or points field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." }
+    ],
+    useCases: ["Converting web font sizes to print point sizes", "Responsive design unit conversion", "UI specification handoff to developers", "Cross-media typography consistency"],
+    relatedSlugs: ["pixels-to-rem", "em-to-px", "unit-converter", "bits-to-bytes"]
+  },
+  { slug: "em-to-px", name: "EM to PX Converter", description: "Convert em units to pixels and pixels to em based on base font size.", category: "converter", icon: "🖋️", keywords: ["em to px", "px to em", "css units converter", "em converter"], subcategory: "data", template: "simple-converter",
+    longDescription: "Convert between em units and pixels based on a configurable base font size. The em unit in CSS is relative to the current element's font size — 1em equals the element's font size in pixels. Essential for responsive web design and accessible typography.",
+    faqs: [
+      { question: "How many pixels is 1 em?", answer: "1 em equals the base font size of the element. At the default browser size, 1 em = 16 px, but this changes if the base font size is different." },
+      { question: "What is the difference between em and rem?", answer: "Em is relative to the parent element's font size, while rem (root em) is relative to the root element's (html) font size. Rem is more predictable for consistent sizing." },
+      { question: "How do I convert 24px to em?", answer: "Divide 24px by your base font size. At base 16px: 24 ÷ 16 = 1.5em." }
+    ],
+    howToSteps: [
+      { name: "Set the base font size", text: "Enter the parent element's font size in pixels (default is 16px)." },
+      { name: "Enter your value", text: "Type a size in either the em or pixels field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." }
+    ],
+    useCases: ["Converting design pixel specs to CSS em units", "Responsive typography and layout design", "Migrating fixed pixel layouts to scalable units", "Accessible font sizing for browser zoom support"],
+    relatedSlugs: ["pixels-to-rem", "pixels-to-points", "unit-converter", "bits-to-bytes"]
+  },
+  { slug: "rgb-to-cmyk", name: "RGB to CMYK Converter", description: "Convert RGB color values to CMYK for print design.", category: "converter", icon: "🎨", keywords: ["rgb to cmyk", "cmyk converter", "color space converter", "print color"], subcategory: "data", template: "simple-converter",
+    longDescription: "Convert RGB (red, green, blue) color values used in digital screens to CMYK (cyan, magenta, yellow, key/black) values used in print production. RGB and CMYK operate in different color spaces — screen colors cannot always be perfectly reproduced in print.",
+    faqs: [
+      { question: "Why are RGB and CMYK different color spaces?", answer: "RGB is an additive color model used for screens (light is combined), while CMYK is subtractive (ink absorbs light). Some bright screen colors cannot be reproduced in CMYK print." },
+      { question: "How accurate is this RGB to CMYK conversion?", answer: "This tool uses a standard mathematical conversion. For professional print work, a color-managed workflow with ICC profiles will give more accurate results depending on your paper and printer." },
+      { question: "What does the K in CMYK stand for?", answer: "K stands for Key, which refers to the black ink plate (the key plate in the printing process). Using K instead of B avoids confusion with Blue in RGB." }
+    ],
+    howToSteps: [
+      { name: "Enter RGB values", text: "Type the red, green, and blue channel values (0–255 each)." },
+      { name: "See CMYK result", text: "The CMYK percentage values appear instantly below." },
+      { name: "Use for print", text: "Copy the CMYK values for use in your print design application." }
+    ],
+    useCases: ["Preparing digital designs for print output", "Matching brand colors between screen and print", "Converting web color codes for graphic design", "Print prepress color specification"],
+    relatedSlugs: ["color-converter", "color-picker", "unit-converter", "pixels-to-points"]
+  },
+  { slug: "fahrenheit-to-kelvin", name: "Fahrenheit to Kelvin Converter", description: "Convert Fahrenheit temperatures to Kelvin and Kelvin to Fahrenheit.", category: "converter", icon: "🌡️", keywords: ["fahrenheit to kelvin", "kelvin to fahrenheit", "temperature converter", "absolute temperature"], subcategory: "temperature", template: "simple-converter",
+    longDescription: "Convert Fahrenheit temperatures to Kelvin and Kelvin to Fahrenheit. The formula is K = (°F + 459.67) × 5/9. This conversion bridges the US customary temperature scale with the absolute SI temperature scale used in science and engineering.",
+    faqs: [
+      { question: "How do you convert Fahrenheit to Kelvin?", answer: "Use the formula K = (°F + 459.67) × 5/9. For example, 32°F = (32 + 459.67) × 5/9 = 273.15 K." },
+      { question: "What is 98.6°F (body temperature) in Kelvin?", answer: "98.6°F equals approximately 310.15 Kelvin." },
+      { question: "What is absolute zero in Fahrenheit?", answer: "Absolute zero (0 Kelvin) equals −459.67°F." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a temperature in either the Fahrenheit or Kelvin field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted temperature." }
+    ],
+    useCases: ["Scientific temperature data conversion", "Thermodynamics and engineering calculations", "Converting US weather data to scientific units", "Physics problem solving across temperature scales"],
+    relatedSlugs: ["celsius-to-fahrenheit", "kelvin-converter", "rankine-converter", "unit-converter"]
+  },
+  { slug: "meters-per-second-to-mph", name: "Meters per Second to MPH Converter", description: "Convert meters per second to miles per hour and back.", category: "converter", icon: "🏃", keywords: ["m/s to mph", "mph to m/s", "meters per second converter", "speed converter"], subcategory: "speed", template: "simple-converter",
+    longDescription: "Convert meters per second (m/s) to miles per hour (mph) and back. One meter per second equals approximately 2.237 miles per hour. Used in physics, sports science, automotive engineering, and meteorology to express speed across metric and imperial systems.",
+    faqs: [
+      { question: "How many mph is one meter per second?", answer: "One meter per second equals approximately 2.237 miles per hour." },
+      { question: "How many m/s is 60 mph?", answer: "60 mph equals approximately 26.82 m/s." },
+      { question: "What is the speed of sound in mph and m/s?", answer: "The speed of sound in air at sea level is approximately 343 m/s or about 767 mph." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a speed in either the m/s or mph field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted speed." }
+    ],
+    useCases: ["Physics and mechanics velocity calculations", "Sports performance analysis (sprinting, cycling)", "Wind speed and meteorology data conversion", "Automotive and vehicle speed specification"],
+    relatedSlugs: ["mph-to-kph", "knots-to-mph", "rpm-to-radians", "unit-converter"]
+  },
+  { slug: "cubic-feet-to-liters", name: "Cubic Feet to Liters Converter", description: "Convert cubic feet to liters and liters to cubic feet.", category: "converter", icon: "📦", keywords: ["cubic feet to liters", "liters to cubic feet", "volume converter", "cu ft to l"], subcategory: "volume", template: "simple-converter",
+    longDescription: "Convert cubic feet to liters and liters to cubic feet. One cubic foot equals approximately 28.317 liters. Useful for HVAC airflow calculations, aquarium volumes, freight and shipping container volumes, and any application that measures large volumes across US and metric systems.",
+    faqs: [
+      { question: "How many liters is one cubic foot?", answer: "One cubic foot equals approximately 28.317 liters." },
+      { question: "How many cubic feet is one liter?", answer: "One liter equals approximately 0.03531 cubic feet." },
+      { question: "When is cubic feet used vs liters?", answer: "Cubic feet are common in US construction, HVAC, and natural gas measurement, while liters are the preferred metric unit for fluid and gas volumes internationally." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a volume in either the cubic feet or liters field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted volume." }
+    ],
+    useCases: ["HVAC and ventilation airflow calculations", "Aquarium and fish tank volume sizing", "Shipping container and freight volume conversion", "Natural gas measurement and billing"],
+    relatedSlugs: ["liters-to-gallons", "bushels-to-liters", "quarts-to-liters", "unit-converter"]
+  },
+  { slug: "atmospheres-to-psi", name: "Atmospheres to PSI Converter", description: "Convert atmospheres to PSI and PSI to atmospheres.", category: "converter", icon: "🌡️", keywords: ["atm to psi", "psi to atm", "atmosphere converter", "pressure converter"], subcategory: "energy", template: "simple-converter",
+    longDescription: "Convert between standard atmospheres (atm) and pounds per square inch (PSI). One atmosphere equals exactly 14.696 PSI. Used in tire pressure, scuba diving, industrial engineering, and scientific pressure measurements.",
+    faqs: [
+      { question: "How many PSI is one atmosphere?", answer: "One standard atmosphere equals exactly 14.696 PSI." },
+      { question: "What is normal tire pressure in atm?", answer: "A typical car tire pressure of 32 PSI equals approximately 2.18 atmospheres." },
+      { question: "Is atm used in diving?", answer: "Yes, divers use atmospheres to measure water pressure. Every 10 meters of seawater depth adds approximately 1 atm of pressure." }
+    ],
+    howToSteps: [
+      { name: "Enter your value", text: "Type a pressure value in either the atmospheres or PSI field." },
+      { name: "See the result", text: "The conversion appears instantly in the other field." },
+      { name: "Copy the result", text: "Click copy to use the converted pressure." }
+    ],
+    useCases: ["Converting tire pressure readings between units", "Scuba diving pressure calculations", "Industrial pressure gauge conversions", "Scientific and laboratory pressure measurements"],
+    relatedSlugs: ["torr-to-pascal", "unit-converter", "horsepower-to-watts", "kelvin-converter"]
+  },
+  { slug: "scientific-notation-converter", name: "Scientific Notation Converter", description: "Convert numbers to and from scientific notation.", category: "converter", icon: "🔬", keywords: ["scientific notation", "exponential notation", "e notation", "number converter"], subcategory: "number",
+    longDescription: "Convert any number to scientific notation (e.g. 1.5 × 10^6) or convert scientific notation back to a standard decimal number. Supports very large and very small numbers with customizable significant figures. Essential for scientists, engineers, and students working with extreme values.",
+    faqs: [
+      { question: "What is scientific notation?", answer: "Scientific notation expresses numbers as a coefficient between 1 and 10 multiplied by a power of 10, e.g. 3.0 × 10^8 for the speed of light in m/s." },
+      { question: "How many significant figures are shown?", answer: "You can configure the number of significant figures from 1 to 10 for precise control over the output." },
+      { question: "Can it handle negative exponents?", answer: "Yes, numbers smaller than 1 are expressed with negative exponents, e.g. 0.005 = 5.0 × 10^-3." }
+    ],
+    howToSteps: [
+      { name: "Enter a number", text: "Type any decimal number or scientific notation expression." },
+      { name: "Set precision", text: "Choose the number of significant figures for the output." },
+      { name: "View conversion", text: "See the number in both standard and scientific notation formats." }
+    ],
+    useCases: ["Converting astronomical distances for physics homework", "Formatting lab measurements for scientific papers", "Working with very small molecular or atomic measurements", "Understanding exponential notation in engineering contexts"],
+    relatedSlugs: ["base-number-converter", "binary-calculator", "exponent-calculator", "unit-converter"]
+  },
+  { slug: "font-size-converter", name: "Font Size Converter", description: "Convert between px, pt, em, rem, and percentage font sizes.", category: "converter", icon: "🔤", keywords: ["font size", "px to pt", "em to px", "rem converter", "css font size"], subcategory: "web",
+    longDescription: "Convert font sizes between pixels (px), points (pt), em, rem, and percentages. Set a base font size to calculate accurate em/rem/percentage conversions. Essential for web designers and developers working with responsive typography across different CSS units.",
+    faqs: [
+      { question: "What is the difference between em and rem?", answer: "Em is relative to the parent element's font size, while rem is relative to the root (html) element's font size. Rem is more predictable for consistent sizing." },
+      { question: "How many points is one pixel?", answer: "At standard screen resolution (96 DPI), 1px = 0.75pt, or equivalently 1pt = 1.333px." },
+      { question: "What base size should I use?", answer: "The default browser font size is 16px, which is the standard base for rem/em calculations in most projects." }
+    ],
+    howToSteps: [
+      { name: "Set base font size", text: "Enter your root/base font size (default 16px) for accurate em/rem calculations." },
+      { name: "Enter a value", text: "Type a font size in any unit — px, pt, em, rem, or %." },
+      { name: "See all conversions", text: "All equivalent values in other units are displayed instantly." }
+    ],
+    useCases: ["Converting print point sizes to web pixel sizes", "Calculating rem values for responsive CSS", "Matching design mockup font sizes to CSS units", "Ensuring consistent typography across platforms"],
+    relatedSlugs: ["em-to-px", "pixels-to-points", "css-unit-converter", "unit-converter"]
   },
 ];

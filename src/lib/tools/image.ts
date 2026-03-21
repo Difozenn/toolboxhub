@@ -264,6 +264,126 @@ export const imageTools: Tool[] = [
     ],
     relatedSlugs: ["image-resizer", "image-filter", "social-image-resizer"]
   },
+  { slug: "color-palette-from-image", name: "Color Palette Extractor", description: "Extract a dominant color palette from any uploaded image.", category: "image", icon: "🎨", keywords: ["color palette extractor", "extract colors from image", "image colors", "dominant colors"], subcategory: "create",
+    longDescription: "Upload any photo or graphic and automatically extract the dominant colors as a ready-to-use color palette. The color palette extractor uses clustering algorithms to identify the most prominent hues and returns them as HEX, RGB, and HSL codes — perfect for building design systems, matching brand colors, or finding inspiration from nature and photography.",
+    faqs: [
+      { question: "How many colors does the extractor return?", answer: "The tool returns between 5 and 10 dominant colors by default, depending on the image's color complexity. You can adjust the number of palette colors in the settings." },
+      { question: "Can I use this to extract brand colors from a logo?", answer: "Yes. Upload any logo or brand image and the tool identifies the key brand colors as precise HEX codes you can use in your designs." },
+      { question: "Does image quality affect the palette accuracy?", answer: "Higher resolution images generally produce more accurate palettes, especially for subtle color variations. Very small or low-resolution images may produce less refined results." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Upload your photo, logo, or graphic by dragging it into the tool or clicking to browse." },
+      { name: "Step 2", text: "The tool analyzes the image and extracts the dominant color palette automatically." },
+      { name: "Step 3", text: "Copy the HEX, RGB, or HSL values for any palette color to use in your design tool or CSS." }
+    ],
+    useCases: [
+      "Designers extracting a cohesive color scheme from a mood board or inspiration photo",
+      "Brand designers verifying or documenting the exact color codes used in a logo",
+      "Web developers matching a website color scheme to a product or hero image",
+      "Artists analyzing the color palette of a painting or illustration"
+    ],
+    relatedSlugs: ["image-color-picker", "color-palette-generator", "image-filter"]
+  },
+  { slug: "image-to-ascii", name: "Image to ASCII Art", description: "Convert any image into ASCII art text output.", category: "image", icon: "🖥️", keywords: ["image to ascii", "ascii art", "ascii converter", "text art"], subcategory: "create",
+    longDescription: "Transform any photo or image into ASCII art — a mosaic of text characters that recreates the original image using varying character densities. Adjust the output width, character density, and color mode to create everything from simple monochrome text art to detailed ASCII portraits, ready to share in forums, chats, and text files.",
+    faqs: [
+      { question: "What characters are used to create the ASCII art?", answer: "The tool maps pixel brightness to characters with different visual densities — from space (lightest) through punctuation and letters to # and @ (darkest), recreating shading through character choice." },
+      { question: "Can I control how detailed the ASCII art is?", answer: "Yes. Adjust the output width (number of characters per row) and character density settings to control detail level. Higher width values produce more detailed but larger output." },
+      { question: "Can I copy and paste the ASCII art into Discord or social media?", answer: "Yes. The ASCII art output is plain text that can be copied and pasted anywhere text is accepted, though best results appear in monospace-font environments." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Upload your image by dragging it in or clicking to browse your files." },
+      { name: "Step 2", text: "Adjust the output width and density settings to control the detail level of the ASCII art." },
+      { name: "Step 3", text: "Copy the ASCII art output or download it as a .txt file to share anywhere." }
+    ],
+    useCases: [
+      "Creating ASCII art portraits for social media profiles and forums",
+      "Generating text-based art for terminal applications and developer tools",
+      "Converting logos into ASCII for README files and command-line interfaces",
+      "Creating retro-style ASCII art for creative projects and digital zines"
+    ],
+    relatedSlugs: ["image-filter", "image-color-picker", "favicon-generator"]
+  },
+  { slug: "image-metadata-viewer", name: "Image Metadata Viewer", description: "View EXIF data, GPS coordinates, camera settings, and metadata from images.", category: "image", icon: "📋", keywords: ["exif viewer", "image metadata", "photo exif", "image info"], subcategory: "optimize",
+    longDescription: "Extract and display all EXIF metadata embedded in your photos — including camera make and model, shutter speed, aperture, ISO, focal length, GPS coordinates, and date taken. All processing happens locally in your browser, so your photos are never uploaded to any server. Use it to review photo details, verify location data, or check privacy before sharing images online.",
+    faqs: [
+      { question: "What metadata does the viewer show?", answer: "The viewer displays all standard EXIF data including camera make/model, date/time taken, shutter speed, f-stop, ISO, focal length, flash status, GPS latitude/longitude, image dimensions, and color space." },
+      { question: "Do all images contain EXIF data?", answer: "Not all images have EXIF data. Photos taken on cameras and smartphones typically contain rich EXIF metadata. Images that have been exported from design tools, compressed online, or explicitly stripped will have minimal or no metadata." },
+      { question: "Can I use this to check if a photo contains GPS coordinates before sharing?", answer: "Yes. This is one of the most common privacy uses. The tool will show any embedded GPS coordinates so you can decide whether to strip the location data before posting online." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Upload the image file you want to inspect — JPEG and TIFF files contain the richest EXIF data." },
+      { name: "Step 2", text: "Browse the metadata table showing all available EXIF fields and values." },
+      { name: "Step 3", text: "Note any sensitive data such as GPS coordinates and consider using a metadata stripper before sharing the image publicly." }
+    ],
+    useCases: [
+      "Photographers reviewing camera settings used in specific shots for learning",
+      "Privacy-conscious users checking whether photos contain GPS location data",
+      "Photo editors verifying date, camera, and lens data for archival purposes",
+      "Journalists and investigators verifying the authenticity and origin of images"
+    ],
+    relatedSlugs: ["image-compressor", "image-resizer", "image-color-picker"]
+  },
+  { slug: "image-border-adder", name: "Image Border Adder", description: "Add customizable borders and frames to images.", category: "image", icon: "🖼️", keywords: ["image border", "add border to image", "photo frame", "image frame"], subcategory: "create",
+    longDescription: "Add a customizable border or decorative frame to any image in seconds — choose the border color, width, corner radius, and style to create everything from a simple white Instagram-style margin to an elaborate decorative frame. All processing happens in your browser with instant preview before downloading.",
+    faqs: [
+      { question: "Can I add a white border for an Instagram post?", answer: "Yes. Select white as the border color and set your desired width in pixels for a clean, minimalist Instagram-style white border that works perfectly for square or portrait posts." },
+      { question: "Can I set different border widths on each side?", answer: "Yes. In advanced mode, you can set different pixel values for top, right, bottom, and left borders, similar to CSS padding, to create asymmetric frame effects." },
+      { question: "Does adding a border change the image resolution?", answer: "Adding a border increases the total pixel dimensions of the image — a 1000px image with a 50px border becomes 1100px wide and 1100px tall. The original image content resolution is unchanged." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Upload the image you want to add a border to." },
+      { name: "Step 2", text: "Choose your border color, width in pixels, and optionally a corner radius for rounded corners." },
+      { name: "Step 3", text: "Preview the result and click Download to save the bordered image." }
+    ],
+    useCases: [
+      "Adding white margins to photos for a Polaroid or print-style look",
+      "Creating consistent framed thumbnails for a YouTube channel or blog",
+      "Adding colored borders to product images to match brand guidelines",
+      "Preparing photos with decorative frames for digital albums or presentations"
+    ],
+    relatedSlugs: ["image-resizer", "screenshot-beautifier", "image-filter"]
+  },
+  { slug: "image-overlay", name: "Image Overlay", description: "Overlay two images together with adjustable opacity and blend modes.", category: "image", icon: "🔀", keywords: ["image overlay", "blend images", "overlay two images", "image blend mode"], subcategory: "create",
+    longDescription: "Combine two images by overlaying one on top of the other with full control over opacity, position, and blend mode. The image overlay tool lets you create double exposures, add texture overlays, blend a logo over a photo, or combine images creatively — entirely in your browser with an instant live preview.",
+    faqs: [
+      { question: "What blend modes are available?", answer: "Available blend modes include Normal, Multiply, Screen, Overlay, Soft Light, Hard Light, Difference, Exclusion, and more — matching standard Photoshop blend mode behavior." },
+      { question: "Can I control the position of the overlay image?", answer: "Yes. Drag the overlay image to any position over the base image, or use numeric position inputs for precise placement." },
+      { question: "Can I resize the overlay image independently?", answer: "Yes. The overlay image can be scaled up or down independently of the base image using a resize handle or percentage input." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Upload your base (background) image and your overlay image." },
+      { name: "Step 2", text: "Adjust the overlay's position, scale, opacity, and blend mode using the controls." },
+      { name: "Step 3", text: "Preview the combined result and download the merged image as a PNG." }
+    ],
+    useCases: [
+      "Creating double-exposure portrait photos from two separate images",
+      "Adding texture or grain overlays to photos for an artistic effect",
+      "Overlaying a logo or watermark on a photo with blend mode integration",
+      "Combining a background image with a graphic element for social media content"
+    ],
+    relatedSlugs: ["image-watermark", "image-filter", "image-compressor"]
+  },
+  { slug: "meme-generator", name: "Meme Generator", description: "Add impact-font text to images to create memes instantly.", category: "image", icon: "😂", keywords: ["meme generator", "meme maker", "create meme", "impact font meme"], subcategory: "create",
+    longDescription: "Create classic and custom memes by adding top and bottom text captions to any image using the iconic Impact font with white fill and black outline. Upload your own image or choose from popular meme templates, then customize the text and download the finished meme — ready to share anywhere.",
+    faqs: [
+      { question: "Can I upload my own image as the meme background?", answer: "Yes. Upload any image from your device and add top, bottom, or custom-positioned text to create a completely unique meme." },
+      { question: "Can I change the font or text color?", answer: "The classic meme style uses white Impact font with black outline. Advanced mode lets you adjust font size, color, and position for custom meme styles." },
+      { question: "Are meme templates included?", answer: "Yes. A selection of popular meme template images is included for instant use without needing to upload your own image." }
+    ],
+    howToSteps: [
+      { name: "Step 1", text: "Upload your own image or select a meme template from the library." },
+      { name: "Step 2", text: "Enter your top text and bottom text captions in the respective input fields." },
+      { name: "Step 3", text: "Preview the meme and click Download to save it as a PNG ready to share." }
+    ],
+    useCases: [
+      "Creating funny social media memes to share with friends and followers",
+      "Adding humorous captions to photos for online communities and forums",
+      "Generating visual jokes for presentations and team communications",
+      "Customizing reaction memes for specific situations or inside jokes"
+    ],
+    relatedSlugs: ["image-filter", "screenshot-beautifier", "image-watermark"]
+  },
   { slug: "gif-maker", name: "GIF Maker", description: "Create animated GIFs from multiple images with custom timing.", category: "image", icon: "🎞️", keywords: ["gif maker", "create gif", "animated gif", "image to gif"], subcategory: "create",
     longDescription: "GIF Maker assembles multiple images into a smooth animated GIF directly in your browser. Upload your frames in order, set the delay between each frame, choose looping options, and download the finished GIF — no software installation required, and your images never leave your device.",
     faqs: [
@@ -283,5 +403,20 @@ export const imageTools: Tool[] = [
       "Turning a set of illustration frames into a simple animated sticker or emote"
     ],
     relatedSlugs: ["image-resizer", "image-compressor", "svg-to-png"]
+  },
+  { slug: "color-mixer", name: "Color Mixer", description: "Mix two or more colors together and see the resulting blended color.", category: "image", icon: "🎨", keywords: ["color mixer", "color blend", "mix colors", "color combination", "paint mixer"], subcategory: "color",
+    longDescription: "Blend two or more colors together to see the resulting mixed color in real time. Choose colors using hex codes, RGB values, or the color picker. Shows the blended result with its hex, RGB, and HSL values ready to copy.",
+    faqs: [
+      { question: "How does the color mixing work?", answer: "Colors are blended by averaging the RGB components of all selected colors, producing a smooth midpoint blend." },
+      { question: "Can I mix more than two colors?", answer: "Yes, you can add up to 5 colors and see the blended result of all of them combined." },
+      { question: "What format is the output?", answer: "The blended color is displayed as a preview swatch with hex, RGB, and HSL values that you can copy with one click." }
+    ],
+    howToSteps: [
+      { name: "Pick colors", text: "Choose two or more colors using the color pickers or enter hex values." },
+      { name: "View the blend", text: "The mixed color result updates in real time as you adjust." },
+      { name: "Copy the result", text: "Copy the resulting hex, RGB, or HSL value for use in your project." }
+    ],
+    useCases: ["Finding the midpoint between two brand colors", "Exploring color harmony and combinations for design", "Teaching color theory and mixing concepts", "Creating gradients and transitional colors for UI design"],
+    relatedSlugs: ["color-picker", "color-converter", "gradient-generator", "color-palette-generator"]
   },
 ];

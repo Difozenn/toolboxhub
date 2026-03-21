@@ -22,6 +22,12 @@ export const financeTools: Tool[] = [
       { question: "How is hourly rate calculated from salary?", answer: "Divide annual salary by 52 weeks, then by hours per week. For a $50,000 salary at 40 hours/week: $50,000 / 52 / 40 = $24.04/hour." },
       { question: "Does it account for taxes?", answer: "This calculator shows gross (pre-tax) conversions. Use the Tax Estimator for after-tax calculations." }
     ],
+    howToSteps: [
+      { name: "Enter your salary or hourly rate", text: "Type your annual salary or hourly wage into the corresponding field." },
+      { name: "Adjust work hours", text: "Set your hours per week (default 40) and weeks per year if they differ from standard." },
+      { name: "View the conversion", text: "See the equivalent hourly rate or annual salary calculated instantly." }
+    ],
+    useCases: ["Comparing job offers listed as salary vs. hourly pay", "Calculating freelance or contract rates from a target annual income", "Understanding the true hourly value of a salaried position", "Budgeting based on hourly earnings for part-time workers"],
     relatedSlugs: ["tax-estimator", "payroll-calculator", "mortgage-calculator", "tip-calculator"]
   },
   { slug: "tax-estimator", name: "Tax Estimator", description: "Estimate your federal income tax based on income and filing status.", category: "finance", icon: "🏛️", keywords: ["tax calculator", "income tax", "tax estimator", "federal tax"], subcategory: "tax", template: "simple-calculator",
@@ -293,5 +299,146 @@ export const financeTools: Tool[] = [
     ],
     useCases: ["Calculating how much foreign currency to bring on a trip", "Comparing exchange rates from different providers", "Estimating the cost of an international wire transfer", "Converting international invoices or pricing to local currency"],
     relatedSlugs: ["currency-converter", "inflation-calculator", "vat-calculator"]
+  },
+  // ── New (10) ──────────────────────────────────────────
+  { slug: "tip-splitter", name: "Tip & Bill Splitter", description: "Split a restaurant bill and calculate tip amounts per person.", category: "finance", icon: "🍽️", keywords: ["tip calculator", "bill splitter", "split bill", "restaurant tip", "tip per person"], subcategory: "personal",
+    longDescription: "Calculate tip amounts and split any bill evenly among a group of people. Enter the subtotal, choose a tip percentage, and specify the number of people to instantly see the tip per person, total per person, and grand total. Also supports uneven splits where individuals have different sub-totals.",
+    faqs: [
+      { question: "Can I split the bill unevenly?", answer: "Yes — in detailed mode, enter each person's individual subtotal and the tool calculates a proportional tip and total for each person based on their share of the bill." },
+      { question: "What tip percentages are standard?", answer: "In the United States, 15% is the minimum customary tip, 18% is common, and 20% is standard for good service. The tool includes quick-select buttons for common percentages." }
+    ],
+    howToSteps: [
+      { name: "Enter the bill amount", text: "Type the total before tip and taxes." },
+      { name: "Choose tip and party size", text: "Select a tip percentage and enter how many people are splitting the bill." },
+      { name: "View per-person amounts", text: "See tip per person, total per person, and the grand total instantly." }
+    ],
+    useCases: ["Splitting restaurant bills at group dinners", "Calculating fair tip amounts for large parties", "Settling bar tabs or food delivery orders among friends", "Teaching tip calculation as a real-world maths application"],
+    relatedSlugs: ["percentage-calculator", "vat-calculator", "hourly-rate-calculator"]
+  },
+  { slug: "hourly-rate-calculator", name: "Freelance Hourly Rate Calculator", description: "Calculate the minimum hourly rate needed to meet your income goals.", category: "finance", icon: "💼", keywords: ["hourly rate", "freelance rate", "contractor rate", "billable rate", "day rate"], subcategory: "business",
+    longDescription: "Calculate the hourly billing rate you need to charge as a freelancer or contractor to meet your target annual income. Input your desired net income, estimated tax rate, number of billable hours per week, and weeks worked per year to get the minimum hourly rate that covers your take-home pay, taxes, and business expenses.",
+    faqs: [
+      { question: "Why should my freelance rate be higher than a salaried equivalent?", answer: "As a freelancer you pay self-employment tax (in the US, ~15.3%), cover your own benefits (health, retirement), pay for software and equipment, and have unpaid hours for admin, marketing, and gaps between projects. These factors significantly increase the required rate." },
+      { question: "What is a billable utilisation rate?", answer: "Utilisation rate is the percentage of your working hours that are actually billed to clients. A typical freelancer bills 60-75% of their time — the rest is admin, business development, and training. Enter your realistic utilisation to get an accurate rate." }
+    ],
+    howToSteps: [
+      { name: "Enter your income target", text: "Input your desired annual take-home income." },
+      { name: "Add costs and tax", text: "Enter your estimated tax rate, annual business expenses, and billable hours per week." },
+      { name: "See your minimum rate", text: "The calculator shows the hourly rate you must charge to meet your target income." }
+    ],
+    useCases: ["Setting a freelance day rate for client proposals", "Comparing freelance income potential vs salaried employment", "Calculating the minimum viable rate before taking on a project", "Planning income and pricing as a new independent contractor"],
+    relatedSlugs: ["tip-splitter", "roi-calculator", "markup-to-margin"]
+  },
+  { slug: "cost-per-unit", name: "Cost Per Unit Calculator", description: "Calculate cost per unit to compare product value and buying efficiency.", category: "finance", icon: "🏷️", keywords: ["cost per unit", "unit price", "price per item", "cost comparison", "value calculator"], subcategory: "personal",
+    longDescription: "Compare the true cost per unit between different product sizes, package quantities, or supplier prices. Enter the total price and quantity for each option to instantly calculate and compare the cost per unit, helping you identify the best-value purchase every time.",
+    faqs: [
+      { question: "What counts as a 'unit'?", answer: "A unit can be any measurable quantity — items, ounces, grams, litres, metres, etc. The tool compares price-per-unit across all options using whatever unit you specify." },
+      { question: "Can I compare more than two options?", answer: "Yes — add up to six product options to compare simultaneously. The best value is highlighted automatically." }
+    ],
+    howToSteps: [
+      { name: "Enter the first product", text: "Input the price and quantity (number of units or weight) for the first product." },
+      { name: "Add more options", text: "Add additional product variants or competitor prices with their respective quantities." },
+      { name: "Compare", text: "The cost per unit for each option is calculated and the best value is highlighted." }
+    ],
+    useCases: ["Comparing supermarket product sizes to find the best value", "Evaluating bulk purchase savings against single-unit prices", "Comparing supplier quotes on a per-unit basis", "Teaching price comparison and consumer maths skills"],
+    relatedSlugs: ["markup-to-margin", "percentage-calculator", "tip-splitter"]
+  },
+  { slug: "markup-to-margin", name: "Markup to Margin Converter", description: "Convert between markup percentage and profit margin percentage.", category: "finance", icon: "📊", keywords: ["markup to margin", "profit margin", "markup calculator", "margin markup", "gross margin"], subcategory: "business",
+    longDescription: "Convert between markup (percentage above cost) and gross profit margin (percentage of selling price) instantly. Markup and margin are often confused — this tool clarifies the relationship, converts between the two, and calculates the selling price and profit amount from any combination of cost, markup, or margin inputs.",
+    faqs: [
+      { question: "What is the difference between markup and margin?", answer: "Markup is profit as a percentage of cost: Markup% = (Profit / Cost) × 100. Margin is profit as a percentage of selling price: Margin% = (Profit / Selling Price) × 100. A 50% markup equals a 33.3% margin — they are not the same." },
+      { question: "Which should I use in business?", answer: "Retailers typically think in margin terms (it's directly tied to revenue percentage). Manufacturers and product companies often use markup (it's directly tied to cost). Knowing both helps prevent pricing errors." }
+    ],
+    howToSteps: [
+      { name: "Enter cost and markup or margin", text: "Input your cost price and either the markup percentage or the margin percentage." },
+      { name: "Convert", text: "The tool instantly shows the equivalent markup, margin, selling price, and profit amount." },
+      { name: "Use the pricing data", text: "Apply the results to price your products correctly for your target margin." }
+    ],
+    useCases: ["Pricing products to achieve a target profit margin", "Converting between markup and margin for financial reporting", "Checking that supplier pricing meets margin requirements", "Teaching the markup vs margin distinction in business education"],
+    relatedSlugs: ["cost-per-unit", "roi-calculator", "hourly-rate-calculator"]
+  },
+  { slug: "simple-interest-calculator", name: "Simple Interest Calculator", description: "Calculate simple interest on a loan or investment.", category: "finance", icon: "📈", keywords: ["simple interest", "interest calculator", "principal interest", "loan interest"], subcategory: "investing",
+    longDescription: "Calculate simple interest earned or owed on a principal amount at a fixed annual rate over any time period. Shows total interest, final amount, and a year-by-year breakdown. Useful for short-term loans, bonds, and basic investment return estimates.",
+    faqs: [
+      { question: "What is the simple interest formula?", answer: "Simple Interest = Principal × Rate × Time, where Rate is the annual interest rate as a decimal and Time is the number of years. The total amount is Principal + Simple Interest." },
+      { question: "How does simple interest differ from compound interest?", answer: "In simple interest, interest is calculated only on the original principal. In compound interest, interest is calculated on the principal plus previously earned interest. Simple interest produces a lower return/cost over time for the same rate." }
+    ],
+    howToSteps: [
+      { name: "Enter the principal", text: "Input the starting loan or investment amount." },
+      { name: "Set rate and time", text: "Enter the annual interest rate (%) and the loan or investment duration in years." },
+      { name: "View the results", text: "See the interest amount, total value, and annual breakdown table." }
+    ],
+    useCases: ["Estimating interest on a short-term personal loan", "Calculating returns on Treasury bills or short-term bonds", "Teaching interest concepts in financial literacy courses", "Comparing simple vs compound interest scenarios"],
+    relatedSlugs: ["future-value-calculator", "compound-interest-calculator", "present-value-calculator"]
+  },
+  { slug: "future-value-calculator", name: "Future Value Calculator", description: "Calculate the future value of an investment with regular contributions.", category: "finance", icon: "📈", keywords: ["future value", "investment growth", "fv calculator", "savings calculator"], subcategory: "investing",
+    longDescription: "Calculate the future value of a lump-sum investment or regular savings contributions over time with compound interest. Enter the present value, annual contribution, interest rate, and number of years to project investment growth and see a year-by-year accumulation table.",
+    faqs: [
+      { question: "What is future value?", answer: "Future Value (FV) is the projected value of a current asset or investment at a specific date in the future, based on an assumed growth rate. FV = PV × (1 + r)^n for lump sums, plus the future value of any regular contributions." },
+      { question: "Does it account for regular contributions?", answer: "Yes — you can enter a recurring contribution amount (monthly or annual) alongside the initial lump sum to model a savings or investment plan with regular deposits." }
+    ],
+    howToSteps: [
+      { name: "Enter present value and rate", text: "Input the initial investment amount and expected annual interest or growth rate." },
+      { name: "Add contributions and timeframe", text: "Optionally add regular contribution amount and select the investment period in years." },
+      { name: "View growth projection", text: "See the future value and a year-by-year growth chart." }
+    ],
+    useCases: ["Projecting retirement savings growth over time", "Estimating investment portfolio value at a target date", "Planning education fund contributions and growth", "Comparing scenarios with different contribution amounts or rates"],
+    relatedSlugs: ["present-value-calculator", "compound-interest-calculator", "simple-interest-calculator"]
+  },
+  { slug: "present-value-calculator", name: "Present Value Calculator", description: "Calculate the present value of a future sum or cash flow stream.", category: "finance", icon: "📉", keywords: ["present value", "discounted value", "pv calculator", "discount rate", "npv"], subcategory: "investing",
+    longDescription: "Calculate the present value (PV) of a future lump sum or a series of future cash flows using a discount rate. Useful for investment valuation, bond pricing, lease analysis, and determining whether a future payment is worth a given amount today.",
+    faqs: [
+      { question: "What is present value?", answer: "Present Value is today's worth of a future amount, discounted at a given rate. PV = FV / (1 + r)^n. It reflects the principle that money today is worth more than the same amount in the future due to its earning potential." },
+      { question: "What discount rate should I use?", answer: "The discount rate represents your required rate of return or opportunity cost. Common choices are the inflation rate, the risk-free rate (Treasury bond yield), or your personal investment hurdle rate." }
+    ],
+    howToSteps: [
+      { name: "Enter the future value", text: "Input the amount you expect to receive in the future." },
+      { name: "Set discount rate and time", text: "Enter the annual discount rate and the number of years until the payment." },
+      { name: "Calculate present value", text: "Click Calculate to see what the future amount is worth in today's money." }
+    ],
+    useCases: ["Valuing a future lump-sum payment in today's terms", "Calculating the present value of a bond's future cash flows", "Comparing lease vs buy decisions for equipment", "Evaluating whether a future investment payout justifies the current cost"],
+    relatedSlugs: ["future-value-calculator", "compound-interest-calculator", "roi-calculator"]
+  },
+  { slug: "dividend-calculator", name: "Dividend Yield Calculator", description: "Calculate dividend yield, annual income, and dividend growth projections.", category: "finance", icon: "💰", keywords: ["dividend yield", "dividend calculator", "dividend income", "stock dividend"], subcategory: "investing",
+    longDescription: "Calculate dividend yield from stock price and annual dividend, estimate annual dividend income from your total investment, and project dividend growth over multiple years using the dividend growth model. Includes DRIP (dividend reinvestment) projection to show compounded growth.",
+    faqs: [
+      { question: "How is dividend yield calculated?", answer: "Dividend Yield = (Annual Dividend Per Share / Stock Price) × 100. For example, a stock paying $2 per year trading at $40 has a 5% dividend yield." },
+      { question: "What is DRIP?", answer: "DRIP stands for Dividend Reinvestment Plan. Instead of receiving cash dividends, they are automatically used to buy more shares. The compounding effect of DRIP can significantly increase total returns over time." }
+    ],
+    howToSteps: [
+      { name: "Enter stock details", text: "Input the current stock price, annual dividend per share, and your total investment amount." },
+      { name: "Set growth assumptions", text: "Enter an expected annual dividend growth rate and investment period for projections." },
+      { name: "View income projections", text: "See annual dividend income, yield, and projected growth with and without DRIP." }
+    ],
+    useCases: ["Evaluating dividend-paying stocks for income investing", "Projecting passive income from a dividend portfolio", "Comparing dividend yield across different stocks", "Planning retirement income from dividend investments"],
+    relatedSlugs: ["future-value-calculator", "roi-calculator", "compound-interest-calculator"]
+  },
+  { slug: "rent-vs-buy", name: "Rent vs Buy Calculator", description: "Compare the true cost of renting vs buying a home over time.", category: "finance", icon: "🏠", keywords: ["rent vs buy", "renting vs buying", "home buying calculator", "mortgage vs rent"], subcategory: "personal",
+    longDescription: "Compare the long-term financial impact of renting versus buying a home. Input purchase price, down payment, mortgage rate, rent amount, and investment assumptions to see the net cost of each option over your chosen time horizon, including home appreciation, equity build-up, opportunity cost, and transaction costs.",
+    faqs: [
+      { question: "Is it always better to buy than rent?", answer: "Not necessarily — it depends on your market, how long you stay, your down payment, and what you could earn by investing that down payment instead. This calculator shows the break-even point where buying becomes more cost-effective." },
+      { question: "What factors does the calculator account for?", answer: "For buying: mortgage payments, property tax, insurance, maintenance (1-2% of value/year), HOA, closing costs, and home appreciation. For renting: monthly rent, annual rent increases, and the investment return on the down payment." }
+    ],
+    howToSteps: [
+      { name: "Enter home purchase details", text: "Input the purchase price, down payment, mortgage rate, and loan term." },
+      { name: "Enter rental and investment details", text: "Input the monthly rent, expected rent increase, and assumed investment return rate." },
+      { name: "Compare over time", text: "View the net cost comparison and break-even timeline chart for both options." }
+    ],
+    useCases: ["Deciding whether to buy or continue renting in your housing market", "Calculating how long you need to stay in a home for buying to make sense", "Comparing home ownership costs vs renting and investing the difference", "Presenting a financial analysis before making a home purchase decision"],
+    relatedSlugs: ["mortgage-calculator", "present-value-calculator", "compound-interest-calculator"]
+  },
+  { slug: "cost-of-living-calculator", name: "Cost of Living Calculator", description: "Estimate the salary needed to maintain your lifestyle in a new city.", category: "finance", icon: "🌆", keywords: ["cost of living", "salary comparison", "city cost comparison", "relocation calculator"], subcategory: "personal",
+    longDescription: "Estimate how much salary you need in a new city to maintain the same standard of living as your current location. Enter your current city, target city, and current salary to get a cost-adjusted salary recommendation based on relative costs of housing, food, transport, healthcare, and utilities.",
+    faqs: [
+      { question: "How is the cost of living index calculated?", answer: "The calculator uses relative cost indices for major expense categories — housing (the largest factor), groceries, transport, healthcare, and utilities. These are weighted by their typical share of household spending to produce an overall adjustment factor." },
+      { question: "Is the comparison accurate for all cities?", answer: "The tool provides estimates based on average cost indices and is most useful for ballpark comparisons and salary negotiation starting points. Actual costs vary significantly by neighbourhood, lifestyle, and individual circumstances." }
+    ],
+    howToSteps: [
+      { name: "Enter your current situation", text: "Select your current city and input your current annual salary." },
+      { name: "Choose your target city", text: "Select the city you are considering moving to." },
+      { name: "View the adjusted salary", text: "See the equivalent salary needed in the target city, with a category-by-category cost breakdown." }
+    ],
+    useCases: ["Negotiating salary for a job offer in a new city", "Evaluating a remote work relocation decision financially", "Comparing the real value of job offers in different locations", "Planning an international or interstate move budget"],
+    relatedSlugs: ["rent-vs-buy", "hourly-rate-calculator", "inflation-calculator"]
   },
 ];
