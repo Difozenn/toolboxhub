@@ -20,7 +20,9 @@ function getCategoryLabel(categoryValue: string): string {
 
 export function generateToolMetadata(tool: Tool): Metadata {
   const title = `${tool.name} - Free Online ${getCategoryLabel(tool.category)} | ${SITE_NAME}`;
-  const description = tool.description;
+  const description = tool.longDescription
+    ? tool.longDescription.slice(0, 160)
+    : tool.description;
   const url = `${BASE_URL}/tools/${tool.slug}`;
 
   return {

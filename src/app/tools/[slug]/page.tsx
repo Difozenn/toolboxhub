@@ -7,6 +7,7 @@ import {
   generateToolJsonLd,
   generateFaqJsonLd,
   generateHowToJsonLd,
+  generateBreadcrumbJsonLd,
 } from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
 import AdBanner from "@/components/AdBanner";
@@ -52,6 +53,11 @@ export default async function ToolPage({
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
       {/* JSON-LD schemas */}
       <JsonLd data={generateToolJsonLd(tool)} />
+      <JsonLd data={generateBreadcrumbJsonLd([
+        { label: "Home", href: "/" },
+        ...(category ? [{ label: category.label, href: `/categories/${tool.category}` }] : []),
+        { label: tool.name, href: `/tools/${tool.slug}` },
+      ])} />
       {tool.faqs && tool.faqs.length > 0 && (
         <JsonLd data={generateFaqJsonLd(tool.faqs)} />
       )}
