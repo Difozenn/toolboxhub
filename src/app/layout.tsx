@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import { Analytics } from "@vercel/analytics/next";
 import { generateSiteJsonLd, BASE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/seo";
 import { tools } from "@/lib/tools";
 
@@ -88,6 +89,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
