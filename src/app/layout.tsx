@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import { generateSiteJsonLd, BASE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/seo";
+import { tools } from "@/lib/tools";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,14 +31,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
-    title: `${SITE_NAME} - 100+ Free Online Tools`,
+    title: `${SITE_NAME} - 500+ Free Online Tools`,
     description: SITE_DESCRIPTION,
     url: BASE_URL,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} - 100+ Free Online Tools`,
+    title: `${SITE_NAME} - 500+ Free Online Tools`,
     description: SITE_DESCRIPTION,
   },
   alternates: {

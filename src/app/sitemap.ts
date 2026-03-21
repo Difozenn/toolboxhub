@@ -13,6 +13,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 1.0,
   };
 
+  // Search page
+  const searchPage: MetadataRoute.Sitemap[number] = {
+    url: `${BASE_URL}/search`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.6,
+  };
+
   // Tool pages
   const toolPages: MetadataRoute.Sitemap = tools.map((tool) => ({
     url: `${BASE_URL}/tools/${tool.slug}`,
@@ -29,5 +37,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [homepage, ...toolPages, ...categoryPages];
+  return [homepage, searchPage, ...categoryPages, ...toolPages];
 }

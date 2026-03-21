@@ -1,12 +1,14 @@
 {
   "name": "toolboxhub",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npx tsx scripts/generate-tool-registry.ts",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate-registry": "npx tsx scripts/generate-tool-registry.ts"
   },
   "dependencies": {
     "next": "16.2.0",
@@ -21,6 +23,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.0",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }

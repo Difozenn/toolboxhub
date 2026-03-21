@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Background: Rounded square -->
+  <rect width="512" height="512" rx="96" fill="#2563eb"/>
+
+  <!-- Toolbox body -->
+  <rect x="96" y="224" width="320" height="192" rx="24" fill="white" opacity="0.95"/>
+
+  <!-- Toolbox lid -->
+  <rect x="80" y="192" width="352" height="56" rx="16" fill="white"/>
+
+  <!-- Handle -->
+  <rect x="192" y="128" width="128" height="80" rx="16" fill="none" stroke="white" stroke-width="24"/>
+
+  <!-- Toolbox clasp / center diamond -->
+  <rect x="232" y="296" width="48" height="48" rx="8" fill="#2563eb"/>
+
+  <!-- Hub dots - representing connectivity -->
+  <circle cx="160" cy="320" r="16" fill="#2563eb" opacity="0.5"/>
+  <circle cx="352" cy="320" r="16" fill="#2563eb" opacity="0.5"/>
+
+  <!-- Divider line on toolbox -->
+  <line x1="128" y1="280" x2="384" y2="280" stroke="#2563eb" stroke-width="4" opacity="0.2"/>
+</svg>

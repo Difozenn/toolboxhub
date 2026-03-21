@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import type { Tool, Category } from "./types";
+import type { Tool, Category, FAQ, HowToStep } from "./types";
 import { categories } from "./tools";
 
 // ── Constants ────────────────────────────────────────────────────────────────
 
-export const BASE_URL = "https://toolboxhub.io";
+export const BASE_URL = "https://toolboxhub.net";
 export const SITE_NAME = "ToolboxHub";
 export const SITE_DESCRIPTION =
-  "100+ free online tools for text, development, math, conversion, and more. No signup required.";
+  "500+ free online tools for text, development, math, finance, health, and more. No signup required.";
 
 // ── Helper: category label lookup ────────────────────────────────────────────
 
@@ -105,6 +105,40 @@ export function generateToolJsonLd(tool: Tool) {
   };
 }
 
+// ── JSON-LD: FAQPage ─────────────────────────────────────────────────────────
+
+export function generateFaqJsonLd(faqs: FAQ[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+// ── JSON-LD: HowTo ──────────────────────────────────────────────────────────
+
+export function generateHowToJsonLd(tool: Tool, steps: HowToStep[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: `How to Use ${tool.name}`,
+    description: tool.description,
+    step: steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  };
+}
+
 // ── JSON-LD: Organization + WebSite (site-level) ────────────────────────────
 
 export function generateSiteJsonLd() {
@@ -127,7 +161,7 @@ export function generateSiteJsonLd() {
         "@type": "SearchAction",
         target: {
           "@type": "EntryPoint",
-          urlTemplate: `${BASE_URL}/?q={search_term_string}`,
+          urlTemplate: `${BASE_URL}/search?q={search_term_string}`,
         },
         "query-input": "required name=search_term_string",
       },

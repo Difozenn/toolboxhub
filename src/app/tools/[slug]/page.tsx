@@ -1,138 +1,24 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import type { Metadata } from "next";
-import type { ComponentType } from "react";
-import { tools, getToolBySlug, getToolsByCategory, categories } from "@/lib/tools";
-import { generateToolMetadata, generateToolJsonLd } from "@/lib/seo";
+import { tools, getToolBySlug, getRelatedTools, categories } from "@/lib/tools";
+import {
+  generateToolMetadata,
+  generateToolJsonLd,
+  generateFaqJsonLd,
+  generateHowToJsonLd,
+} from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
 import AdBanner from "@/components/AdBanner";
-
-/* ── Tool component map (lazy-loaded) ──────────────────────────── */
-const toolComponents: Record<string, ComponentType> = {
-  // Text Tools
-  "word-counter": dynamic(() => import("@/components/tools/WordCounter")),
-  "case-converter": dynamic(() => import("@/components/tools/CaseConverter")),
-  "lorem-ipsum": dynamic(() => import("@/components/tools/LoremIpsum")),
-  "text-diff": dynamic(() => import("@/components/tools/TextDiff")),
-  "slugify": dynamic(() => import("@/components/tools/Slugify")),
-  "text-reverser": dynamic(() => import("@/components/tools/TextReverser")),
-  "line-sorter": dynamic(() => import("@/components/tools/LineSorter")),
-  "duplicate-line-remover": dynamic(() => import("@/components/tools/DuplicateLineRemover")),
-  "word-frequency": dynamic(() => import("@/components/tools/WordFrequency")),
-  "whitespace-remover": dynamic(() => import("@/components/tools/WhitespaceRemover")),
-  "add-line-numbers": dynamic(() => import("@/components/tools/AddLineNumbers")),
-  "text-repeater": dynamic(() => import("@/components/tools/TextRepeater")),
-  "fancy-text": dynamic(() => import("@/components/tools/FancyText")),
-  "text-to-binary": dynamic(() => import("@/components/tools/TextToBinary")),
-  "string-length": dynamic(() => import("@/components/tools/StringLength")),
-
-  // Developer Tools
-  "json-formatter": dynamic(() => import("@/components/tools/JsonFormatter")),
-  "base64-encoder": dynamic(() => import("@/components/tools/Base64Encoder")),
-  "url-encoder": dynamic(() => import("@/components/tools/UrlEncoder")),
-  "html-entity-encoder": dynamic(() => import("@/components/tools/HtmlEntityEncoder")),
-  "regex-tester": dynamic(() => import("@/components/tools/RegexTester")),
-  "css-minifier": dynamic(() => import("@/components/tools/CssMinifier")),
-  "javascript-minifier": dynamic(() => import("@/components/tools/JavascriptMinifier")),
-  "html-prettifier": dynamic(() => import("@/components/tools/HtmlPrettifier")),
-  "sql-formatter": dynamic(() => import("@/components/tools/SqlFormatter")),
-  "markdown-preview": dynamic(() => import("@/components/tools/MarkdownPreview")),
-  "cron-parser": dynamic(() => import("@/components/tools/CronParser")),
-  "jwt-decoder": dynamic(() => import("@/components/tools/JwtDecoder")),
-  "css-gradient-generator": dynamic(() => import("@/components/tools/CssGradientGenerator")),
-  "box-shadow-generator": dynamic(() => import("@/components/tools/BoxShadowGenerator")),
-  "meta-tag-generator": dynamic(() => import("@/components/tools/MetaTagGenerator")),
-  "chmod-calculator": dynamic(() => import("@/components/tools/ChmodCalculator")),
-  "csv-to-json": dynamic(() => import("@/components/tools/CsvToJson")),
-  "xml-to-json": dynamic(() => import("@/components/tools/XmlToJson")),
-  "yaml-to-json": dynamic(() => import("@/components/tools/YamlToJson")),
-  "user-agent-parser": dynamic(() => import("@/components/tools/UserAgentParser")),
-
-  // Math Tools
-  "percentage-calculator": dynamic(() => import("@/components/tools/PercentageCalculator")),
-  "scientific-calculator": dynamic(() => import("@/components/tools/ScientificCalculator")),
-  "bmi-calculator": dynamic(() => import("@/components/tools/BmiCalculator")),
-  "age-calculator": dynamic(() => import("@/components/tools/AgeCalculator")),
-  "loan-calculator": dynamic(() => import("@/components/tools/LoanCalculator")),
-  "compound-interest": dynamic(() => import("@/components/tools/CompoundInterest")),
-  "tip-calculator": dynamic(() => import("@/components/tools/TipCalculator")),
-  "discount-calculator": dynamic(() => import("@/components/tools/DiscountCalculator")),
-  "average-calculator": dynamic(() => import("@/components/tools/AverageCalculator")),
-  "roman-numeral-converter": dynamic(() => import("@/components/tools/RomanNumeralConverter")),
-  "random-number-generator": dynamic(() => import("@/components/tools/RandomNumberGenerator")),
-  "gpa-calculator": dynamic(() => import("@/components/tools/GpaCalculator")),
-
-  // Converters
-  "unit-converter": dynamic(() => import("@/components/tools/UnitConverter")),
-  "color-converter": dynamic(() => import("@/components/tools/ColorConverter")),
-  "number-base-converter": dynamic(() => import("@/components/tools/NumberBaseConverter")),
-  "timestamp-converter": dynamic(() => import("@/components/tools/TimestampConverter")),
-  "morse-code": dynamic(() => import("@/components/tools/MorseCode")),
-  "timezone-converter": dynamic(() => import("@/components/tools/TimezoneConverter")),
-  "cooking-converter": dynamic(() => import("@/components/tools/CookingConverter")),
-  "hex-to-text": dynamic(() => import("@/components/tools/HexToText")),
-  "markdown-to-html": dynamic(() => import("@/components/tools/MarkdownToHtml")),
-  "csv-to-table": dynamic(() => import("@/components/tools/CsvToTable")),
-  "text-to-nato": dynamic(() => import("@/components/tools/TextToNato")),
-  "currency-converter": dynamic(() => import("@/components/tools/CurrencyConverter")),
-  "image-to-base64": dynamic(() => import("@/components/tools/ImageToBase64")),
-  "json-to-typescript": dynamic(() => import("@/components/tools/JsonToTypescript")),
-  "pixels-to-rem": dynamic(() => import("@/components/tools/PixelsToRem")),
-
-  // Generators
-  "password-generator": dynamic(() => import("@/components/tools/PasswordGenerator")),
-  "uuid-generator": dynamic(() => import("@/components/tools/UuidGenerator")),
-  "qr-code-generator": dynamic(() => import("@/components/tools/QrCodeGenerator")),
-  "color-palette-generator": dynamic(() => import("@/components/tools/ColorPaletteGenerator")),
-  "fake-data-generator": dynamic(() => import("@/components/tools/FakeDataGenerator")),
-  "placeholder-image": dynamic(() => import("@/components/tools/PlaceholderImage")),
-  "invoice-generator": dynamic(() => import("@/components/tools/InvoiceGenerator")),
-  "credit-card-validator": dynamic(() => import("@/components/tools/CreditCardValidator")),
-  "emoji-picker": dynamic(() => import("@/components/tools/EmojiPicker")),
-  "random-color": dynamic(() => import("@/components/tools/RandomColor")),
-  "htaccess-generator": dynamic(() => import("@/components/tools/HtaccessGenerator")),
-  "robots-txt-generator": dynamic(() => import("@/components/tools/RobotsTxtGenerator")),
-  "privacy-policy-generator": dynamic(() => import("@/components/tools/PrivacyPolicyGenerator")),
-
-  // Image Tools
-  "image-resizer": dynamic(() => import("@/components/tools/ImageResizer")),
-  "image-cropper": dynamic(() => import("@/components/tools/ImageCropper")),
-  "image-compressor": dynamic(() => import("@/components/tools/ImageCompressor")),
-  "svg-to-png": dynamic(() => import("@/components/tools/SvgToPng")),
-  "favicon-generator": dynamic(() => import("@/components/tools/FaviconGenerator")),
-
-  // Crypto & Security
-  "hash-generator": dynamic(() => import("@/components/tools/HashGenerator")),
-  "encryption-tool": dynamic(() => import("@/components/tools/EncryptionTool")),
-  "rot13": dynamic(() => import("@/components/tools/Rot13")),
-  "caesar-cipher": dynamic(() => import("@/components/tools/CaesarCipher")),
-  "password-strength": dynamic(() => import("@/components/tools/PasswordStrength")),
-  "checksum-calculator": dynamic(() => import("@/components/tools/ChecksumCalculator")),
-  "ip-address-lookup": dynamic(() => import("@/components/tools/IpAddressLookup")),
-  "whois-lookup": dynamic(() => import("@/components/tools/WhoisLookup")),
-
-  // SEO & Marketing
-  "og-preview": dynamic(() => import("@/components/tools/OgPreview")),
-  "keyword-density": dynamic(() => import("@/components/tools/KeywordDensity")),
-  "google-serp-preview": dynamic(() => import("@/components/tools/GoogleSerpPreview")),
-  "utm-builder": dynamic(() => import("@/components/tools/UtmBuilder")),
-  "email-validator": dynamic(() => import("@/components/tools/EmailValidator")),
-  "twitter-card-preview": dynamic(() => import("@/components/tools/TwitterCardPreview")),
-  "readability-checker": dynamic(() => import("@/components/tools/ReadabilityChecker")),
-
-  // Utilities
-  "pomodoro-timer": dynamic(() => import("@/components/tools/PomodoroTimer")),
-  "countdown-timer": dynamic(() => import("@/components/tools/CountdownTimer")),
-  "stopwatch": dynamic(() => import("@/components/tools/Stopwatch")),
-  "notepad": dynamic(() => import("@/components/tools/Notepad")),
-  "screen-resolution": dynamic(() => import("@/components/tools/ScreenResolution")),
-};
+import { toolComponents } from "@/lib/generated/tool-components";
 
 /* ── Static params ──────────────────────────────────────────────── */
 export function generateStaticParams() {
   return tools.map((tool) => ({ slug: tool.slug }));
 }
+
+/* ── ISR ─────────────────────────────────────────────────────────── */
+export const revalidate = 86400;
 
 /* ── SEO metadata ───────────────────────────────────────────────── */
 export async function generateMetadata({
@@ -160,14 +46,18 @@ export default async function ToolPage({
 
   const ToolComponent = toolComponents[tool.slug];
   const category = categories.find((c) => c.value === tool.category);
-
-  const relatedTools = getToolsByCategory(tool.category)
-    .filter((t) => t.slug !== tool.slug)
-    .slice(0, 6);
+  const relatedTools = getRelatedTools(tool);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+      {/* JSON-LD schemas */}
       <JsonLd data={generateToolJsonLd(tool)} />
+      {tool.faqs && tool.faqs.length > 0 && (
+        <JsonLd data={generateFaqJsonLd(tool.faqs)} />
+      )}
+      {tool.howToSteps && tool.howToSteps.length > 0 && (
+        <JsonLd data={generateHowToJsonLd(tool, tool.howToSteps)} />
+      )}
 
       {/* Breadcrumbs */}
       <nav
@@ -232,11 +122,109 @@ export default async function ToolPage({
         <AdBanner slot="tool-bottom-ad" format="horizontal" />
       </div>
 
-      {/* Related tools — internal linking for SEO */}
+      {/* ── SEO Content Sections ─────────────────────────────────── */}
+
+      {/* About section */}
+      {tool.longDescription && (
+        <section className="mt-12">
+          <h2 className="text-xl font-semibold text-foreground mb-3">
+            About {tool.name}
+          </h2>
+          <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed">
+            <p>{tool.longDescription}</p>
+          </div>
+        </section>
+      )}
+
+      {/* How to Use section */}
+      {tool.howToSteps && tool.howToSteps.length > 0 && (
+        <section className="mt-10">
+          <h2 className="text-xl font-semibold text-foreground mb-4">
+            How to Use {tool.name}
+          </h2>
+          <ol className="space-y-3">
+            {tool.howToSteps.map((step, i) => (
+              <li key={i} className="flex gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
+                  {i + 1}
+                </span>
+                <div>
+                  <p className="font-medium text-foreground">{step.name}</p>
+                  <p className="text-sm text-muted-foreground">{step.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+
+      {/* Use Cases section */}
+      {tool.useCases && tool.useCases.length > 0 && (
+        <section className="mt-10">
+          <h2 className="text-xl font-semibold text-foreground mb-3">
+            Common Use Cases
+          </h2>
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {tool.useCases.map((useCase, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-2 text-sm text-muted-foreground"
+              >
+                <svg className="mt-0.5 h-4 w-4 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+                {useCase}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* Ad slot between content sections */}
+      {(tool.longDescription || tool.faqs) && (
+        <div className="mt-8">
+          <AdBanner slot="tool-mid-content" format="horizontal" />
+        </div>
+      )}
+
+      {/* FAQ section */}
+      {tool.faqs && tool.faqs.length > 0 && (
+        <section className="mt-10">
+          <h2 className="text-xl font-semibold text-foreground mb-4">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-2">
+            {tool.faqs.map((faq, i) => (
+              <details
+                key={i}
+                className="group rounded-lg border border-border"
+              >
+                <summary className="flex cursor-pointer items-center justify-between px-4 py-3 text-sm font-medium text-foreground hover:bg-muted/50">
+                  {faq.question}
+                  <svg
+                    className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </summary>
+                <div className="px-4 pb-3 text-sm text-muted-foreground">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Related tools — cross-category linking via relatedSlugs */}
       {relatedTools.length > 0 && (
         <section className="mt-12">
           <h2 className="text-xl font-semibold text-foreground mb-4">
-            Related {category?.label ?? "Tools"}
+            Related Tools
           </h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {relatedTools.map((rt) => (

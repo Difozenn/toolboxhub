@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "ToolboxHub",
     short_name: "ToolboxHub",
     description:
-      "100+ free online tools for text, development, math, conversion, and more. No signup required.",
+      "500+ free online tools for text, development, math, finance, health, and more. No signup required.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
