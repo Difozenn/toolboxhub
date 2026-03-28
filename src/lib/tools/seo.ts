@@ -224,8 +224,8 @@ export const seoTools: Tool[] = [
     ],
     relatedSlugs: ["keyword-density", "readability-checker", "google-serp-preview"]
   },
-  { slug: "backlink-checker", name: "Backlink Checker", description: "Check the number and quality of backlinks pointing to any URL.", category: "seo", icon: "🔗", keywords: ["backlink checker", "link checker", "seo backlinks", "link analysis"], subcategory: "analysis",
-    longDescription: "Backlink Checker retrieves a summary of inbound links pointing to any URL — including referring domains, anchor text distribution, and link authority signals — helping you understand your site's link profile and identify link-building opportunities. Analyze both your own site and competitor domains.",
+  { slug: "backlink-checker", name: "Backlink Checker", description: "Analyze any site's SEO health: security headers, meta tags, robots.txt, sitemap, and get links to professional backlink tools.", category: "seo", icon: "🔗", keywords: ["backlink checker", "site analysis", "seo audit", "security headers", "meta tags", "link analysis"], subcategory: "analysis",
+    longDescription: "Backlink Checker performs a comprehensive SEO site analysis — checking security headers, meta tags, robots.txt, sitemap presence, and HTTPS status — then links you to professional backlink analysis tools for in-depth link profile data. Get actionable insights about your site's technical SEO health in seconds.",
     faqs: [
       { question: "Why do backlinks matter for SEO?", answer: "Backlinks from authoritative, relevant websites are one of Google's most important ranking factors. Each quality backlink acts as a vote of confidence, signaling that other sites consider your content trustworthy and valuable." },
       { question: "What is a referring domain versus a backlink?", answer: "A backlink is a single incoming link from another page. A referring domain is the unique website that link comes from. 100 backlinks from one domain counts as one referring domain — diversity of referring domains is generally more valuable than volume of raw links." },
