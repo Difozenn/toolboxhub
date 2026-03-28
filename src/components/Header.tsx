@@ -8,6 +8,8 @@ import Logo from "@/components/Logo";
 const navLinks = [
   { href: "/", label: "All Tools" },
   { href: "/categories", label: "Categories" },
+  { href: "/collections", label: "Collections" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export default function Header() {

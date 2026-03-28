@@ -3,6 +3,8 @@ import AdBanner from "./AdBanner";
 import Logo from "./Logo";
 
 const footerLinks = [
+  { href: "/blog", label: "Blog" },
+  { href: "/collections", label: "Collections" },
   { href: "/privacy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms of Service" },
   { href: "/contact", label: "Contact" },

@@ -11,7 +11,9 @@ import {
 } from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
 import AdBanner from "@/components/AdBanner";
+import ShareButtons from "@/components/ShareButtons";
 import { toolComponents } from "@/lib/generated/tool-components";
+import { BASE_URL } from "@/lib/seo";
 
 /* ── Static params ──────────────────────────────────────────────── */
 export function generateStaticParams() {
@@ -110,6 +112,9 @@ export default async function ToolPage({
         <p className="mt-2 text-lg text-muted-foreground">
           {tool.description}
         </p>
+        <div className="mt-3">
+          <ShareButtons url={`${BASE_URL}/tools/${tool.slug}`} title={`${tool.name} - Free Online Tool | ToolboxHub`} />
+        </div>
       </div>
 
       {/* Tool component */}

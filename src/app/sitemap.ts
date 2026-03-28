@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { tools, categories } from "@/lib/tools";
+import { collections } from "@/lib/collections";
+import { blogPosts } from "@/lib/blog";
 import { BASE_URL } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -45,5 +47,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [homepage, allToolsPage, categoriesPage, ...categoryPages, ...toolPages];
+  // Collections pages
+  const collectionsIndex: MetadataRoute.Sitemap[number] = {
+    url: `${BASE_URL}/collections`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  };
+
+  const collectionPages: MetadataRoute.Sitemap = collections.map((col) => ({
+    url: `${BASE_URL}/collections/${col.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
+  // Blog pages
+  const blogIndex: MetadataRoute.Sitemap[number] = {
+    url: `${BASE_URL}/blog`,
+    lastModified: now,
+    changeFrequency: "daily",
+    priority: 0.8,
+  };
+
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [homepage, allToolsPage, categoriesPage, collectionsIndex, blogIndex, ...categoryPages, ...collectionPages, ...blogPages, ...toolPages];
 }
