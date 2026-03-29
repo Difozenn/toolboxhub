@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { categories, tools, getToolsByCategory } from "@/lib/tools";
+import { blogPosts } from "@/lib/blog";
+import { collections } from "@/lib/collections";
 import ToolCard from "@/components/ToolCard";
 
 // Popular tools shown at top (high-traffic categories)
@@ -74,6 +76,64 @@ export default function Home() {
           {popularTools.map((tool) => (
             <ToolCard key={tool.slug} tool={tool} />
           ))}
+        </div>
+      </section>
+
+      {/* Collections */}
+      <section className="mt-16">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <span className="text-2xl">📦</span>
+            <h2 className="text-2xl font-bold text-foreground">Tool Collections</h2>
+          </div>
+          <Link href="/collections" className="text-sm font-medium text-primary hover:underline">
+            View all &rarr;
+          </Link>
+        </div>
+        <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {collections.slice(0, 8).map((col) => (
+            <Link
+              key={col.slug}
+              href={`/collections/${col.slug}`}
+              className="group rounded-xl border border-border bg-muted/50 p-4 transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
+            >
+              <span className="text-2xl">{col.icon}</span>
+              <p className="mt-2 text-sm font-semibold text-foreground group-hover:text-primary transition-colors">{col.title}</p>
+              <p className="mt-0.5 text-xs text-muted-foreground">{col.tools.length} tools</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Blog */}
+      <section className="mt-16">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <span className="text-2xl">📖</span>
+            <h2 className="text-2xl font-bold text-foreground">From the Blog</h2>
+          </div>
+          <Link href="/blog" className="text-sm font-medium text-primary hover:underline">
+            All articles &rarr;
+          </Link>
+        </div>
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[...blogPosts]
+            .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+            .slice(0, 3)
+            .map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group rounded-xl border border-border p-5 transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
+              >
+                <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
+                  <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary">{post.category}</span>
+                  <span>{post.readTime}</span>
+                </div>
+                <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">{post.title}</p>
+                <p className="mt-1.5 text-xs text-muted-foreground line-clamp-2">{post.description}</p>
+              </Link>
+            ))}
         </div>
       </section>
 
