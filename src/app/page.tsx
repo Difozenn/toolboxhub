@@ -19,12 +19,29 @@ export default function Home() {
       {/* Hero section */}
       <section className="text-center">
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-          Free Online Tools
+          500+ Free Online Tools
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          500+ free tools for text, development, math, finance, health, and
-          more. No signup required.
+          Calculators, converters, formatters, generators, and utilities for developers, designers, writers, students, and everyone in between. All tools run in your browser — no signup, no install, no data collection.
         </p>
+        <div className="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+          <span className="flex items-center gap-1.5">
+            <svg className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+            100% Free
+          </span>
+          <span className="flex items-center gap-1.5">
+            <svg className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+            No Signup Required
+          </span>
+          <span className="flex items-center gap-1.5">
+            <svg className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+            Runs in Your Browser
+          </span>
+          <span className="flex items-center gap-1.5">
+            <svg className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+            Privacy First
+          </span>
+        </div>
       </section>
 
       {/* Category filter buttons */}

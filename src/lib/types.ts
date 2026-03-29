@@ -57,4 +57,5 @@ export interface Category {
   label: string;
   icon: string;
   subcategories?: string[];
+  description?: string;
 }

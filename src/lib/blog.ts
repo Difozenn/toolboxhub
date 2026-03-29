@@ -1211,6 +1211,10 @@ export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug);
 }
 
+export function getBlogPostsForTool(toolSlug: string): BlogPost[] {
+  return blogPosts.filter((p) => p.relatedTools.includes(toolSlug));
+}
+
 export function getBlogPostsByCategory(category: string): BlogPost[] {
   return blogPosts.filter((p) => p.category === category);
 }

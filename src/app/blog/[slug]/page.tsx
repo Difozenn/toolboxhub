@@ -6,6 +6,7 @@ import { getToolBySlug } from "@/lib/tools";
 import { BASE_URL, SITE_NAME, generateBreadcrumbJsonLd } from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
 import ShareButtons from "@/components/ShareButtons";
+import BlogTableOfContents from "@/components/BlogTableOfContents";
 
 export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));
@@ -50,6 +51,24 @@ export default async function BlogPostPage({
   const { slug } = await params;
   const post = getBlogPostBySlug(slug);
   if (!post) notFound();
+
+  // Inject IDs into headings for TOC anchors
+  const contentWithIds = post.content.replace(
+    /<h([23])>(.*?)<\/h[23]>/gi,
+    (_match, level, text) => {
+      const plain = text.replace(/<[^>]*>/g, "").trim();
+      const id = plain.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+      return `<h${level} id="${id}">${text}</h${level}>`;
+    }
+  );
+
+  // Prev/Next posts
+  const sortedPosts = [...blogPosts].sort(
+    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+  );
+  const currentIndex = sortedPosts.findIndex((p) => p.slug === post.slug);
+  const prevPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
+  const nextPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null;
 
   const relatedTools = post.relatedTools
     .map((s) => getToolBySlug(s))
@@ -119,10 +138,13 @@ export default async function BlogPostPage({
         </div>
       </header>
 
+      {/* Table of Contents */}
+      <BlogTableOfContents content={post.content} />
+
       {/* Content */}
       <article
         className="blog-content prose prose-sm max-w-none text-foreground"
-        dangerouslySetInnerHTML={{ __html: post.content }}
+        dangerouslySetInnerHTML={{ __html: contentWithIds }}
       />
 
       {/* Related Tools */}
@@ -171,11 +193,26 @@ export default async function BlogPostPage({
         </section>
       )}
 
-      {/* Back to Blog */}
+      {/* Prev / Next Navigation */}
       <div className="mt-12 border-t border-border pt-6">
-        <Link href="/blog" className="text-sm font-medium text-primary hover:underline">
-          &larr; Back to Blog
-        </Link>
+        <div className="flex items-center justify-between gap-4">
+          {prevPost ? (
+            <Link href={`/blog/${prevPost.slug}`} className="group flex-1 min-w-0">
+              <p className="text-xs text-muted-foreground mb-1">&larr; Previous</p>
+              <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">{prevPost.title}</p>
+            </Link>
+          ) : (
+            <Link href="/blog" className="text-sm font-medium text-primary hover:underline">
+              &larr; All Posts
+            </Link>
+          )}
+          {nextPost && (
+            <Link href={`/blog/${nextPost.slug}`} className="group flex-1 min-w-0 text-right">
+              <p className="text-xs text-muted-foreground mb-1">Next &rarr;</p>
+              <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">{nextPost.title}</p>
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

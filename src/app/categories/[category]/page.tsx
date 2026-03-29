@@ -26,7 +26,9 @@ export async function generateMetadata({
 
   return {
     title: `Free ${category.label} Online | ToolboxHub`,
-    description: `Browse ${getToolsByCategory(category.value).length}+ free online ${category.label.toLowerCase()} at ToolboxHub. No signup required.`,
+    description: category.description
+      ? category.description.slice(0, 160)
+      : `Browse ${getToolsByCategory(category.value).length}+ free online ${category.label.toLowerCase()} at ToolboxHub. No signup required.`,
   };
 }
 
@@ -87,6 +89,13 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
           </p>
         </div>
       </div>
+
+      {/* Category description */}
+      {category.description && (
+        <p className="mt-4 max-w-3xl text-sm text-muted-foreground leading-relaxed">
+          {category.description}
+        </p>
+      )}
 
       {/* Subcategory filter pills */}
       {subcategories.length > 1 && (

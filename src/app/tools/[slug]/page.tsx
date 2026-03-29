@@ -13,6 +13,7 @@ import JsonLd from "@/components/JsonLd";
 import AdBanner from "@/components/AdBanner";
 import ShareButtons from "@/components/ShareButtons";
 import { toolComponents } from "@/lib/generated/tool-components";
+import { getBlogPostsForTool } from "@/lib/blog";
 import { BASE_URL } from "@/lib/seo";
 
 /* ── Static params ──────────────────────────────────────────────── */
@@ -50,6 +51,7 @@ export default async function ToolPage({
   const ToolComponent = toolComponents[tool.slug];
   const category = categories.find((c) => c.value === tool.category);
   const relatedTools = getRelatedTools(tool);
+  const relatedBlogPosts = getBlogPostsForTool(tool.slug);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
@@ -226,6 +228,32 @@ export default async function ToolPage({
                   {faq.answer}
                 </div>
               </details>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Related blog posts — cross-link tools ↔ blog */}
+      {relatedBlogPosts.length > 0 && (
+        <section className="mt-12">
+          <h2 className="text-xl font-semibold text-foreground mb-4">
+            Related Articles
+          </h2>
+          <div className="space-y-3">
+            {relatedBlogPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group flex items-center justify-between rounded-lg border border-border p-4 transition-colors hover:bg-muted"
+              >
+                <div>
+                  <p className="font-medium text-foreground text-sm group-hover:text-primary transition-colors">{post.title}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">{post.readTime}</p>
+                </div>
+                <svg className="h-4 w-4 shrink-0 text-muted-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
             ))}
           </div>
         </section>
