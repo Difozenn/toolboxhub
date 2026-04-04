@@ -34,16 +34,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Category pages
   const categoryPages: MetadataRoute.Sitemap = categories.map((cat) => ({
     url: `${BASE_URL}/categories/${cat.value}`,
-    lastModified: now,
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
 
-  // Tool pages
+  // Tool pages – no fake lastModified; Google ignores it when it's always "now"
   const toolPages: MetadataRoute.Sitemap = tools.map((tool) => ({
     url: `${BASE_URL}/tools/${tool.slug}`,
-    lastModified: now,
-    changeFrequency: "weekly" as const,
+    changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
 
@@ -57,7 +55,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const collectionPages: MetadataRoute.Sitemap = collections.map((col) => ({
     url: `${BASE_URL}/collections/${col.slug}`,
-    lastModified: now,
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));

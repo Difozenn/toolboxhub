@@ -84,6 +84,9 @@ export default async function BlogPostPage({
     headline: post.title,
     description: post.description,
     datePublished: post.date,
+    dateModified: post.date,
+    image: `${BASE_URL}/icon-512.png`,
+    wordCount: post.content.replace(/<[^>]*>/g, "").split(/\s+/).length,
     author: {
       "@type": "Organization",
       name: SITE_NAME,
@@ -96,6 +99,7 @@ export default async function BlogPostPage({
       logo: { "@type": "ImageObject", url: `${BASE_URL}/icon-512.png` },
     },
     mainEntityOfPage: `${BASE_URL}/blog/${post.slug}`,
+    keywords: post.keywords.join(", "),
   };
 
   return (

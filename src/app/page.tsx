@@ -3,6 +3,8 @@ import { categories, tools, getToolsByCategory } from "@/lib/tools";
 import { blogPosts } from "@/lib/blog";
 import { collections } from "@/lib/collections";
 import ToolCard from "@/components/ToolCard";
+import JsonLd from "@/components/JsonLd";
+import { generateItemListJsonLd, BASE_URL } from "@/lib/seo";
 
 // Popular tools shown at top (high-traffic categories)
 const popularSlugs = [
@@ -18,6 +20,11 @@ export default function Home() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <JsonLd data={generateItemListJsonLd(
+        "Popular Free Online Tools",
+        "The most popular free online tools on ToolboxHub — calculators, converters, formatters, and generators.",
+        popularTools.map((t) => ({ name: t.name, url: `${BASE_URL}/tools/${t.slug}` })),
+      )} />
       {/* Hero section */}
       <section className="text-center">
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">

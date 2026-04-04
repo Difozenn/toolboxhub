@@ -1,12 +1,26 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { blogPosts, getAllBlogCategories } from "@/lib/blog";
-import { BASE_URL, SITE_NAME, generateBreadcrumbJsonLd } from "@/lib/seo";
+import {
+  BASE_URL,
+  SITE_NAME,
+  generateBreadcrumbJsonLd,
+  generateItemListJsonLd,
+  generateCollectionPageJsonLd,
+} from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: `Blog — Guides, Tips & Tutorials | ${SITE_NAME}`,
   description: "Learn how to use online tools effectively. Guides on SSL certificates, DNS records, SEO optimization, development workflows, and more.",
+  keywords: [
+    "online tools guide",
+    "ssl certificate explained",
+    "dns records guide",
+    "seo tips",
+    "developer tutorials",
+    "free tools blog",
+  ],
   alternates: { canonical: `${BASE_URL}/blog` },
   openGraph: {
     title: `Blog — Guides, Tips & Tutorials | ${SITE_NAME}`,
@@ -14,6 +28,12 @@ export const metadata: Metadata = {
     url: `${BASE_URL}/blog`,
     siteName: SITE_NAME,
     type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Blog — Guides, Tips & Tutorials | ${SITE_NAME}`,
+    description: "Guides on SSL, DNS, SEO, development workflows, and more.",
   },
 };
 
@@ -29,6 +49,16 @@ export default function BlogPage() {
         { label: "Home", href: "/" },
         { label: "Blog", href: "/blog" },
       ])} />
+      <JsonLd data={generateCollectionPageJsonLd(
+        "ToolboxHub Blog",
+        "In-depth guides, tutorials, and tips for free online tools.",
+        `${BASE_URL}/blog`,
+      )} />
+      <JsonLd data={generateItemListJsonLd(
+        "Blog Articles",
+        "Guides, tips, and tutorials for using free online tools effectively.",
+        sortedPosts.map((p) => ({ name: p.title, url: `${BASE_URL}/blog/${p.slug}` })),
+      )} />
 
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">

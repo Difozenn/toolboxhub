@@ -2,13 +2,25 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { collections } from "@/lib/collections";
 import { tools } from "@/lib/tools";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import {
+  BASE_URL,
+  SITE_NAME,
+  generateBreadcrumbJsonLd,
+  generateItemListJsonLd,
+} from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
-import { generateBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: `Best Free Online Tool Collections | ${SITE_NAME}`,
   description: "Curated collections of the best free online tools for developers, SEO, writing, finance, security, and more. No signup required.",
+  keywords: [
+    "best free online tools",
+    "tool collections",
+    "curated tools",
+    "developer tools",
+    "seo tools",
+    "writing tools",
+  ],
   alternates: { canonical: `${BASE_URL}/collections` },
   openGraph: {
     title: `Best Free Online Tool Collections | ${SITE_NAME}`,
@@ -16,6 +28,12 @@ export const metadata: Metadata = {
     url: `${BASE_URL}/collections`,
     siteName: SITE_NAME,
     type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Best Free Online Tool Collections | ${SITE_NAME}`,
+    description: "Curated collections of the best free tools for developers, SEO, writing, and more.",
   },
 };
 
@@ -26,6 +44,11 @@ export default function CollectionsPage() {
         { label: "Home", href: "/" },
         { label: "Collections", href: "/collections" },
       ])} />
+      <JsonLd data={generateItemListJsonLd(
+        "Free Online Tool Collections",
+        "Curated collections of the best free online tools at ToolboxHub.",
+        collections.map((c) => ({ name: c.title, url: `${BASE_URL}/collections/${c.slug}` })),
+      )} />
 
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">

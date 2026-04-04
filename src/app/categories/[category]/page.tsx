@@ -4,6 +4,13 @@ import type { Metadata } from "next";
 import { categories, getToolsByCategory, getToolsByCategoryAndSubcategory } from "@/lib/tools";
 import type { ToolCategory } from "@/lib/types";
 import ToolCard from "@/components/ToolCard";
+import JsonLd from "@/components/JsonLd";
+import {
+  generateCategoryMetadata,
+  generateBreadcrumbJsonLd,
+  generateItemListJsonLd,
+  BASE_URL,
+} from "@/lib/seo";
 
 interface CategoryPageProps {
   params: Promise<{ category: string }>;
@@ -24,12 +31,8 @@ export async function generateMetadata({
     return { title: "Category Not Found | ToolboxHub" };
   }
 
-  return {
-    title: `Free ${category.label} Online | ToolboxHub`,
-    description: category.description
-      ? category.description.slice(0, 160)
-      : `Browse ${getToolsByCategory(category.value).length}+ free online ${category.label.toLowerCase()} at ToolboxHub. No signup required.`,
-  };
+  const toolCount = getToolsByCategory(category.value).length;
+  return generateCategoryMetadata(category, toolCount);
 }
 
 export function generateStaticParams() {
@@ -57,8 +60,20 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      {/* JSON-LD schemas */}
+      <JsonLd data={generateBreadcrumbJsonLd([
+        { label: "Home", href: "/" },
+        { label: "Categories", href: "/categories" },
+        { label: category.label, href: `/categories/${category.value}` },
+      ])} />
+      <JsonLd data={generateItemListJsonLd(
+        `Free ${category.label} Online`,
+        category.description || `${allCategoryTools.length}+ free online ${category.label.toLowerCase()} at ToolboxHub.`,
+        allCategoryTools.map((t) => ({ name: t.name, url: `${BASE_URL}/tools/${t.slug}` })),
+      )} />
+
       {/* Breadcrumbs */}
-      <nav className="flex items-center gap-2 text-sm text-muted-foreground">
+      <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-muted-foreground">
         <Link
           href="/"
           className="transition-colors hover:text-foreground"
@@ -81,11 +96,11 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
         <span className="text-3xl">{category.icon}</span>
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            {category.label}
+            Free {category.label} Online
           </h1>
           <p className="mt-1 text-muted-foreground">
             {allCategoryTools.length} free{" "}
-            {allCategoryTools.length === 1 ? "tool" : "tools"} available
+            {allCategoryTools.length === 1 ? "tool" : "tools"} — no signup required
           </p>
         </div>
       </div>

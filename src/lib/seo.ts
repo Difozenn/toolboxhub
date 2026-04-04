@@ -16,19 +16,35 @@ function getCategoryLabel(categoryValue: string): string {
   return cat?.label ?? categoryValue;
 }
 
+// ── Helper: smart description truncation ─────────────────────────────────────
+
+function truncateDescription(text: string, maxLen = 155): string {
+  if (text.length <= maxLen) return text;
+  const truncated = text.slice(0, maxLen);
+  const lastPeriod = truncated.lastIndexOf(". ");
+  if (lastPeriod > 80) return truncated.slice(0, lastPeriod + 1);
+  const lastSpace = truncated.lastIndexOf(" ");
+  return lastSpace > 0 ? truncated.slice(0, lastSpace) + "..." : truncated + "...";
+}
+
 // ── Tool Metadata ────────────────────────────────────────────────────────────
 
 export function generateToolMetadata(tool: Tool): Metadata {
-  const title = `${tool.name} - Free Online ${getCategoryLabel(tool.category)} | ${SITE_NAME}`;
+  const title = `${tool.name} - Free Online Tool | ${SITE_NAME}`;
   const description = tool.longDescription
-    ? tool.longDescription.slice(0, 160)
+    ? truncateDescription(tool.longDescription)
     : tool.description;
   const url = `${BASE_URL}/tools/${tool.slug}`;
 
   return {
     title,
     description,
-    keywords: tool.keywords,
+    keywords: [
+      ...tool.keywords,
+      "free online tool",
+      "no signup",
+      getCategoryLabel(tool.category).toLowerCase(),
+    ],
     alternates: {
       canonical: url,
     },
@@ -50,19 +66,26 @@ export function generateToolMetadata(tool: Tool): Metadata {
 
 // ── Category Metadata ────────────────────────────────────────────────────────
 
-export function generateCategoryMetadata(category: Category): Metadata {
-  const title = `${category.label} - Free Online Tools | ${SITE_NAME}`;
-  const description = `Browse free online ${category.label.toLowerCase()} on ToolboxHub. No signup required.`;
+export function generateCategoryMetadata(
+  category: Category,
+  toolCount: number,
+): Metadata {
+  const title = `Free ${category.label} Online - ${toolCount}+ Browser Tools | ${SITE_NAME}`;
+  const description = category.description
+    ? truncateDescription(category.description)
+    : `Browse ${toolCount}+ free online ${category.label.toLowerCase()} at ToolboxHub. No signup required — all tools run in your browser.`;
   const url = `${BASE_URL}/categories/${category.value}`;
 
   return {
     title,
     description,
     keywords: [
-      category.label.toLowerCase(),
+      `free ${category.label.toLowerCase()}`,
+      `online ${category.label.toLowerCase()}`,
+      `${category.value} tools`,
       "free online tools",
       "no signup",
-      category.value,
+      "browser tools",
     ],
     alternates: {
       canonical: url,
@@ -90,15 +113,61 @@ export function generateToolJsonLd(tool: Tool) {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: tool.name,
-    description: tool.description,
+    description: tool.longDescription || tool.description,
     url: `${BASE_URL}/tools/${tool.slug}`,
-    applicationCategory: "UtilityApplication",
+    applicationCategory: `${getCategoryLabel(tool.category)}`,
     operatingSystem: "All",
+    browserRequirements: "Requires JavaScript. Works in all modern browsers.",
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
     },
+    featureList: tool.useCases?.join(", "),
+    isPartOf: {
+      "@type": "WebSite",
+      name: SITE_NAME,
+      url: BASE_URL,
+    },
+  };
+}
+
+// ── JSON-LD: ItemList (for category / listing pages) ────────────────────────
+
+export function generateItemListJsonLd(
+  name: string,
+  description: string,
+  items: { name: string; url: string }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name,
+    description,
+    numberOfItems: items.length,
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      url: item.url.startsWith("http") ? item.url : `${BASE_URL}${item.url}`,
+    })),
+  };
+}
+
+// ── JSON-LD: CollectionPage (for blog index, collections index) ─────────────
+
+export function generateCollectionPageJsonLd(
+  name: string,
+  description: string,
+  url: string,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name,
+    description,
+    url: url.startsWith("http") ? url : `${BASE_URL}${url}`,
     isPartOf: {
       "@type": "WebSite",
       name: SITE_NAME,
